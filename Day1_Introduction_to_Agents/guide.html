@@ -1,0 +1,3258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPTPlaner Guide</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 1200px; margin: auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+        .page { display: flex; border-bottom: 2px solid #eee; padding: 20px 0; }
+        .slide { flex: 1; padding-right: 20px; border-right: 1px solid #ddd; min-width: 0; } /* Fix: Added min-width */
+        .notes { flex: 1; padding-left: 20px; min-width: 0; } /* Fix: Added min-width */
+        h1, h2 { border-bottom: 1px solid #ddd; padding-bottom: 10px; color: #444; }
+        pre { background: #f9f9f9; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; border: 1px solid #eee; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; }
+        
+        .note-toggle { margin-bottom: 15px; }
+        .toggle-btn { padding: 8px 15px; border: 1px solid #ccc; background-color: #f0f0f0; cursor: pointer; border-radius: 5px; margin-right: 5px; }
+        .toggle-btn.active { background-color: #007bff; color: white; border-color: #007bff; }
+
+        /* Generic styles for rendered markdown content */
+        .rendered-content h1, .rendered-content h2, .rendered-content h3, .rendered-content h4, .rendered-content h5, .rendered-content h6 { border-bottom: none; padding-bottom: 5px; margin-top: 20px; }
+        .rendered-content ul, .rendered-content ol { padding-left: 25px; }
+        .rendered-content code { background-color: #eee; padding: 2px 5px; border-radius: 3px; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; }
+        .rendered-content blockquote { border-left: 4px solid #ccc; padding-left: 15px; color: #666; margin-left: 0; }
+        .rendered-content table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+        .rendered-content th, .rendered-content td { border: 1px solid #ddd; padding: 8px; }
+        .rendered-content th { background-color: #f2f2f2; }
+        .rendered-content img { max-width: 100%; height: auto; display: block; margin: 1em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PPTPlaner Guide</h1>
+        <p>This guide displays the generated slides and notes side-by-side. Use the buttons to toggle between rendered and source view for the notes.</p>
+        <hr>
+        
+        <div class="page" id="page-1">
+            <div class="slide">
+                <h2>Slide 01</h2>
+                <div class="rendered-content">
+                    <h1>Introduction to Agents</h1>
+<p><strong>Authors:</strong> Alan Blount, Antonio Gulli, Shubham Saboo, Michael Zimmermann, and Vladimir Vuskovic</p>
+<p><em>A formal guide for developers, architects, and product leaders transitioning from proofs-of-concept to robust, production-grade agentic systems.</em></p>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 01</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(1, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(1, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-1" class="note-content rendered-content">
+                    <h3>🎙️ 第 01 頁：Introduction_to_Agents</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>本課程為一份關於 AI 代理人 (Agent) 的正式指南，旨在協助專業人士將專案從概念驗證推向正式生產。</li>
+<li>內容由 Alan Blount, Antonio Gulli, Shubham Saboo, Michael Zimmermann, 和 Vladimir Vuskovic 共同撰寫。</li>
+<li>目標受眾為開發者、架構師與產品負責人。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+大家好，歡迎來到今天的課程：「Introduction to Agents」。在接下來的時間裡，我們將一起探索 AI 領域最令人興奮的前沿——AI 代理人。</p>
+<h5>① 介紹本份指南的背景與作者</h5>
+<p>首先，各位手上看到的這份資料，是由 Alan Blount、Antonio Gulli、Shubham Saboo、Michael Zimmermann，以及 Vladimir Vuskovic 等多位專家共同撰寫的。</p>
+<blockquote>
+<p>這不僅僅是一份簡報，而是一本正式的指南，專為在第一線奮鬥的<strong>開發者、架構師，以及產品負責人</strong>所設計。</p>
+</blockquote>
+<h5>② 闡述核心目標</h5>
+<p>我們今天聚集在這裡，目標非常明確：就是要解決一個許多團隊都面臨的挑戰。那就是，如何將一個看起來很有潛力的 AI 代理人「原型」或「概念驗證（PoC）」，真正轉化為一個穩健、可靠、可以大規模部署到生產環境的<strong>正式系統</strong>。</p>
+<p>這條路並不容易，它充滿了技術、安全與品質上的挑戰。而這份指南，就是各位在這趟旅程中的地圖與羅盤。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：開場時，語氣可以充滿熱情與權威感，強調這份指南的重要性與實用價值。在念到作者名字時，可以稍微放慢速度，以示尊重。</li>
+<li><strong>補充案例</strong>：此為標題頁，暫不需補充額外案例。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>好的，既然我們明確了這份指南的目標，那麼讓我們先退一步思考一個更根本的問題：為什麼「代理人」會成為 AI 發展的下一個浪潮？它與我們過去熟悉的 AI 有何不同？下一頁，我們就來談談這場正在發生的「典範轉移」。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-1" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 01 頁：Introduction_to_Agents
+
+#### 【本頁重點摘要】
+*   本課程為一份關於 AI 代理人 (Agent) 的正式指南，旨在協助專業人士將專案從概念驗證推向正式生產。
+*   內容由 Alan Blount, Antonio Gulli, Shubham Saboo, Michael Zimmermann, 和 Vladimir Vuskovic 共同撰寫。
+*   目標受眾為開發者、架構師與產品負責人。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+大家好，歡迎來到今天的課程：「Introduction to Agents」。在接下來的時間裡，我們將一起探索 AI 領域最令人興奮的前沿——AI 代理人。
+
+##### ① 介紹本份指南的背景與作者
+首先，各位手上看到的這份資料，是由 Alan Blount、Antonio Gulli、Shubham Saboo、Michael Zimmermann，以及 Vladimir Vuskovic 等多位專家共同撰寫的。
+
+> 這不僅僅是一份簡報，而是一本正式的指南，專為在第一線奮鬥的**開發者、架構師，以及產品負責人**所設計。
+
+##### ② 闡述核心目標
+我們今天聚集在這裡，目標非常明確：就是要解決一個許多團隊都面臨的挑戰。那就是，如何將一個看起來很有潛力的 AI 代理人「原型」或「概念驗證（PoC）」，真正轉化為一個穩健、可靠、可以大規模部署到生產環境的**正式系統**。
+
+這條路並不容易，它充滿了技術、安全與品質上的挑戰。而這份指南，就是各位在這趟旅程中的地圖與羅盤。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：開場時，語氣可以充滿熱情與權威感，強調這份指南的重要性與實用價值。在念到作者名字時，可以稍微放慢速度，以示尊重。
+*   **補充案例**：此為標題頁，暫不需補充額外案例。
+*   **轉場橋樑 (Bridge)**：
+    > 好的，既然我們明確了這份指南的目標，那麼讓我們先退一步思考一個更根本的問題：為什麼「代理人」會成為 AI 發展的下一個浪潮？它與我們過去熟悉的 AI 有何不同？下一頁，我們就來談談這場正在發生的「典範轉移」。
+
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-2">
+            <div class="slide">
+                <h2>Slide 02</h2>
+                <div class="rendered-content">
+                    <h1>From Predictive AI to Autonomous Agents</h1>
+<ul>
+<li><strong>Paradigm Shift:</strong> Moving from passive AI (content generation, translation) requiring constant human direction to autonomous AI capable of problem-solving and task execution.</li>
+<li><strong>What is an AI Agent?</strong> A complete application that combines a Language Model's (LM) reasoning with the ability to take actions to achieve goals.</li>
+<li><strong>Key Capability:</strong> Agents can work independently, determining the necessary steps to reach a goal without step-by-step human guidance.</li>
+<li><strong>Purpose of this Guide:</strong> To provide a comprehensive foundation for building, deploying, and managing this new generation of intelligent applications.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 02</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(2, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(2, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-2" class="note-content rendered-content">
+                    <h3>🎙️ 第 02 頁：From_Predictive_AI_to_Autonomous_Agents</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>AI 正在經歷一場範式轉移，從需要人類持續指導的被動式工具，演變為能夠自主解決問題的系統。</li>
+<li>AI 代理人 (Agent) 是一個完整的應用程式，它結合了語言模型的推理能力與執行任務的行動能力。</li>
+<li>代理人的關鍵特點是能夠獨立運作，自行規劃並執行達成目標所需的步驟。</li>
+<li>本指南旨在為建構、部署和管理生產級別的代理人系統提供一個全面的基礎框架。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+大家好，在過去幾年，當我們談論人工智慧時，我們腦中浮現的可能是一些很酷的工具：它們可以幫我們回答問題、翻譯文章，或者根據一段描述生成漂亮的圖片。這些都非常強大，但它們有一個共同點：它們是被動的，每一步都需要我們的明確指令。</p>
+<p>今天，我們正在見證一場深刻的 <strong>典範轉移 (Paradigm Shift)</strong>。我們正從這種被動的、僅僅是預測或生成內容的 AI，邁向一個全新的領域：一個能夠自主解決問題和執行任務的軟體新物種。</p>
+<h5>① 什麼是 AI 代理人 (Agent)？</h5>
+<p>那麼，這個新物種到底是什麼？我們稱之為「AI 代理人」。</p>
+<blockquote>
+<p>一個代理人，它不僅僅是一個靜態工作流程中的 AI 模型；它是一個<strong>完整的應用程式</strong>，能夠制定計畫並採取行動來實現目標。</p>
+</blockquote>
+<p>換句話說，它不僅有「大腦」可以思考，更有「雙手」可以行動。它將語言模型的強大推理能力，與在真實世界中執行任務的實用能力結合在一起。</p>
+<h5>② 代理人的核心能力：自主性</h5>
+<p>這就帶出了代理人最關鍵、也最令人興奮的能力：<strong>自主性</strong>。</p>
+<p>這意味著代理人可以<strong>獨立工作</strong>。你給它一個目標，例如「幫我規劃下週去東京的出差行程」，它就能自己弄清楚需要哪些步驟來完成這個目標，而不需要你在旁邊一步一步地指導它。它會自己思考：「首先，我需要查機票；然後，訂一個離客戶近的飯店；接著，把行程加到行事曆上。」這整個過程，它都能自主完成。</p>
+<h5>③ 本指南的目的</h5>
+<p>當然，要打造一個真正可靠、安全、高品質的代理人系統，遠比聽起來要複雜。建立一個簡單的原型或許不難，但要將它推向生產環境，會面臨巨大的挑戰。</p>
+<p>這也正是我們這份指南的核心目的。我們將為各位開發者、架構師和產品負責人，提供一個<strong>全面性的基礎</strong>。從解構代理人的核心組件，到如何安全地部署與管理，我們將一步步帶領大家，掌握建構這新一代智慧應用的所有關鍵知識。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「被動式 AI」的限制後，可以稍微停頓一下，然後用更有力的語氣強調「今天，我們正在見證一場深刻的典範轉移」，以製造戲劇性效果。</li>
+<li><strong>補充案例</strong>：如果想讓「被動 vs. 自主」的對比更鮮明，可以舉例：「傳統 AI 就像一個計算機，你必須輸入 <code>2+2</code>，它才會給你 <code>4</code>。而 AI 代理人更像一位助理，你對他說『幫我結算這個月的開銷』，他會自己去找到所有帳單並完成任務。」</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了代理人是結合「推理」與「行動」的自主系統後，大家可能很好奇：這樣一個強大的系統，它內部到底是由哪些部分組成的呢？下一頁，我們就來解構一個 AI 代理人的核心組件。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-2" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 02 頁：From_Predictive_AI_to_Autonomous_Agents
+
+#### 【本頁重點摘要】
+*   AI 正在經歷一場範式轉移，從需要人類持續指導的被動式工具，演變為能夠自主解決問題的系統。
+*   AI 代理人 (Agent) 是一個完整的應用程式，它結合了語言模型的推理能力與執行任務的行動能力。
+*   代理人的關鍵特點是能夠獨立運作，自行規劃並執行達成目標所需的步驟。
+*   本指南旨在為建構、部署和管理生產級別的代理人系統提供一個全面的基礎框架。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+大家好，在過去幾年，當我們談論人工智慧時，我們腦中浮現的可能是一些很酷的工具：它們可以幫我們回答問題、翻譯文章，或者根據一段描述生成漂亮的圖片。這些都非常強大，但它們有一個共同點：它們是被動的，每一步都需要我們的明確指令。
+
+今天，我們正在見證一場深刻的 **典範轉移 (Paradigm Shift)**。我們正從這種被動的、僅僅是預測或生成內容的 AI，邁向一個全新的領域：一個能夠自主解決問題和執行任務的軟體新物種。
+
+##### ① 什麼是 AI 代理人 (Agent)？
+那麼，這個新物種到底是什麼？我們稱之為「AI 代理人」。
+
+> 一個代理人，它不僅僅是一個靜態工作流程中的 AI 模型；它是一個**完整的應用程式**，能夠制定計畫並採取行動來實現目標。
+
+換句話說，它不僅有「大腦」可以思考，更有「雙手」可以行動。它將語言模型的強大推理能力，與在真實世界中執行任務的實用能力結合在一起。
+
+##### ② 代理人的核心能力：自主性
+這就帶出了代理人最關鍵、也最令人興奮的能力：**自主性**。
+
+這意味著代理人可以**獨立工作**。你給它一個目標，例如「幫我規劃下週去東京的出差行程」，它就能自己弄清楚需要哪些步驟來完成這個目標，而不需要你在旁邊一步一步地指導它。它會自己思考：「首先，我需要查機票；然後，訂一個離客戶近的飯店；接著，把行程加到行事曆上。」這整個過程，它都能自主完成。
+
+##### ③ 本指南的目的
+當然，要打造一個真正可靠、安全、高品質的代理人系統，遠比聽起來要複雜。建立一個簡單的原型或許不難，但要將它推向生產環境，會面臨巨大的挑戰。
+
+這也正是我們這份指南的核心目的。我們將為各位開發者、架構師和產品負責人，提供一個**全面性的基礎**。從解構代理人的核心組件，到如何安全地部署與管理，我們將一步步帶領大家，掌握建構這新一代智慧應用的所有關鍵知識。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「被動式 AI」的限制後，可以稍微停頓一下，然後用更有力的語氣強調「今天，我們正在見證一場深刻的典範轉移」，以製造戲劇性效果。
+*   **補充案例**：如果想讓「被動 vs. 自主」的對比更鮮明，可以舉例：「傳統 AI 就像一個計算機，你必須輸入 `2+2`，它才會給你 `4`。而 AI 代理人更像一位助理，你對他說『幫我結算這個月的開銷』，他會自己去找到所有帳單並完成任務。」
+*   **轉場橋樑 (Bridge)**：
+    > 了解了代理人是結合「推理」與「行動」的自主系統後，大家可能很好奇：這樣一個強大的系統，它內部到底是由哪些部分組成的呢？下一頁，我們就來解構一個 AI 代理人的核心組件。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-3">
+            <div class="slide">
+                <h2>Slide 03</h2>
+                <div class="rendered-content">
+                    <h1>Core Components of an AI Agent</h1>
+<p>An AI Agent is a system that integrates four essential components to accomplish a goal:</p>
+<ol>
+<li><strong>The Model (The &quot;Brain&quot;):</strong> The core reasoning engine (LM) that processes information and makes decisions.</li>
+<li><strong>Tools (The &quot;Hands&quot;):</strong> Mechanisms that connect the agent to the outside world, allowing it to perform actions and access real-time data.</li>
+<li><strong>The Orchestration Layer (The &quot;Nervous System&quot;):</strong> The governing process that manages the agent's operational loop, including planning, memory, and strategy.</li>
+<li><strong>Deployment (The &quot;Body and Legs&quot;):</strong> The infrastructure that hosts the agent, making it a reliable and accessible service.</li>
+</ol>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 03</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(3, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(3, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-3" class="note-content rendered-content">
+                    <h3>🎙️ 第 03 頁：Core_Components_of_an_AI_Agent</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>AI 代理 (Agent) 由四個核心組件構成，可以比喻為一個完整的人。</li>
+<li><strong>模型 (Model)</strong> 是代理的「大腦」，負責思考與決策。</li>
+<li><strong>工具 (Tools)</strong> 是代理的「雙手」，負責與外界互動並執行任務。</li>
+<li><strong>編排層 (Orchestration Layer)</strong> 是「神經系統」，負責連接大腦與雙手，管理整個運作流程。</li>
+<li><strong>部署 (Deployment)</strong> 是「身體與雙腿」，讓代理成為一個真實、可靠的服務。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，在我們理解了 AI 代理的宏觀概念後，現在讓我們來深入剖析它的內部結構。一個功能完整的代理，究竟是由哪些部分組成的？我們可以把它想像成一個「人」，它有大腦、有雙手、有神經系統，還有一個能讓它在世界上行動的身體。這四個部分，就是我們接下來要談的核心組件。</p>
+<h5>① 模型 (The Model)：代理的「大腦」</h5>
+<p>首先，每個代理的核心都是 <strong>模型 (Model)</strong>，也就是它的 <strong>「大腦」</strong>。這通常是一個大型語言模型（LM）或基礎模型，是代理的中央推理引擎。它負責處理資訊、評估選項，並做出決策。可以說，代理的所有「思考」能力都源自於這個大腦。整個代理系統的其他部分，其實都在為這個大腦服務，它們最重要的工作，就是為大腦精心準備它所需要的「上下文資訊」，讓它能夠清晰、準確地進行思考。</p>
+<h5>② 工具 (Tools)：代理的「雙手」</h5>
+<p>但光有大腦是遠遠不夠的，它需要能夠與世界互動。這就要靠代理的 <strong>工具 (Tools)</strong>，也就是它的 <strong>「雙手」</strong>。這些工具將代理的思考與外部世界連接起來，讓它能夠執行文字生成以外的實際動作。例如，它可以是呼叫一個 API、執行一段程式碼，或是從資料庫中查詢即時、真實的資訊。</p>
+<blockquote>
+<p>代理不僅僅是「擁有」工具，它會主動「規劃」要使用哪個工具，然後「執行」它，最後再把工具執行的「結果」放回大腦的上下文視窗中，作為下一步思考的依據。</p>
+</blockquote>
+<h5>③ 編排層 (Orchestration Layer)：代理的「神經系統」</h5>
+<p>有了大腦和雙手，還需要有東西把它們串連起來。這就是 <strong>編排層 (Orchestration Layer)</strong>，也就是代理的 <strong>「神經系統」</strong>。它是管理代理整個運作循環的治理流程，就像是整個交響樂團的指揮。它負責處理<strong>規劃 (Planning)</strong>、<strong>記憶 (Memory)</strong>，以及執行整個策略。它會使用像「思維鏈 (Chain-of-Thought)」或「ReAct」這樣的推理技術，將複雜的目標分解成一個個小步驟，並決定何時該思考、何時該使用工具。同時，它也負責賦予代理「記憶」，讓它能記住自己做過什麼。</p>
+<h5>④ 部署 (Deployment)：代理的「身體與雙腿」</h5>
+<p>最後，一個擁有大腦、雙手和神經系統的個體，需要一個真實的「身體」才能提供服務。這就是 <strong>部署 (Deployment)</strong>。在筆記型電腦上打造一個代理原型是個好的開始，但「部署」才能真正將它變成一個可靠、可存取的服務。這包括將代理託管在安全、可擴展的伺服器上，並與監控、日誌記錄和管理等必要的生產服務整合。一旦部署完成，使用者就可以透過圖形介面與它互動，或者其他代理也可以透過 API 來呼叫它。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講完這四個組件後，可以稍微停頓，用手勢比喻大腦、雙手、神經系統，加深聽眾的印象。這個「人體」的比喻非常關鍵。</li>
+<li><strong>補充說明</strong>：可以強調，開發者不再是傳統的「砌磚工」，為每一步撰寫精確的邏輯；而是更像一位「導演」，負責設定場景（指令）、挑選演員（工具），並提供劇本（上下文）。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了構成代理的四個核心藍圖——大腦、雙手、神經系統和身體。那麼，這些組件是如何協同工作的呢？下一頁，我們將深入探討那個讓代理「活」起來的、持續不斷的「思考、行動、觀察」循環。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-3" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 03 頁：Core_Components_of_an_AI_Agent
+
+#### 【本頁重點摘要】
+*   AI 代理 (Agent) 由四個核心組件構成，可以比喻為一個完整的人。
+*   **模型 (Model)** 是代理的「大腦」，負責思考與決策。
+*   **工具 (Tools)** 是代理的「雙手」，負責與外界互動並執行任務。
+*   **編排層 (Orchestration Layer)** 是「神經系統」，負責連接大腦與雙手，管理整個運作流程。
+*   **部署 (Deployment)** 是「身體與雙腿」，讓代理成為一個真實、可靠的服務。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，在我們理解了 AI 代理的宏觀概念後，現在讓我們來深入剖析它的內部結構。一個功能完整的代理，究竟是由哪些部分組成的？我們可以把它想像成一個「人」，它有大腦、有雙手、有神經系統，還有一個能讓它在世界上行動的身體。這四個部分，就是我們接下來要談的核心組件。
+
+##### ① 模型 (The Model)：代理的「大腦」
+首先，每個代理的核心都是 **模型 (Model)**，也就是它的 **「大腦」**。這通常是一個大型語言模型（LM）或基礎模型，是代理的中央推理引擎。它負責處理資訊、評估選項，並做出決策。可以說，代理的所有「思考」能力都源自於這個大腦。整個代理系統的其他部分，其實都在為這個大腦服務，它們最重要的工作，就是為大腦精心準備它所需要的「上下文資訊」，讓它能夠清晰、準確地進行思考。
+
+##### ② 工具 (Tools)：代理的「雙手」
+但光有大腦是遠遠不夠的，它需要能夠與世界互動。這就要靠代理的 **工具 (Tools)**，也就是它的 **「雙手」**。這些工具將代理的思考與外部世界連接起來，讓它能夠執行文字生成以外的實際動作。例如，它可以是呼叫一個 API、執行一段程式碼，或是從資料庫中查詢即時、真實的資訊。
+
+> 代理不僅僅是「擁有」工具，它會主動「規劃」要使用哪個工具，然後「執行」它，最後再把工具執行的「結果」放回大腦的上下文視窗中，作為下一步思考的依據。
+
+##### ③ 編排層 (Orchestration Layer)：代理的「神經系統」
+有了大腦和雙手，還需要有東西把它們串連起來。這就是 **編排層 (Orchestration Layer)**，也就是代理的 **「神經系統」**。它是管理代理整個運作循環的治理流程，就像是整個交響樂團的指揮。它負責處理**規劃 (Planning)**、**記憶 (Memory)**，以及執行整個策略。它會使用像「思維鏈 (Chain-of-Thought)」或「ReAct」這樣的推理技術，將複雜的目標分解成一個個小步驟，並決定何時該思考、何時該使用工具。同時，它也負責賦予代理「記憶」，讓它能記住自己做過什麼。
+
+##### ④ 部署 (Deployment)：代理的「身體與雙腿」
+最後，一個擁有大腦、雙手和神經系統的個體，需要一個真實的「身體」才能提供服務。這就是 **部署 (Deployment)**。在筆記型電腦上打造一個代理原型是個好的開始，但「部署」才能真正將它變成一個可靠、可存取的服務。這包括將代理託管在安全、可擴展的伺服器上，並與監控、日誌記錄和管理等必要的生產服務整合。一旦部署完成，使用者就可以透過圖形介面與它互動，或者其他代理也可以透過 API 來呼叫它。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講完這四個組件後，可以稍微停頓，用手勢比喻大腦、雙手、神經系統，加深聽眾的印象。這個「人體」的比喻非常關鍵。
+*   **補充說明**：可以強調，開發者不再是傳統的「砌磚工」，為每一步撰寫精確的邏輯；而是更像一位「導演」，負責設定場景（指令）、挑選演員（工具），並提供劇本（上下文）。
+*   **轉場橋樑 (Bridge)**：
+    > 了解了構成代理的四個核心藍圖——大腦、雙手、神經系統和身體。那麼，這些組件是如何協同工作的呢？下一頁，我們將深入探討那個讓代理「活」起來的、持續不斷的「思考、行動、觀察」循環。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-4">
+            <div class="slide">
+                <h2>Slide 04</h2>
+                <div class="rendered-content">
+                    <h1>The Agentic Problem-Solving Process</h1>
+<p>Agents operate on a continuous &quot;Think, Act, Observe&quot; cycle to achieve their objectives.</p>
+<ol>
+<li><strong>Get the Mission:</strong> The process starts with a high-level goal from a user or trigger.</li>
+<li><strong>Scan the Scene:</strong> The agent gathers context from its memory and available tools.</li>
+<li><strong>Think It Through:</strong> The agent's reasoning model devises a plan. For example, &quot;To find an order status, I first need to find the order in the database, then use the tracking number with the shipping API.&quot;</li>
+<li><strong>Take Action:</strong> The orchestration layer executes the plan's first step by invoking a tool (e.g., calling an API).</li>
+<li><strong>Observe and Iterate:</strong> The agent observes the outcome, updates its context, and repeats the cycle until the mission is complete.</li>
+</ol>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 04</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(4, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(4, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-4" class="note-content rendered-content">
+                    <h3>🎙️ 第 04 頁：The_Agentic_Problem-Solving_Process</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>AI 代理人透過一個稱為「思考、行動、觀察」(Think, Act, Observe) 的連續循環來達成目標。</li>
+<li>這個過程包含五個關鍵步驟：獲取任務、掃描場景、思考規劃、採取行動，以及觀察與迭代。</li>
+<li>代理人會自主地將高階目標分解為具體步驟，並利用工具來執行，直到任務完成。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，剛剛我們介紹了構成一個 AI 代理人的四大核心組件：也就是它的大腦 (模型)、雙手 (工具)、神經系統 (協調層) 和身體 (部署)。但這些零件究竟是如何協同運作，來真正完成一項任務的呢？這就是我們這一頁要深入探討的核心——代理人的問題解決流程。</p>
+<p>簡單來說，代理人就像一個不斷運轉的引擎，它遵循著一個「思考、行動、觀察」的循環。或者用更技術性但很貼切的話來說，就是「在一個循環中，不斷使用工具的語言模型，來達成目標」。這個循環可以被拆解成五個關鍵步驟。</p>
+<h5>① 任務啟動與情境分析 (Get the Mission &amp; Scan the Scene)</h5>
+<p>首先，一切都始於一個<strong>任務 (Mission)</strong>。這可能來自於使用者的一個明確指令，比如：「幫我安排下週去東京的出差行程」，或者是一個自動化的觸發事件，像是系統偵測到「一張新的高優先級客服工單進來了」。</p>
+<p>拿到任務後，代理人不會馬上行動。它會先做第二步：<strong>掃描場景 (Scan the Scene)</strong>。它會像一個偵探一樣，收集所有相關的線索來建立「情境」。它會問自己：「使用者的具體要求是什麼？」、「我的短期記憶裡有沒有相關對話？」、「上週使用者有沒有給過我什麼特別的指示？」、以及「我有哪些工具，像是日曆 API、資料庫或搜尋引擎，可以幫助我完成這個任務？」</p>
+<h5>② 思考、行動與觀察的循環 (Think, Act, Observe)</h5>
+<p>當情境建立起來後，就進入了最核心的第三步：<strong>思考規劃 (Think It Through)</strong>。這就是代理人的「大腦」——也就是語言模型——真正開始發揮作用的地方。它會分析任務和情境，然後制定一個行動計畫。</p>
+<p>讓我們用一個非常生動的例子來說明。想像一下，你是一個電商平台的客服代理人，一個使用者問你：「我的訂單 #12345 在哪裡？」</p>
+<blockquote>
+<p>代理人不會直接回答「我不知道」。相反地，它的內心會開始這樣規劃策略：
+「好的，使用者想知道訂單狀態。要給出一個完整的答案，我需要一個三步計畫：</p>
+<ol>
+<li><strong>識別 (Identify)</strong>：我必須先用 <code>find_order</code> 工具，在內部資料庫裡找到這筆訂單，確認它存在並取得訂單詳情。</li>
+<li><strong>追蹤 (Track)</strong>：從訂單詳情中，我需要拿出貨運公司的追蹤號碼，然後用 <code>get_shipping_status</code> 工具去查詢外部貨運公司的 API，取得即時的運送狀態。</li>
+<li><strong>報告 (Report)</strong>：最後，我必須把我收集到的所有資訊，整合成一個清晰、有幫助的答案回覆給使用者。」</li>
+</ol>
+</blockquote>
+<p>看到嗎？這就是「思考規劃」。有了這個計畫後，代理人就進入第四步：<strong>採取行動 (Take Action)</strong>。它會執行計畫的第一步，呼叫 <code>find_order(&quot;12345&quot;)</code> 這個工具。</p>
+<p>接著是第五步：<strong>觀察與迭代 (Observe and Iterate)</strong>。代理人觀察到工具回傳了完整的訂單紀錄，裡面包含了追蹤號碼「ZYX987」。這個新資訊被加到它的短期記憶中。然後，循環繼續！它回到第三步「思考」，意識到計畫的第一步完成了，現在該執行第二步。於是它再次「行動」，呼叫 <code>get_shipping_status(&quot;ZYX987&quot;)</code> 工具，並「觀察」到結果是：「貨物正在派送中 (Out for Delivery)」。</p>
+<p>最後，當所有資料都收集完畢，計畫來到最後一步「報告」。代理人整合所有資訊，生成最終的回應：「您的訂單 #12345 目前狀態是『正在派送中』！」</p>
+<p>這個「思考、行動、觀察」的循環會不斷重複，直到最初的那個高階任務被徹底完成為止。這就是代理人能夠自主解決複雜問題的秘密。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講解五個步驟時，可以搭配手勢，依序指向投影片上的列表。在講完客服代理人的完整範例後，可以稍微停頓，讓聽眾消化這個循環的運作方式。</li>
+<li><strong>視覺輔助</strong>：可以向聽眾說明，這個流程在原始文件中有一張流程圖 (Figure 1)，能幫助視覺化理解這個循環。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>這個五步驟的循環，可以說是所有 AI 代理人運作的底層引擎。不過，這個引擎可以被裝在各種不同的「車子」裡，從簡單的代步車到複雜的星際飛船都有。下一頁，我們將探討一個代理人系統的「分類學」，看看如何根據它們的能力，將它們劃分為不同的等級。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-4" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 04 頁：The_Agentic_Problem-Solving_Process
+
+#### 【本頁重點摘要】
+*   AI 代理人透過一個稱為「思考、行動、觀察」(Think, Act, Observe) 的連續循環來達成目標。
+*   這個過程包含五個關鍵步驟：獲取任務、掃描場景、思考規劃、採取行動，以及觀察與迭代。
+*   代理人會自主地將高階目標分解為具體步驟，並利用工具來執行，直到任務完成。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，剛剛我們介紹了構成一個 AI 代理人的四大核心組件：也就是它的大腦 (模型)、雙手 (工具)、神經系統 (協調層) 和身體 (部署)。但這些零件究竟是如何協同運作，來真正完成一項任務的呢？這就是我們這一頁要深入探討的核心——代理人的問題解決流程。
+
+簡單來說，代理人就像一個不斷運轉的引擎，它遵循著一個「思考、行動、觀察」的循環。或者用更技術性但很貼切的話來說，就是「在一個循環中，不斷使用工具的語言模型，來達成目標」。這個循環可以被拆解成五個關鍵步驟。
+
+##### ① 任務啟動與情境分析 (Get the Mission & Scan the Scene)
+首先，一切都始於一個**任務 (Mission)**。這可能來自於使用者的一個明確指令，比如：「幫我安排下週去東京的出差行程」，或者是一個自動化的觸發事件，像是系統偵測到「一張新的高優先級客服工單進來了」。
+
+拿到任務後，代理人不會馬上行動。它會先做第二步：**掃描場景 (Scan the Scene)**。它會像一個偵探一樣，收集所有相關的線索來建立「情境」。它會問自己：「使用者的具體要求是什麼？」、「我的短期記憶裡有沒有相關對話？」、「上週使用者有沒有給過我什麼特別的指示？」、以及「我有哪些工具，像是日曆 API、資料庫或搜尋引擎，可以幫助我完成這個任務？」
+
+##### ② 思考、行動與觀察的循環 (Think, Act, Observe)
+當情境建立起來後，就進入了最核心的第三步：**思考規劃 (Think It Through)**。這就是代理人的「大腦」——也就是語言模型——真正開始發揮作用的地方。它會分析任務和情境，然後制定一個行動計畫。
+
+讓我們用一個非常生動的例子來說明。想像一下，你是一個電商平台的客服代理人，一個使用者問你：「我的訂單 #12345 在哪裡？」
+
+> 代理人不會直接回答「我不知道」。相反地，它的內心會開始這樣規劃策略：
+> 「好的，使用者想知道訂單狀態。要給出一個完整的答案，我需要一個三步計畫：
+> 1.  **識別 (Identify)**：我必須先用 `find_order` 工具，在內部資料庫裡找到這筆訂單，確認它存在並取得訂單詳情。
+> 2.  **追蹤 (Track)**：從訂單詳情中，我需要拿出貨運公司的追蹤號碼，然後用 `get_shipping_status` 工具去查詢外部貨運公司的 API，取得即時的運送狀態。
+> 3.  **報告 (Report)**：最後，我必須把我收集到的所有資訊，整合成一個清晰、有幫助的答案回覆給使用者。」
+
+看到嗎？這就是「思考規劃」。有了這個計畫後，代理人就進入第四步：**採取行動 (Take Action)**。它會執行計畫的第一步，呼叫 `find_order("12345")` 這個工具。
+
+接著是第五步：**觀察與迭代 (Observe and Iterate)**。代理人觀察到工具回傳了完整的訂單紀錄，裡面包含了追蹤號碼「ZYX987」。這個新資訊被加到它的短期記憶中。然後，循環繼續！它回到第三步「思考」，意識到計畫的第一步完成了，現在該執行第二步。於是它再次「行動」，呼叫 `get_shipping_status("ZYX987")` 工具，並「觀察」到結果是：「貨物正在派送中 (Out for Delivery)」。
+
+最後，當所有資料都收集完畢，計畫來到最後一步「報告」。代理人整合所有資訊，生成最終的回應：「您的訂單 #12345 目前狀態是『正在派送中』！」
+
+這個「思考、行動、觀察」的循環會不斷重複，直到最初的那個高階任務被徹底完成為止。這就是代理人能夠自主解決複雜問題的秘密。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講解五個步驟時，可以搭配手勢，依序指向投影片上的列表。在講完客服代理人的完整範例後，可以稍微停頓，讓聽眾消化這個循環的運作方式。
+*   **視覺輔助**：可以向聽眾說明，這個流程在原始文件中有一張流程圖 (Figure 1)，能幫助視覺化理解這個循環。
+*   **轉場橋樑 (Bridge)**：
+    > 這個五步驟的循環，可以說是所有 AI 代理人運作的底層引擎。不過，這個引擎可以被裝在各種不同的「車子」裡，從簡單的代步車到複雜的星際飛船都有。下一頁，我們將探討一個代理人系統的「分類學」，看看如何根據它們的能力，將它們劃分為不同的等級。
+
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-5">
+            <div class="slide">
+                <h2>Slide 05</h2>
+                <div class="rendered-content">
+                    <h1>A Taxonomy of Agentic Systems</h1>
+<p>Agentic systems can be classified into levels, each building on the capabilities of the last. This taxonomy helps scope the complexity and power of an agent.</p>
+<ul>
+<li><strong>Level 0:</strong> The Core Reasoning System</li>
+<li><strong>Level 1:</strong> The Connected Problem-Solver</li>
+<li><strong>Level 2:</strong> The Strategic Problem-Solver</li>
+<li><strong>Level 3:</strong> The Collaborative Multi-Agent System</li>
+<li><strong>Level 4:</strong> The Self-Evolving System</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 05</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(5, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(5, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-5" class="note-content rendered-content">
+                    <h3>🎙️ 第 05 頁：A_Taxonomy_of_Agentic_Systems</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>將 Agentic 系統分為五個等級，有助於我們理解其複雜性與能力範疇。</li>
+<li>這五個等級分別是：Level 0 (核心推理系統)、Level 1 (聯網的問題解決者)、Level 2 (策略性的問題解決者)、Level 3 (協作式多代理系統) 與 Level 4 (自我演進系統)。</li>
+<li>這個分類法為架構師和產品負責人提供了明確的藍圖，以決定該打造何種類型的代理。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，我們剛剛了解了代理運作的「Think, Act, Observe」循環。但這就像我們知道了汽車引擎的原理，卻還沒看過各種不同的車款。事實上，並非所有代理生而平等。它們的能力和複雜度有著天壤之別。</p>
+<p>這一頁，我們將介紹一個非常重要的概念：「代理系統分類法」。</p>
+<h5>① 為什麼需要分類？</h5>
+<p>想像一下，你是一位產品經理或架構師，你的老闆說：「我們來做一個 AI 代理吧！」你的第一個問題應該是：「哪一種代理？」</p>
+<blockquote>
+<p>這個分類法，就是幫助我們回答這個問題的藍圖。它將代理系統從最基礎到最前沿，劃分為五個清晰的等級。這讓我們在專案開始時，就能精準地定義目標、範疇和所需投入的資源。</p>
+</blockquote>
+<p>這不是一個純粹的學術模型，而是一個攸關專案成敗的策略工具。</p>
+<h5>② 五個等級概覽</h5>
+<p>投影片上列出了這五個等級，從 Level 0 到 Level 4。現在，我先帶大家快速預覽一下這趟進階之旅，接下來的幾頁，我們會逐一深入探討。</p>
+<ul>
+<li><strong>Level 0</strong>，你可以想像成一個「瓶中大腦」，擁有知識但與世隔絕。</li>
+<li><strong>Level 1</strong>，是為這個大腦接上「雙手」，讓它能接觸真實世界的資訊。</li>
+<li><strong>Level 2</strong>，是這個大腦開始學會「策略思考」，能夠規劃複雜的多步驟任務。</li>
+<li><strong>Level 3</strong>，則是從單打獨鬥，進化成一個「專家團隊」，由多個代理協同作戰。</li>
+<li>最後，<strong>Level 4</strong>，是這個團隊不僅能完成任務，甚至能「自我進化」，創造新的工具和成員。</li>
+</ul>
+<p>這是一條從簡單到複雜、從被動到主動的演進路徑。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在介紹完「為什麼需要分類」後，可以稍微停頓，強調這個分類法對於「專案範疇定義」的重要性。</li>
+<li><strong>互動比喻</strong>：可以將這五個等級比喻成一個人的職業生涯發展：從一個剛畢業、滿腹經綸的學生 (Level 0)，到學會使用工具的實習生 (Level 1)，再到能獨立規劃專案的資深員工 (Level 2)，接著成為領導團隊的經理 (Level 3)，最後成為能開創新事業的企業家 (Level 4)。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了這張藍圖的全貌後，就讓我們從這趟旅程的起點開始。下一頁，我們將深入探討最基礎、也是一切核心的 <strong>Level 0：核心推理系統</strong>。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-5" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 05 頁：A_Taxonomy_of_Agentic_Systems
+
+#### 【本頁重點摘要】
+*   將 Agentic 系統分為五個等級，有助於我們理解其複雜性與能力範疇。
+*   這五個等級分別是：Level 0 (核心推理系統)、Level 1 (聯網的問題解決者)、Level 2 (策略性的問題解決者)、Level 3 (協作式多代理系統) 與 Level 4 (自我演進系統)。
+*   這個分類法為架構師和產品負責人提供了明確的藍圖，以決定該打造何種類型的代理。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，我們剛剛了解了代理運作的「Think, Act, Observe」循環。但這就像我們知道了汽車引擎的原理，卻還沒看過各種不同的車款。事實上，並非所有代理生而平等。它們的能力和複雜度有著天壤之別。
+
+這一頁，我們將介紹一個非常重要的概念：「代理系統分類法」。
+
+##### ① 為什麼需要分類？
+想像一下，你是一位產品經理或架構師，你的老闆說：「我們來做一個 AI 代理吧！」你的第一個問題應該是：「哪一種代理？」
+
+> 這個分類法，就是幫助我們回答這個問題的藍圖。它將代理系統從最基礎到最前沿，劃分為五個清晰的等級。這讓我們在專案開始時，就能精準地定義目標、範疇和所需投入的資源。
+
+這不是一個純粹的學術模型，而是一個攸關專案成敗的策略工具。
+
+##### ② 五個等級概覽
+投影片上列出了這五個等級，從 Level 0 到 Level 4。現在，我先帶大家快速預覽一下這趟進階之旅，接下來的幾頁，我們會逐一深入探討。
+
+*   **Level 0**，你可以想像成一個「瓶中大腦」，擁有知識但與世隔絕。
+*   **Level 1**，是為這個大腦接上「雙手」，讓它能接觸真實世界的資訊。
+*   **Level 2**，是這個大腦開始學會「策略思考」，能夠規劃複雜的多步驟任務。
+*   **Level 3**，則是從單打獨鬥，進化成一個「專家團隊」，由多個代理協同作戰。
+*   最後，**Level 4**，是這個團隊不僅能完成任務，甚至能「自我進化」，創造新的工具和成員。
+
+這是一條從簡單到複雜、從被動到主動的演進路徑。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在介紹完「為什麼需要分類」後，可以稍微停頓，強調這個分類法對於「專案範疇定義」的重要性。
+*   **互動比喻**：可以將這五個等級比喻成一個人的職業生涯發展：從一個剛畢業、滿腹經綸的學生 (Level 0)，到學會使用工具的實習生 (Level 1)，再到能獨立規劃專案的資深員工 (Level 2)，接著成為領導團隊的經理 (Level 3)，最後成為能開創新事業的企業家 (Level 4)。
+*   **轉場橋樑 (Bridge)**：
+    > 了解了這張藍圖的全貌後，就讓我們從這趟旅程的起點開始。下一頁，我們將深入探討最基礎、也是一切核心的 **Level 0：核心推理系統**。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-6">
+            <div class="slide">
+                <h2>Slide 06</h2>
+                <div class="rendered-content">
+                    <h1>Level 0: The Core Reasoning System</h1>
+<ul>
+<li><strong>Description:</strong> A Language Model (LM) operating in isolation.</li>
+<li><strong>Capabilities:</strong> Responds based solely on its pre-trained knowledge. It can explain concepts and history but has no real-time awareness.</li>
+<li><strong>Limitation:</strong> It is &quot;blind&quot; to any event or fact outside its training data.</li>
+<li><strong>Example:</strong> It can explain the rules of baseball but cannot tell you the score of last night's game.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 06</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(6, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(6, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-6" class="note-content rendered-content">
+                    <h3>🎙️ 第 06 頁：Level_0_The_Core_Reasoning_System</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>Level 0 是最基礎的型態：一個獨立運作、與外界隔絕的語言模型 (LM)。</li>
+<li>它的所有回應都完全基於其龐大的「預訓練知識」，沒有即時資訊。</li>
+<li>其最大的限制是「盲目性」，它對訓練資料庫之外的任何即時事件一無所知。</li>
+<li>經典比喻：它像個博學的歷史學家，知道棒球的所有規則與歷史，卻不知道昨晚比賽的分數。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好的，在我們看過了代理系統的五個層級之後，讓我們先從一切的基礎開始看起——也就是 Level 0，我們稱之為「核心推理系統」。這可以說是一個代理人最原始、最單純的形態。</p>
+<h5>① 孤立的大腦</h5>
+<p>想像一下，一個被關在盒子裡、非常聰明的大腦。這就是 Level 0 的核心概念。在這個層級，語言模型（LM）是完全獨立運作的。它沒有任何工具、沒有記憶，也無法與我們身處的真實環境進行任何互動。它就像一個博學的學者，但被鎖在一間沒有窗戶、沒有網路的圖書館裡。</p>
+<blockquote>
+<p>它的所有反應，都只來自於它在「出生」時就被灌輸的龐大預訓練知識。</p>
+</blockquote>
+<h5>② 知識的深度與現實的盲點</h5>
+<p>這種設計有它的優點。它的強項在於其廣泛的訓練，讓它能夠以驚人的深度，去解釋一個已經確立的概念，或是闡述一段完整的歷史。</p>
+<p>但相對地，它的取捨就是完全犧牲了「即時性」。它對於訓練資料截止日期之後發生的任何事情，是功能性地「失明」的。它不知道今天的新聞、股市的漲跌，當然，也不知道昨晚的球賽結果。</p>
+<h5>③ 棒球比賽的例子</h5>
+<p>投影片上的例子非常經典，也很好地說明了這一點。你可以問它職業棒球的詳細規則，甚至紐約洋基隊的完整隊史，它都能對答如流。</p>
+<p>但如果你問它：「嘿，昨晚洋基隊比賽的最終比分是多少？」</p>
+<p>它會無法回答。為什麼？因為那場比賽是一個發生在它知識庫之外的、真實世界的具體事件。這個資訊，在它的世界裡根本就不存在。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「它會無法回答」之後，可以稍微停頓一下，讓聽眾思考這個「盲點」的意涵，然後再解釋原因。</li>
+<li><strong>補充案例</strong>：可以隨口舉一個更貼近生活的例子，例如：「這就像問一位 18 世紀的歷史學家，對智慧型手機的看法一樣，這完全超出了他的認知範圍。」</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了這個強大但被孤立的大腦後，下一個最自然的問題就是：如果我們為這個大腦接上「眼睛」和「雙手」，讓它能感知並與真實世界互動，會發生什麼事呢？這就帶我們進入了下一個層級：Level 1，互聯的問題解決者。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-6" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 06 頁：Level_0_The_Core_Reasoning_System
+
+#### 【本頁重點摘要】
+*   Level 0 是最基礎的型態：一個獨立運作、與外界隔絕的語言模型 (LM)。
+*   它的所有回應都完全基於其龐大的「預訓練知識」，沒有即時資訊。
+*   其最大的限制是「盲目性」，它對訓練資料庫之外的任何即時事件一無所知。
+*   經典比喻：它像個博學的歷史學家，知道棒球的所有規則與歷史，卻不知道昨晚比賽的分數。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好的，在我們看過了代理系統的五個層級之後，讓我們先從一切的基礎開始看起——也就是 Level 0，我們稱之為「核心推理系統」。這可以說是一個代理人最原始、最單純的形態。
+
+##### ① 孤立的大腦
+想像一下，一個被關在盒子裡、非常聰明的大腦。這就是 Level 0 的核心概念。在這個層級，語言模型（LM）是完全獨立運作的。它沒有任何工具、沒有記憶，也無法與我們身處的真實環境進行任何互動。它就像一個博學的學者，但被鎖在一間沒有窗戶、沒有網路的圖書館裡。
+
+> 它的所有反應，都只來自於它在「出生」時就被灌輸的龐大預訓練知識。
+
+##### ② 知識的深度與現實的盲點
+這種設計有它的優點。它的強項在於其廣泛的訓練，讓它能夠以驚人的深度，去解釋一個已經確立的概念，或是闡述一段完整的歷史。
+
+但相對地，它的取捨就是完全犧牲了「即時性」。它對於訓練資料截止日期之後發生的任何事情，是功能性地「失明」的。它不知道今天的新聞、股市的漲跌，當然，也不知道昨晚的球賽結果。
+
+##### ③ 棒球比賽的例子
+投影片上的例子非常經典，也很好地說明了這一點。你可以問它職業棒球的詳細規則，甚至紐約洋基隊的完整隊史，它都能對答如流。
+
+但如果你問它：「嘿，昨晚洋基隊比賽的最終比分是多少？」
+
+它會無法回答。為什麼？因為那場比賽是一個發生在它知識庫之外的、真實世界的具體事件。這個資訊，在它的世界裡根本就不存在。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「它會無法回答」之後，可以稍微停頓一下，讓聽眾思考這個「盲點」的意涵，然後再解釋原因。
+*   **補充案例**：可以隨口舉一個更貼近生活的例子，例如：「這就像問一位 18 世紀的歷史學家，對智慧型手機的看法一樣，這完全超出了他的認知範圍。」
+*   **轉場橋樑 (Bridge)**：
+    > 了解了這個強大但被孤立的大腦後，下一個最自然的問題就是：如果我們為這個大腦接上「眼睛」和「雙手」，讓它能感知並與真實世界互動，會發生什麼事呢？這就帶我們進入了下一個層級：Level 1，互聯的問題解決者。
+
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-7">
+            <div class="slide">
+                <h2>Slide 07</h2>
+                <div class="rendered-content">
+                    <h1>Level 1: The Connected Problem-Solver</h1>
+<ul>
+<li><strong>Description:</strong> The reasoning engine is connected to external tools, becoming a functional agent.</li>
+<li><strong>Capabilities:</strong> Can access real-time information to answer questions beyond its static knowledge.</li>
+<li><strong>Process:</strong> Uses the &quot;Think, Act, Observe&quot; loop to recognize a data need, invoke a tool (like a search API), and synthesize the result.</li>
+<li><strong>Example:</strong> Can now answer, &quot;What was the final score of the Yankees game last night?&quot; by using a search tool.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 07</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(7, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(7, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-7" class="note-content rendered-content">
+                    <h3>🎙️ 第 07 頁：Level_1_The_Connected_Problem-Solver</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>Level 1 標誌著真正的「代理人」誕生，它將核心的語言模型（大腦）與外部工具（雙手）連接起來。</li>
+<li>它突破了靜態、預訓練知識的限制，能夠存取即時資訊來回答現實世界的問題。</li>
+<li>透過「思考、行動、觀察」的循環，它能辨識資訊需求、呼叫工具（如搜尋 API），並整合結果以提供答案。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，上一頁我們談到的 Level 0 系統，就像一位知識淵博的歷史學家，但他被鎖在一間沒有窗戶、沒有網路的圖書館裡。他知道過去的一切，卻對「現在」一無所知。</p>
+<p>那麼，如果我們給這位歷史學家一部可以上網的手機呢？這就帶我們進入了 <strong>Level 1：聯網的問題解決者</strong>。</p>
+<h5>① 什麼是聯網的問題解決者？</h5>
+<p>在 Level 1，我們的 AI 不再只是一個孤立的「大腦」。我們為它裝上了「雙手」——也就是外部工具。這讓它的問題解決能力，不再局限於它那靜態的、預先訓練好的知識庫。</p>
+<blockquote>
+<p>這是一個根本性的轉變：AI 從一個「博學的書呆子」，進化成了一個能夠與現實世界互動的「實踐者」。</p>
+</blockquote>
+<p>它的核心能力，就是存取即時資訊。無論是透過 Google 搜尋來查資料、連接金融 API 來獲取即時股價，還是透過 RAG 技術查詢公司的內部文件，這都是 Level 1 代理人的基本功。</p>
+<h5>② 它是如何運作的？</h5>
+<p>這一切都圍繞著我們之前提到的「思考、行動、觀察」循環。讓我們用投影片上的例子來具體說明。</p>
+<p>假設你問它：「昨天洋基隊的比賽最終比分是多少？」</p>
+<ol>
+<li><strong>思考 (Think)</strong>：Level 0 的模型會直接投降，因為這個資訊在它的訓練資料裡不存在。但 Level 1 的代理人會意識到，這是一個需要「即時數據」的問題。</li>
+<li><strong>行動 (Act)</strong>：於是，它的「策劃層」會決定呼叫一個工具，例如，一個 Google 搜尋的 API，並自動帶上正確的日期和關鍵字。</li>
+<li><strong>觀察 (Observe)</strong>：它觀察到搜尋結果回傳：「洋基隊以 5 比 3 獲勝」。</li>
+<li><strong>整合與回應</strong>：最後，它會將這個新資訊，整合成一個清晰的句子回答你：「昨天洋基隊的比賽，他們以 5 比 3 贏了。」</li>
+</ol>
+<p>就這樣，透過連接外部工具，一個原本無法回答的問題，現在輕鬆解決了。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講「思考、行動、觀察」的循環時，可以放慢速度，用手勢輔助，讓聽眾一步步跟上這個流程。</li>
+<li><strong>強化類比</strong>：可以再次提起「給歷史學家一部手機」的類比，強調「連接」所帶來的巨大價值。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>好的，現在我們的代理人已經學會如何「查資料」來回答一個單一、直接的問題了。但如果問題更複雜，需要好幾個步驟才能解決呢？例如「幫我找出從 A 點到 B 點的中途，評價最高的咖啡店」。這就需要策略規劃了。下一頁，我們將進入 Level 2，看看代理人如何成為一個「策略規劃者」。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-7" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 07 頁：Level_1_The_Connected_Problem-Solver
+
+#### 【本頁重點摘要】
+*   Level 1 標誌著真正的「代理人」誕生，它將核心的語言模型（大腦）與外部工具（雙手）連接起來。
+*   它突破了靜態、預訓練知識的限制，能夠存取即時資訊來回答現實世界的問題。
+*   透過「思考、行動、觀察」的循環，它能辨識資訊需求、呼叫工具（如搜尋 API），並整合結果以提供答案。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，上一頁我們談到的 Level 0 系統，就像一位知識淵博的歷史學家，但他被鎖在一間沒有窗戶、沒有網路的圖書館裡。他知道過去的一切，卻對「現在」一無所知。
+
+那麼，如果我們給這位歷史學家一部可以上網的手機呢？這就帶我們進入了 **Level 1：聯網的問題解決者**。
+
+##### ① 什麼是聯網的問題解決者？
+在 Level 1，我們的 AI 不再只是一個孤立的「大腦」。我們為它裝上了「雙手」——也就是外部工具。這讓它的問題解決能力，不再局限於它那靜態的、預先訓練好的知識庫。
+
+> 這是一個根本性的轉變：AI 從一個「博學的書呆子」，進化成了一個能夠與現實世界互動的「實踐者」。
+
+它的核心能力，就是存取即時資訊。無論是透過 Google 搜尋來查資料、連接金融 API 來獲取即時股價，還是透過 RAG 技術查詢公司的內部文件，這都是 Level 1 代理人的基本功。
+
+##### ② 它是如何運作的？
+這一切都圍繞著我們之前提到的「思考、行動、觀察」循環。讓我們用投影片上的例子來具體說明。
+
+假設你問它：「昨天洋基隊的比賽最終比分是多少？」
+
+1.  **思考 (Think)**：Level 0 的模型會直接投降，因為這個資訊在它的訓練資料裡不存在。但 Level 1 的代理人會意識到，這是一個需要「即時數據」的問題。
+2.  **行動 (Act)**：於是，它的「策劃層」會決定呼叫一個工具，例如，一個 Google 搜尋的 API，並自動帶上正確的日期和關鍵字。
+3.  **觀察 (Observe)**：它觀察到搜尋結果回傳：「洋基隊以 5 比 3 獲勝」。
+4.  **整合與回應**：最後，它會將這個新資訊，整合成一個清晰的句子回答你：「昨天洋基隊的比賽，他們以 5 比 3 贏了。」
+
+就這樣，透過連接外部工具，一個原本無法回答的問題，現在輕鬆解決了。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講「思考、行動、觀察」的循環時，可以放慢速度，用手勢輔助，讓聽眾一步步跟上這個流程。
+*   **強化類比**：可以再次提起「給歷史學家一部手機」的類比，強調「連接」所帶來的巨大價值。
+*   **轉場橋樑 (Bridge)**：
+    > 好的，現在我們的代理人已經學會如何「查資料」來回答一個單一、直接的問題了。但如果問題更複雜，需要好幾個步驟才能解決呢？例如「幫我找出從 A 點到 B 點的中途，評價最高的咖啡店」。這就需要策略規劃了。下一頁，我們將進入 Level 2，看看代理人如何成為一個「策略規劃者」。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-8">
+            <div class="slide">
+                <h2>Slide 08</h2>
+                <div class="rendered-content">
+                    <h1>Level 2: The Strategic Problem-Solver</h1>
+<ul>
+<li><strong>Description:</strong> The agent moves from simple tasks to strategically planning complex, multi-part goals.</li>
+<li><strong>Key Skill:</strong> <strong>Context Engineering</strong>. The agent actively selects and manages the most relevant information for each step of its plan.</li>
+<li><strong>Process:</strong> Breaks down a complex request into a sequence of steps, using the output of one step to create the context for the next.</li>
+<li><strong>Example:</strong> To &quot;find a good coffee shop halfway between two addresses,&quot; it first uses a Maps tool to find the halfway point, then uses that location to perform a targeted search for highly-rated coffee shops.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 08</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(8, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(8, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-8" class="note-content rendered-content">
+                    <h3>🎙️ 第 08 頁：Level_2_The_Strategic_Problem-Solver</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>能力躍升</strong>：Agent 從執行單一步驟的簡單任務，進化到能夠策略性地規劃並完成複雜、多步驟的目標。</li>
+<li><strong>核心技能</strong>：關鍵在於 <strong>Context Engineering (情境工程)</strong>，也就是 Agent 能主動為計畫的每一步，篩選、打包並管理最相關的資訊。</li>
+<li><strong>運作流程</strong>：將一個複雜的請求拆解成一系列的連續步驟，並巧妙地將前一個步驟的輸出，當作下一步驟的輸入情境。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，如果說 Level 1 的 Agent 學會了如何使用單一工具，那麼 Level 2 的 Agent，就學會了如何像一位真正的「策略家」一樣，有計畫地使用一連串的工具來解決複雜問題。這是一個巨大的躍進。</p>
+<h5>① 策略家的誕生：關鍵在於「情境工程」</h5>
+<p>我們正式進入「策略型問題解決者」的層級。這裡的 Agent 不再只是被動地回應，而是開始主動地「規劃」。</p>
+<p>這個層級最關鍵的技能，叫做 <strong>Context Engineering</strong>，也就是「情境工程」。這是什麼意思呢？簡單來說，就是 Agent 為了完成任務，主動去篩選、管理、甚至創造最適合當下步驟的「上下文資訊」。</p>
+<blockquote>
+<p>Agent 的準確性，取決於一個高度集中且優質的上下文情境。情境工程的目的，就是管理模型有限的注意力，防止資訊過載，確保它能高效地執行任務。</p>
+</blockquote>
+<p>這就像我們人類在處理複雜問題時，不會把所有資訊都塞進腦子裡，而是會先做什麼、再做什麼，每一步只專注在當下需要的資訊上。Agent 也是如此。</p>
+<h5>② 實戰演練：幫我找一家完美的咖啡廳</h5>
+<p>讓我們來看一個非常經典的例子，你就能立刻明白。假設你對 Agent 下達一個指令：「幫我找一間好咖啡廳，它要位在我山景城的辦公室和客戶位於舊金山的辦公室之間的中點位置。」</p>
+<p>這是一個複雜的任務，Level 1 的 Agent 可能會不知所措。但 Level 2 的策略家會怎麼做呢？</p>
+<ol>
+<li>
+<p><strong>第一步：思考與行動</strong>。Agent 的內心計畫是：「我必須先找到這兩個地址的中點在哪裡。」於是，它<strong>行動</strong>，呼叫了地圖工具 (Maps tool)，輸入兩個地址。<strong>觀察</strong>到的結果是：「中點位置在密爾布瑞 (Millbrae) 這個城市。」</p>
+</li>
+<li>
+<p><strong>第二步：情境工程的展現</strong>。Agent 接著想：「好，現在我知道要在密爾布瑞找咖啡廳。但使用者要的是『好的』咖啡廳，所以我要找評價四星以上的。」各位請注意，這就是情境工程！它<strong>主動</strong>把上一步的結果「密爾布瑞」，和使用者的隱含需求「好的」，組合成一個全新的、更精準的搜尋情境。於是，它再次<strong>行動</strong>，呼叫 Google Places 工具，搜尋 <code>query=&quot;coffee shop in Millbrae, CA&quot;, min_rating=4.0</code>。<strong>觀察</strong>到的結果是兩家店：『Millbrae Coffee』和『The Daily Grind』。</p>
+</li>
+<li>
+<p><strong>第三步：整合報告</strong>。Agent 完成了它的計畫，最後將這兩個選項回報給你。</p>
+</li>
+</ol>
+<p>看到了嗎？它把一個大問題，拆解成兩個小步驟，並且聰明地利用了第一步的結果來指導第二步的行動。</p>
+<h5>③ 從被動到主動：您的專屬助理</h5>
+<p>這種策略規劃能力，還讓 Agent 能提供「主動式」的協助。例如，你收到一封很長的航班確認信。一個 Level 2 的 Agent 會主動閱讀這封郵件，然後進行情境工程：它會<strong>提取</strong>出最關鍵的上下文，也就是「航班號碼」和「日期」，然後<strong>主動採取行動</strong>，幫你把這個行程加到你的行事曆上。</p>
+<p>它不再只是個問答機器，而是開始像一個能為你分憂解勞的協作者。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：「情境工程」是本頁的核心概念，講到這裡時可以稍微停頓，讓聽眾消化一下這個詞的重要性。可以強調「Agent 主動創造了新的、更精準的搜尋條件」。</li>
+<li><strong>補充案例</strong>：如果時間允許，可以口頭補充：「這就像你請助理訂餐廳，你只說『找間好吃的』，他會自己根據你的喜好、地點、預算去篩選，而不是把所有餐廳列表都丟給你。這就是策略！」</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>一個 Level 2 的 Agent 就像一個聰明的獨立工作者。但如果任務太過龐大，連一個策略家都無法單獨完成呢？這時，我們就需要一個「團隊」。下一頁，我們將探討 Level 3，看看如何從單一 Agent 走向一個協同合作的「多 Agent 系統」。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-8" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 08 頁：Level_2_The_Strategic_Problem-Solver
+
+#### 【本頁重點摘要】
+*   **能力躍升**：Agent 從執行單一步驟的簡單任務，進化到能夠策略性地規劃並完成複雜、多步驟的目標。
+*   **核心技能**：關鍵在於 **Context Engineering (情境工程)**，也就是 Agent 能主動為計畫的每一步，篩選、打包並管理最相關的資訊。
+*   **運作流程**：將一個複雜的請求拆解成一系列的連續步驟，並巧妙地將前一個步驟的輸出，當作下一步驟的輸入情境。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，如果說 Level 1 的 Agent 學會了如何使用單一工具，那麼 Level 2 的 Agent，就學會了如何像一位真正的「策略家」一樣，有計畫地使用一連串的工具來解決複雜問題。這是一個巨大的躍進。
+
+##### ① 策略家的誕生：關鍵在於「情境工程」
+我們正式進入「策略型問題解決者」的層級。這裡的 Agent 不再只是被動地回應，而是開始主動地「規劃」。
+
+這個層級最關鍵的技能，叫做 **Context Engineering**，也就是「情境工程」。這是什麼意思呢？簡單來說，就是 Agent 為了完成任務，主動去篩選、管理、甚至創造最適合當下步驟的「上下文資訊」。
+
+> Agent 的準確性，取決於一個高度集中且優質的上下文情境。情境工程的目的，就是管理模型有限的注意力，防止資訊過載，確保它能高效地執行任務。
+
+這就像我們人類在處理複雜問題時，不會把所有資訊都塞進腦子裡，而是會先做什麼、再做什麼，每一步只專注在當下需要的資訊上。Agent 也是如此。
+
+##### ② 實戰演練：幫我找一家完美的咖啡廳
+讓我們來看一個非常經典的例子，你就能立刻明白。假設你對 Agent 下達一個指令：「幫我找一間好咖啡廳，它要位在我山景城的辦公室和客戶位於舊金山的辦公室之間的中點位置。」
+
+這是一個複雜的任務，Level 1 的 Agent 可能會不知所措。但 Level 2 的策略家會怎麼做呢？
+
+1.  **第一步：思考與行動**。Agent 的內心計畫是：「我必須先找到這兩個地址的中點在哪裡。」於是，它**行動**，呼叫了地圖工具 (Maps tool)，輸入兩個地址。**觀察**到的結果是：「中點位置在密爾布瑞 (Millbrae) 這個城市。」
+
+2.  **第二步：情境工程的展現**。Agent 接著想：「好，現在我知道要在密爾布瑞找咖啡廳。但使用者要的是『好的』咖啡廳，所以我要找評價四星以上的。」各位請注意，這就是情境工程！它**主動**把上一步的結果「密爾布瑞」，和使用者的隱含需求「好的」，組合成一個全新的、更精準的搜尋情境。於是，它再次**行動**，呼叫 Google Places 工具，搜尋 `query="coffee shop in Millbrae, CA", min_rating=4.0`。**觀察**到的結果是兩家店：『Millbrae Coffee』和『The Daily Grind』。
+
+3.  **第三步：整合報告**。Agent 完成了它的計畫，最後將這兩個選項回報給你。
+
+看到了嗎？它把一個大問題，拆解成兩個小步驟，並且聰明地利用了第一步的結果來指導第二步的行動。
+
+##### ③ 從被動到主動：您的專屬助理
+這種策略規劃能力，還讓 Agent 能提供「主動式」的協助。例如，你收到一封很長的航班確認信。一個 Level 2 的 Agent 會主動閱讀這封郵件，然後進行情境工程：它會**提取**出最關鍵的上下文，也就是「航班號碼」和「日期」，然後**主動採取行動**，幫你把這個行程加到你的行事曆上。
+
+它不再只是個問答機器，而是開始像一個能為你分憂解勞的協作者。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：「情境工程」是本頁的核心概念，講到這裡時可以稍微停頓，讓聽眾消化一下這個詞的重要性。可以強調「Agent 主動創造了新的、更精準的搜尋條件」。
+*   **補充案例**：如果時間允許，可以口頭補充：「這就像你請助理訂餐廳，你只說『找間好吃的』，他會自己根據你的喜好、地點、預算去篩選，而不是把所有餐廳列表都丟給你。這就是策略！」
+*   **轉場橋樑 (Bridge)**：
+    > 一個 Level 2 的 Agent 就像一個聰明的獨立工作者。但如果任務太過龐大，連一個策略家都無法單獨完成呢？這時，我們就需要一個「團隊」。下一頁，我們將探討 Level 3，看看如何從單一 Agent 走向一個協同合作的「多 Agent 系統」。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-9">
+            <div class="slide">
+                <h2>Slide 09</h2>
+                <div class="rendered-content">
+                    <h1>Level 3: The Collaborative Multi-Agent System</h1>
+<ul>
+<li><strong>Description:</strong> A paradigm shift from a single &quot;super-agent&quot; to a &quot;team of specialists&quot; working in concert.</li>
+<li><strong>Key Concept:</strong> Agents treat other agents as tools, delegating tasks based on specialty.</li>
+<li><strong>Process:</strong> A &quot;Project Manager&quot; agent receives a high-level mission and breaks it down, assigning sub-tasks to specialized agents (e.g., MarketResearchAgent, MarketingAgent, WebDevAgent).</li>
+<li><strong>Represents:</strong> The frontier of automating entire, complex business workflows.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 09</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(9, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(9, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-9" class="note-content rendered-content">
+                    <h3>🎙️ 第 09 頁：Level_3_The_Collaborative_Multi-Agent_System</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>這是一個典範轉移：從打造一個無所不能的「超級 AI」，轉向建立一個協同工作的「專家團隊」。</li>
+<li>核心概念是「代理人即工具」：一個代理人可以將任務指派給其他更專業的代理人來執行。</li>
+<li>運作流程就像一個專案經理，將高階任務拆解，並分配給市場研究、行銷、網站開發等不同功能的代理人。</li>
+<li>這個模式代表了自動化完整、複雜商業流程的未來前沿。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，我們前面看到了代理人如何連接外部工具、如何制定策略。現在，我們要進入一個更令人興奮的層次。想像一下，與其試圖打造一個什麼都懂、什麼都會的超級天才，不如我們組建一個夢幻團隊，裡面有各種領域的頂尖專家，各司其職。這，就是 Level 3 的核心思想：<strong>協作式多代理人系統</strong>。</p>
+<h5>① 典範轉移：從「超級個體」到「專家團隊」</h5>
+<p>我們不再追求一個巨大而全能的「超級代理人」。當任務變得越來越複雜時，這種單一代理人的效率會變得很低。Level 3 的作法，完全模仿了我們人類社會的組織運作方式——<strong>分工合作</strong>。</p>
+<blockquote>
+<p>我們將一個複雜的流程，拆解成數個獨立的子任務，並將每個任務交給一個專門的、特化的 AI 代理人來處理。</p>
+</blockquote>
+<p>這樣做的好處非常明顯：每一個專家代理人因為功能單一，所以會<strong>更簡單、更專注，也更容易被我們開發、測試與維護</strong>。整個系統的集體力量，就來自於這種高效的勞力分工。</p>
+<h5>② 核心機制：代理人就是你的新工具</h5>
+<p>這個模式的關鍵在於，代理人開始將<strong>其他的代理人</strong>也視為一種可以調用的「工具」。這是一個非常強大的概念。</p>
+<p>系統中會有一個扮演「專案經理」角色的代理人。當它收到一個高層次的任務時，它不會自己動手完成所有工作。相反地，它會分析任務，然後像人類經理一樣，開始指派工作給它團隊裡的專家代理人。</p>
+<h5>③ 實務案例：一場虛擬的產品發布會</h5>
+<p>讓我們用書中的「Solaris 耳機」上市專案來想像一下。</p>
+<p>「專案經理」代理人收到的任務是：「啟動我們新款‘Solaris’降噪耳機的上市計畫。」</p>
+<p>它的下一步不是寫文案或程式碼，而是<strong>分派任務</strong>：</p>
+<ul>
+<li>它對<strong>市場研究代理人</strong>說：「去分析競爭對手的降噪耳機定價，明天給我一份摘要報告。」</li>
+<li>接著，它對<strong>行銷代理人</strong>說：「根據‘Solaris’的產品規格書，草擬三種不同風格的新聞稿。」</li>
+<li>最後，它對<strong>網站開發代理人</strong>說：「根據附件裡的設計圖，生成新產品頁面的 HTML 程式碼。」</li>
+</ul>
+<p>你看，整個複雜的商業流程，就被這樣有條不紊地自動化執行了。這正是 Level 3 系統所代表的、自動化完整工作流程的未來樣貌。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「專家團隊」的比喻後，可以稍微停頓，讓聽眾感受一下這個概念與傳統單一 AI 的區別。</li>
+<li><strong>補充案例</strong>：可以強調，這就像一家公司裡，CEO 不會親自去寫程式碼或做會計，而是把任務交給技術長 (CTO) 和財務長 (CFO)。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>我們看到，一個代理人可以聰明地將任務「委派」給其他現有的代理人。但如果...它發現團隊裡缺少某個專家，它能不能「自己創造」一個全新的代理人或工具來填補這個空缺呢？這就帶我們進入了下一個、也是更具未來感的層次：Level 4，自我演化系統。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-9" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 09 頁：Level_3_The_Collaborative_Multi-Agent_System
+
+#### 【本頁重點摘要】
+*   這是一個典範轉移：從打造一個無所不能的「超級 AI」，轉向建立一個協同工作的「專家團隊」。
+*   核心概念是「代理人即工具」：一個代理人可以將任務指派給其他更專業的代理人來執行。
+*   運作流程就像一個專案經理，將高階任務拆解，並分配給市場研究、行銷、網站開發等不同功能的代理人。
+*   這個模式代表了自動化完整、複雜商業流程的未來前沿。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，我們前面看到了代理人如何連接外部工具、如何制定策略。現在，我們要進入一個更令人興奮的層次。想像一下，與其試圖打造一個什麼都懂、什麼都會的超級天才，不如我們組建一個夢幻團隊，裡面有各種領域的頂尖專家，各司其職。這，就是 Level 3 的核心思想：**協作式多代理人系統**。
+
+##### ① 典範轉移：從「超級個體」到「專家團隊」
+我們不再追求一個巨大而全能的「超級代理人」。當任務變得越來越複雜時，這種單一代理人的效率會變得很低。Level 3 的作法，完全模仿了我們人類社會的組織運作方式——**分工合作**。
+
+> 我們將一個複雜的流程，拆解成數個獨立的子任務，並將每個任務交給一個專門的、特化的 AI 代理人來處理。
+
+這樣做的好處非常明顯：每一個專家代理人因為功能單一，所以會**更簡單、更專注，也更容易被我們開發、測試與維護**。整個系統的集體力量，就來自於這種高效的勞力分工。
+
+##### ② 核心機制：代理人就是你的新工具
+這個模式的關鍵在於，代理人開始將**其他的代理人**也視為一種可以調用的「工具」。這是一個非常強大的概念。
+
+系統中會有一個扮演「專案經理」角色的代理人。當它收到一個高層次的任務時，它不會自己動手完成所有工作。相反地，它會分析任務，然後像人類經理一樣，開始指派工作給它團隊裡的專家代理人。
+
+##### ③ 實務案例：一場虛擬的產品發布會
+讓我們用書中的「Solaris 耳機」上市專案來想像一下。
+
+「專案經理」代理人收到的任務是：「啟動我們新款‘Solaris’降噪耳機的上市計畫。」
+
+它的下一步不是寫文案或程式碼，而是**分派任務**：
+*   它對**市場研究代理人**說：「去分析競爭對手的降噪耳機定價，明天給我一份摘要報告。」
+*   接著，它對**行銷代理人**說：「根據‘Solaris’的產品規格書，草擬三種不同風格的新聞稿。」
+*   最後，它對**網站開發代理人**說：「根據附件裡的設計圖，生成新產品頁面的 HTML 程式碼。」
+
+你看，整個複雜的商業流程，就被這樣有條不紊地自動化執行了。這正是 Level 3 系統所代表的、自動化完整工作流程的未來樣貌。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「專家團隊」的比喻後，可以稍微停頓，讓聽眾感受一下這個概念與傳統單一 AI 的區別。
+*   **補充案例**：可以強調，這就像一家公司裡，CEO 不會親自去寫程式碼或做會計，而是把任務交給技術長 (CTO) 和財務長 (CFO)。
+*   **轉場橋樑 (Bridge)**：
+    > 我們看到，一個代理人可以聰明地將任務「委派」給其他現有的代理人。但如果...它發現團隊裡缺少某個專家，它能不能「自己創造」一個全新的代理人或工具來填補這個空缺呢？這就帶我們進入了下一個、也是更具未來感的層次：Level 4，自我演化系統。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-10">
+            <div class="slide">
+                <h2>Slide 10</h2>
+                <div class="rendered-content">
+                    <h1>Level 4: The Self-Evolving System</h1>
+<ul>
+<li><strong>Description:</strong> An agentic system that can identify gaps in its own capabilities and dynamically create new tools or agents to fill them.</li>
+<li><strong>Key Capability:</strong> Moves from using a fixed set of resources to actively expanding them.</li>
+<li><strong>Process (Meta-Reasoning):</strong> A manager agent recognizes a missing capability (e.g., no social media sentiment tool), then invokes a creator tool to build, test, and deploy a new, specialized agent on the fly.</li>
+<li><strong>Represents:</strong> A truly learning and evolving organization of agents.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 10</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(10, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(10, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-10" class="note-content rendered-content">
+                    <h3>🎙️ 第 10 頁：Level_4_The_Self-Evolving_System</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>Level 4 系統是 AI 代理的最高層級，具備自我進化與創造的能力。</li>
+<li>它能主動識別自身能力的不足，並動態創造新的工具或代理來彌補。</li>
+<li>這個過程稱為「元推理」(Meta-Reasoning)，即代理能夠思考自身的思考過程與能力。</li>
+<li>這代表了一種真正能夠學習和演化的「代理組織」，而不僅僅是執行任務。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，我們剛剛看到了 Level 3 的協作系統，一個像人類組織一樣分工的 AI 團隊。現在，我們要探討一個更令人震撼的未來：如果這個 AI 團隊，發現自己缺少某位專家時，能夠自己「創造」出這位新成員呢？這就是 Level 4，自我演化系統的境界。</p>
+<h5>① 從「使用」到「創造」的飛躍</h5>
+<p>Level 4 代表了一次從「授權」到「自主創造與適應」的深刻飛躍。前面的代理，無論多麼聰明，都只能在我們預先設定好的工具箱裡挑選工具來使用。但 Level 4 的系統，打破了這個限制。它不再滿足於<strong>使用固定的資源</strong>，而是能夠<strong>主動地擴展</strong>這些資源。</p>
+<blockquote>
+<p>這就像一個團隊，不僅僅是使用現有的軟體，而是當它發現流程中有個環節效率低下時，能自己寫出一個新軟體來解決問題。</p>
+</blockquote>
+<h5>② 「元推理」的實踐過程</h5>
+<p>這個過程的核心，叫做「元推理」(Meta-Reasoning)，也就是代理能夠「思考自己的思考過程」。讓我們回到剛剛那個「Solaris」耳機的上市專案。</p>
+<p>假設我們的「專案經理」代理在規劃任務時，意識到它需要監控社群媒體上對新產品的情緒反應，但團隊裡並沒有這樣的工具或專家。</p>
+<ol>
+<li><strong>思考 (元推理)</strong>：它會進行這樣的內心獨白：「我必須追蹤『Solaris』的社群媒體熱度，但我缺乏這個能力。」</li>
+<li><strong>行動 (自主創造)</strong>：它不會就此停下或報錯。相反地，它會調用一個更高層級的「代理創造工具」(AgentCreator tool)，並給它一個全新的任務：「建立一個新的代理，讓它能監控社群媒體上的『Solaris 耳機』關鍵字，進行情緒分析，並每天回報摘要。」</li>
+<li><strong>觀察</strong>：接著，一個全新的、專門的「情緒分析代理」(SentimentAnalysisAgent) 就這樣被即時創建、測試，並加入到團隊中，馬上開始為最初的上市任務貢獻心力。</li>
+</ol>
+<p>這整個過程是全自動的。這就是從一個代理團隊，轉變為一個真正具備學習和進化能力的「組織」的關鍵。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講到「一個全新的代理就這樣被即時創建」時，可以稍微加重語氣並停頓一下，讓聽眾感受這個概念的顛覆性。</li>
+<li><strong>補充案例</strong>：這裡可以簡單提一下：「我們稍後會看到像 Google Co-Scientist 和 AlphaEvolve 這樣的真實案例，它們就體現了這種自我優化的思想。」</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了從 Level 0 到 Level 4 這驚人的演化階梯後，你可能會想：這一切聽起來很棒，但我們該如何從零開始，親手打造一個代理呢？下一頁，我們就將深入其核心，拆解一個 AI 代理的基礎架構。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-10" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 10 頁：Level_4_The_Self-Evolving_System
+
+#### 【本頁重點摘要】
+*   Level 4 系統是 AI 代理的最高層級，具備自我進化與創造的能力。
+*   它能主動識別自身能力的不足，並動態創造新的工具或代理來彌補。
+*   這個過程稱為「元推理」(Meta-Reasoning)，即代理能夠思考自身的思考過程與能力。
+*   這代表了一種真正能夠學習和演化的「代理組織」，而不僅僅是執行任務。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，我們剛剛看到了 Level 3 的協作系統，一個像人類組織一樣分工的 AI 團隊。現在，我們要探討一個更令人震撼的未來：如果這個 AI 團隊，發現自己缺少某位專家時，能夠自己「創造」出這位新成員呢？這就是 Level 4，自我演化系統的境界。
+
+##### ① 從「使用」到「創造」的飛躍
+Level 4 代表了一次從「授權」到「自主創造與適應」的深刻飛躍。前面的代理，無論多麼聰明，都只能在我們預先設定好的工具箱裡挑選工具來使用。但 Level 4 的系統，打破了這個限制。它不再滿足於**使用固定的資源**，而是能夠**主動地擴展**這些資源。
+
+> 這就像一個團隊，不僅僅是使用現有的軟體，而是當它發現流程中有個環節效率低下時，能自己寫出一個新軟體來解決問題。
+
+##### ② 「元推理」的實踐過程
+這個過程的核心，叫做「元推理」(Meta-Reasoning)，也就是代理能夠「思考自己的思考過程」。讓我們回到剛剛那個「Solaris」耳機的上市專案。
+
+假設我們的「專案經理」代理在規劃任務時，意識到它需要監控社群媒體上對新產品的情緒反應，但團隊裡並沒有這樣的工具或專家。
+
+1.  **思考 (元推理)**：它會進行這樣的內心獨白：「我必須追蹤『Solaris』的社群媒體熱度，但我缺乏這個能力。」
+2.  **行動 (自主創造)**：它不會就此停下或報錯。相反地，它會調用一個更高層級的「代理創造工具」(AgentCreator tool)，並給它一個全新的任務：「建立一個新的代理，讓它能監控社群媒體上的『Solaris 耳機』關鍵字，進行情緒分析，並每天回報摘要。」
+3.  **觀察**：接著，一個全新的、專門的「情緒分析代理」(SentimentAnalysisAgent) 就這樣被即時創建、測試，並加入到團隊中，馬上開始為最初的上市任務貢獻心力。
+
+這整個過程是全自動的。這就是從一個代理團隊，轉變為一個真正具備學習和進化能力的「組織」的關鍵。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講到「一個全新的代理就這樣被即時創建」時，可以稍微加重語氣並停頓一下，讓聽眾感受這個概念的顛覆性。
+*   **補充案例**：這裡可以簡單提一下：「我們稍後會看到像 Google Co-Scientist 和 AlphaEvolve 這樣的真實案例，它們就體現了這種自我優化的思想。」
+*   **轉場橋樑 (Bridge)**：
+    > 了解了從 Level 0 到 Level 4 這驚人的演化階梯後，你可能會想：這一切聽起來很棒，但我們該如何從零開始，親手打造一個代理呢？下一頁，我們就將深入其核心，拆解一個 AI 代理的基礎架構。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-11">
+            <div class="slide">
+                <h2>Slide 11</h2>
+                <div class="rendered-content">
+                    <h1>Core Agent Architecture</h1>
+<p>Having defined an agent and its levels of capability, we now examine the architectural design of its three core components:</p>
+<ul>
+<li><strong>Model</strong> (The Brain)</li>
+<li><strong>Tools</strong> (The Hands)</li>
+<li><strong>Orchestration</strong> (The Nervous System)</li>
+</ul>
+<p>This section details the design considerations for building a robust and effective agent.</p>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 11</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(11, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(11, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-11" class="note-content rendered-content">
+                    <h3>🎙️ 第 11 頁：Core_Agent_Architecture_Model,_Tools,_and_Orchestration</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>我們已經了解了 Agent 的能力分級，現在將深入探討如何實際建構一個 Agent。</li>
+<li>一個強健的 Agent 架構由三個核心組件構成：模型 (大腦)、工具 (雙手) 與業務流程層 (神經系統)。</li>
+<li>接下來的章節將會詳細解析這三個組件的設計考量。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，到目前為止，我們已經一起看過了 Agent 的不同能力層級，從最基本的 Level 0 到可以自我演化的 Level 4。我們知道了「什麼是」Agent，以及它們能做些什麼。但現在，我們要進入最關鍵的部分：我們該<strong>如何</strong>實際打造一個 Agent 呢？</p>
+<blockquote>
+<p>從概念到程式碼的轉變，關鍵就在於其三個核心組件的具體架構設計。</p>
+</blockquote>
+<p>這就像我們要組裝一個機器人，光有藍圖還不夠，我們必須了解它的每一個核心零件。一個 Agent 的架構，我們可以很形象地拆解成三個部分：</p>
+<h5>① 模型 (Model)：也就是 Agent 的「大腦」</h5>
+<p>這是整個系統的思考核心。它是一個語言模型或基礎模型，負責推理、處理資訊、評估選項並做出決策。可以說，Agent 的「智商」有多高，完全取決於這個大腦。</p>
+<h5>② 工具 (Tools)：也就是 Agent 的「雙手」</h5>
+<p>如果模型是大腦，那工具就是它連接現實世界、採取行動的雙手。光會思考還不夠，Agent 需要工具來查詢即時資訊、發送郵件、更新資料庫，甚至是請求人類的協助。這些工具讓思考得以轉化為實際的行動。</p>
+<h5>③ 業務流程層 (Orchestration Layer)：也就是 Agent 的「神經系統」</h5>
+<p>最後，我們需要一個神經系統，將大腦的指令精準地傳達給雙手，並將雙手感知到的結果回傳給大腦。這個業務流程層就是指揮官，它管理著整個「思考、行動、觀察」的循環，決定了 Agent 何時該思考、何時該使用工具，並管理著 Agent 的記憶與狀態。</p>
+<p>這三個組件——大腦、雙手、神經系統——它們的無縫整合，才構成了一個完整、強大且可靠的 AI Agent。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在介紹完「大腦、雙手、神經系統」這個比喻後，可以稍微停頓一下，讓聽眾消化這個核心架構。這個比喻非常重要，能幫助大家快速建立心智模型。</li>
+<li><strong>互動建議</strong>：可以簡單提問：「大家覺得，在這三個組件中，哪一個在初期建構時挑戰最大？」引導聽眾思考。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>接下來，我們將逐一解構這些組件。讓我們先從最核心的部分開始，也就是決定 Agent 智慧高度的關鍵——它的「大腦」，模型 (Model)。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-11" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 11 頁：Core_Agent_Architecture_Model,_Tools,_and_Orchestration
+
+#### 【本頁重點摘要】
+*   我們已經了解了 Agent 的能力分級，現在將深入探討如何實際建構一個 Agent。
+*   一個強健的 Agent 架構由三個核心組件構成：模型 (大腦)、工具 (雙手) 與業務流程層 (神經系統)。
+*   接下來的章節將會詳細解析這三個組件的設計考量。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，到目前為止，我們已經一起看過了 Agent 的不同能力層級，從最基本的 Level 0 到可以自我演化的 Level 4。我們知道了「什麼是」Agent，以及它們能做些什麼。但現在，我們要進入最關鍵的部分：我們該**如何**實際打造一個 Agent 呢？
+
+> 從概念到程式碼的轉變，關鍵就在於其三個核心組件的具體架構設計。
+
+這就像我們要組裝一個機器人，光有藍圖還不夠，我們必須了解它的每一個核心零件。一個 Agent 的架構，我們可以很形象地拆解成三個部分：
+
+##### ① 模型 (Model)：也就是 Agent 的「大腦」
+這是整個系統的思考核心。它是一個語言模型或基礎模型，負責推理、處理資訊、評估選項並做出決策。可以說，Agent 的「智商」有多高，完全取決於這個大腦。
+
+##### ② 工具 (Tools)：也就是 Agent 的「雙手」
+如果模型是大腦，那工具就是它連接現實世界、採取行動的雙手。光會思考還不夠，Agent 需要工具來查詢即時資訊、發送郵件、更新資料庫，甚至是請求人類的協助。這些工具讓思考得以轉化為實際的行動。
+
+##### ③ 業務流程層 (Orchestration Layer)：也就是 Agent 的「神經系統」
+最後，我們需要一個神經系統，將大腦的指令精準地傳達給雙手，並將雙手感知到的結果回傳給大腦。這個業務流程層就是指揮官，它管理著整個「思考、行動、觀察」的循環，決定了 Agent 何時該思考、何時該使用工具，並管理著 Agent 的記憶與狀態。
+
+這三個組件——大腦、雙手、神經系統——它們的無縫整合，才構成了一個完整、強大且可靠的 AI Agent。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在介紹完「大腦、雙手、神經系統」這個比喻後，可以稍微停頓一下，讓聽眾消化這個核心架構。這個比喻非常重要，能幫助大家快速建立心智模型。
+*   **互動建議**：可以簡單提問：「大家覺得，在這三個組件中，哪一個在初期建構時挑戰最大？」引導聽眾思考。
+*   **轉場橋樑 (Bridge)**：
+    > 接下來，我們將逐一解構這些組件。讓我們先從最核心的部分開始，也就是決定 Agent 智慧高度的關鍵——它的「大腦」，模型 (Model)。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-12">
+            <div class="slide">
+                <h2>Slide 12</h2>
+                <div class="rendered-content">
+                    <h1>Model: The &quot;Brain&quot; of the AI Agent</h1>
+<ul>
+<li><strong>Selection is Key:</strong> Choosing a model is a critical architectural decision. Success depends on reasoning and tool-use capabilities, not just benchmarks.</li>
+<li><strong>Optimize for the Task:</strong> Test models against business-specific problems, balancing quality, speed, and cost.</li>
+<li><strong>A Team of Specialists:</strong> Use a frontier model (e.g., Gemini 2.5 Pro) for complex reasoning and a smaller model (e.g., Gemini 2.5 Flash) for simpler tasks to optimize performance and cost.</li>
+<li><strong>Plan for Evolution:</strong> The AI landscape changes rapidly. Implement an &quot;Agent Ops&quot; practice to continuously evaluate and upgrade models without architectural overhauls.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 12</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(12, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(12, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-12" class="note-content rendered-content">
+                    <h3>🎙️ 第 12 頁：Model: The 'Brain' of the AI Agent</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>選擇是關鍵</strong>：選擇模型不能只看學術評分，成功的關鍵在於其<strong>推理能力</strong>與<strong>工具使用</strong>的可靠性。</li>
+<li><strong>為任務優化</strong>：應針對具體的業務問題來測試模型，並在<strong>品質、速度、成本</strong>三者之間取得最佳平衡。</li>
+<li><strong>專家團隊策略</strong>：採用混合模型策略，如同一個專家團隊。用強大的前沿模型（如 Gemini 2.5 Pro）處理複雜推理，用輕快的小模型（如 Gemini 2.5 Flash）處理高頻率的簡單任務。</li>
+<li><strong>規劃演進</strong>：AI 技術迭代極快，必須建立一套「Agent Ops」實踐，持續評估與升級模型，以避免架構僵化。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好的，我們已經看過了 Agent 的宏觀架構，現在，讓我們一起深入探索其最核心的組件——也就是 Agent 的「大腦」：<strong>模型 (Model)</strong>。這個決策，將直接決定你的 Agent 有多聰明、多能幹。</p>
+<h5>① 選擇模型的真正藝術：超越跑分</h5>
+<p>首先，我們必須破除一個常見的迷思。許多人認為選擇模型就像選購電腦，看規格、看跑分就對了。但在 Agent 的世界裡，這恰恰是「一條通往失敗的常見路徑」。</p>
+<blockquote>
+<p>一個 Agent 在真實世界中的成功，很少取決於它在通用學術基準測試上的分數。真正的成功，取決於它在兩個「代理人基礎能力」上的表現：<strong>卓越的推理能力</strong>，以及<strong>可靠的工具使用能力</strong>。</p>
+</blockquote>
+<p>換句話說，你的模型不僅要能「思考」，更要能精準地「行動」。它是否能理解複雜的多步驟問題？它是否能穩定地呼叫你給它的工具？這才是我們應該關注的焦點。</p>
+<h5>② 為你的業務場景，量身打造「最佳大腦」</h5>
+<p>那麼，該如何選擇呢？答案是：<strong>從你的業務問題出發</strong>。你需要像對待一個真正的員工一樣，對模型進行「面試」。</p>
+<ul>
+<li>如果你的 Agent 需要<strong>寫程式</strong>，那就讓它在你的<strong>私有程式碼庫</strong>上進行測試。</li>
+<li>如果它要<strong>處理保險理賠</strong>，那就評估它從你<strong>特定的文件格式</strong>中提取資訊的能力。</li>
+</ul>
+<p>我們的目標，是在 <strong>品質、速度和成本</strong> 這三個維度上，找到那個最適合你特定任務的「最佳交集點」。</p>
+<h5>③ 組建你的「模型專家團隊」</h5>
+<p>更高階的架構，甚至不是選擇「一個」模型，而是組建一個「模型專家團隊」。這裡有一個很生動的比喻：</p>
+<blockquote>
+<p>你不會用一把大鐵鎚去敲開一顆核桃。</p>
+</blockquote>
+<p>同樣的道理，我們可以將任務智慧地分派給不同的模型。例如，使用像 <strong>Gemini 2.5 Pro</strong> 這樣的前沿模型，來處理需要深度規劃和複雜推理的「重度工作」。然後，將那些相對簡單、高頻率的任務——比如分類使用者意圖或總結文字——交給像 <strong>Gemini 2.5 Flash</strong> 這樣更快速、更具成本效益的模型。這種「模型路由」策略，是優化性能與成本的關鍵。</p>
+<h5>④ 擁抱變化：為模型的持續進化做好準備</h5>
+<p>最後，也是最重要的一點：AI 的世界日新月異。你今天選擇的模型，可能在六個月後就被超越。因此，「一次設定，永遠適用」的心態是行不通的。</p>
+<p>一個成功的 Agent 架構，必須從第一天起就為<strong>演進</strong>做準備。這意味著你需要建立一套敏捷的營運框架——也就是我們後面會提到的 <strong>「Agent Ops」</strong>。透過持續整合、持續部署（CI/CD）的流程，不斷用你的關鍵業務指標來評估新模型，你才能確保你的 Agent 始終由市面上「最好的大腦」驅動，而無需對整個架構進行顛覆性的改造。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：「模型專家團隊」是一個很棒的譬喻，講到這裡可以稍微停頓，讓聽眾消化這個概念。</li>
+<li><strong>補充案例</strong>：如果時間允許，可以補充說明處理多模態數據的兩種方法：一是直接使用像 Gemini 這樣的原生多模態模型；二是將視覺或語音等工具（如 Cloud Vision API）轉換為文字，再交給語言模型處理，這兩種方法各有優劣。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>既然我們為 Agent 選擇了合適的「大腦」，接下來，我們就要為它裝上能與真實世界互動的「雙手」。下一頁，我們將深入探討 Agent 架構的第二個核心組件：<strong>工具 (Tools)</strong>。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-12" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 12 頁：Model: The 'Brain' of the AI Agent
+
+#### 【本頁重點摘要】
+*   **選擇是關鍵**：選擇模型不能只看學術評分，成功的關鍵在於其**推理能力**與**工具使用**的可靠性。
+*   **為任務優化**：應針對具體的業務問題來測試模型，並在**品質、速度、成本**三者之間取得最佳平衡。
+*   **專家團隊策略**：採用混合模型策略，如同一個專家團隊。用強大的前沿模型（如 Gemini 2.5 Pro）處理複雜推理，用輕快的小模型（如 Gemini 2.5 Flash）處理高頻率的簡單任務。
+*   **規劃演進**：AI 技術迭代極快，必須建立一套「Agent Ops」實踐，持續評估與升級模型，以避免架構僵化。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好的，我們已經看過了 Agent 的宏觀架構，現在，讓我們一起深入探索其最核心的組件——也就是 Agent 的「大腦」：**模型 (Model)**。這個決策，將直接決定你的 Agent 有多聰明、多能幹。
+
+##### ① 選擇模型的真正藝術：超越跑分
+
+首先，我們必須破除一個常見的迷思。許多人認為選擇模型就像選購電腦，看規格、看跑分就對了。但在 Agent 的世界裡，這恰恰是「一條通往失敗的常見路徑」。
+
+> 一個 Agent 在真實世界中的成功，很少取決於它在通用學術基準測試上的分數。真正的成功，取決於它在兩個「代理人基礎能力」上的表現：**卓越的推理能力**，以及**可靠的工具使用能力**。
+
+換句話說，你的模型不僅要能「思考」，更要能精準地「行動」。它是否能理解複雜的多步驟問題？它是否能穩定地呼叫你給它的工具？這才是我們應該關注的焦點。
+
+##### ② 為你的業務場景，量身打造「最佳大腦」
+
+那麼，該如何選擇呢？答案是：**從你的業務問題出發**。你需要像對待一個真正的員工一樣，對模型進行「面試」。
+
+*   如果你的 Agent 需要**寫程式**，那就讓它在你的**私有程式碼庫**上進行測試。
+*   如果它要**處理保險理賠**，那就評估它從你**特定的文件格式**中提取資訊的能力。
+
+我們的目標，是在 **品質、速度和成本** 這三個維度上，找到那個最適合你特定任務的「最佳交集點」。
+
+##### ③ 組建你的「模型專家團隊」
+
+更高階的架構，甚至不是選擇「一個」模型，而是組建一個「模型專家團隊」。這裡有一個很生動的比喻：
+
+> 你不會用一把大鐵鎚去敲開一顆核桃。
+
+同樣的道理，我們可以將任務智慧地分派給不同的模型。例如，使用像 **Gemini 2.5 Pro** 這樣的前沿模型，來處理需要深度規劃和複雜推理的「重度工作」。然後，將那些相對簡單、高頻率的任務——比如分類使用者意圖或總結文字——交給像 **Gemini 2.5 Flash** 這樣更快速、更具成本效益的模型。這種「模型路由」策略，是優化性能與成本的關鍵。
+
+##### ④ 擁抱變化：為模型的持續進化做好準備
+
+最後，也是最重要的一點：AI 的世界日新月異。你今天選擇的模型，可能在六個月後就被超越。因此，「一次設定，永遠適用」的心態是行不通的。
+
+一個成功的 Agent 架構，必須從第一天起就為**演進**做準備。這意味著你需要建立一套敏捷的營運框架——也就是我們後面會提到的 **「Agent Ops」**。透過持續整合、持續部署（CI/CD）的流程，不斷用你的關鍵業務指標來評估新模型，你才能確保你的 Agent 始終由市面上「最好的大腦」驅動，而無需對整個架構進行顛覆性的改造。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：「模型專家團隊」是一個很棒的譬喻，講到這裡可以稍微停頓，讓聽眾消化這個概念。
+*   **補充案例**：如果時間允許，可以補充說明處理多模態數據的兩種方法：一是直接使用像 Gemini 這樣的原生多模態模型；二是將視覺或語音等工具（如 Cloud Vision API）轉換為文字，再交給語言模型處理，這兩種方法各有優劣。
+*   **轉場橋樑 (Bridge)**：
+    > 既然我們為 Agent 選擇了合適的「大腦」，接下來，我們就要為它裝上能與真實世界互動的「雙手」。下一頁，我們將深入探討 Agent 架構的第二個核心組件：**工具 (Tools)**。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-13">
+            <div class="slide">
+                <h2>Slide 13</h2>
+                <div class="rendered-content">
+                    <h1>Tools: The &quot;Hands&quot; of the AI Agent</h1>
+<p>Tools connect the agent's reasoning to the real world, allowing it to retrieve information and execute actions.</p>
+<ul>
+<li>
+<p><strong>Retrieving Information (Grounding):</strong></p>
+<ul>
+<li><strong>RAG:</strong> Access external knowledge from vector databases or knowledge graphs.</li>
+<li><strong>NL2SQL:</strong> Query structured databases using natural language.</li>
+</ul>
+</li>
+<li>
+<p><strong>Executing Actions (Changing the World):</strong></p>
+<ul>
+<li><strong>APIs/Code:</strong> Send emails, schedule meetings, or update records.</li>
+<li><strong>Code Execution:</strong> Write and run code on the fly in a secure sandbox.</li>
+<li><strong>Human in the Loop (HITL):</strong> Pause to ask a human for confirmation or input.</li>
+</ul>
+</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 13</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(13, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(13, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-13" class="note-content rendered-content">
+                    <h3>🎙️ 第 13 頁：Tools_The_'Hands'_of_the_AI_Agent</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>工具是連接 AI 大腦（模型）與現實世界的「雙手」，讓它不只能思考，更能行動。</li>
+<li>工具主要分為兩大類：<strong>資訊檢索</strong>（讀取世界）與<strong>執行動作</strong>（改變世界）。</li>
+<li><strong>資訊檢索</strong>：透過 RAG 查閱外部文件、或用 NL2SQL 查詢資料庫，讓 AI 的回答有所依據，避免胡亂編造。</li>
+<li><strong>執行動作</strong>：透過呼叫 API 或執行程式碼來完成任務，例如寄送郵件、更新客戶資料，甚至讓人類介入確認（HITL）。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好的，我們剛剛談完了作為「大腦」的模型。但如果一個大腦沒有手腳，它就只能空想，無法與世界互動。這就是「工具」登場的時刻。</p>
+<blockquote>
+<p>如果說模型是 AI 代理的「大腦」，那麼工具就是連接其推理能力與現實世界的「雙手」。</p>
+</blockquote>
+<p>工具讓代理不再局限於它預先訓練好的靜態知識，而是能夠真正地感知並改變世界。我們可以把這些工具分成兩大類。</p>
+<h5>① 第一類：資訊檢索 (Retrieving Information)</h5>
+<p>這類工具的核心目標是「接地氣」，也就是<strong>確保代理的回答是基於事實的</strong>，而不是憑空想像。這也是我們大幅減少模型產生「幻覺」或胡說八道現象的關鍵。</p>
+<ul>
+<li>最基礎的工具就是 <strong>RAG</strong>，也就是「檢索增強生成」。你可以把它想像成給代理一張「圖書館借書證」，讓它可以去查詢外部的知識庫，比如公司的內部文件、產品手冊，甚至是透過 Google 搜尋最新的網路資訊。</li>
+<li>另一種則是 <strong>NL2SQL</strong>，也就是自然語言轉 SQL。這讓代理可以直接用人話查詢結構化的資料庫。例如，你可以直接問它：「我們上一季最暢銷的產品是什麼？」代理就能自己把這句話轉成 SQL 查詢指令，從資料庫裡找出答案。</li>
+</ul>
+<h5>② 第二類：執行動作 (Executing Actions)</h5>
+<p>如果說第一類工具是讓代理「讀取」世界，那第二類工具就是讓它「改變」世界。這是代理真正釋放其力量的地方。</p>
+<ul>
+<li>我們可以把公司既有的 <strong>API 或程式碼</strong>包裝成工具，讓代理能夠去執行具體的任務。例如，<strong>發送一封電子郵件</strong>、<strong>安排一個會議</strong>，或者<strong>在 ServiceNow 系統中更新一筆客戶紀錄</strong>。</li>
+<li>對於更動態的任務，代理甚至可以在一個安全的「沙箱」環境中，<strong>即時編寫並執行程式碼</strong>。比如，寫一段 Python 腳本來解決一個複雜的計算問題。這讓它從一個知識淵博的助理，轉變為一個能自主行動的執行者。</li>
+</ul>
+<h5>③ 最特別的工具：人在迴路中 (Human in the Loop)</h5>
+<p>最後，還有一個非常重要的工具，就是「人在迴路中」，也就是 <strong>HITL</strong>。這個工具允許代理在執行關鍵步驟前，主動暫停工作流程，並向人類請求確認。</p>
+<blockquote>
+<p>例如，在執行一筆不可逆的交易或刪除重要資料前，代理會呼叫 <code>ask_for_confirmation()</code> 這個工具，彈出一個視窗問你：「您確定要這麼做嗎？」</p>
+</blockquote>
+<p>這確保了在執行高風險任務時，最終的決定權仍然掌握在人類手中，我們始終保有控制權。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「資訊檢索」和「執行動作」這兩大分類後，可以稍微停頓一下，讓聽眾消化「讀取世界」和「改變世界」這兩個核心概念的區別。</li>
+<li><strong>補充案例</strong>：可以強調「更新 ServiceNow 客戶紀錄」這個例子，說明代理如何與企業現有的 IT 系統無縫整合，而不只是做一些簡單的通用任務。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了作為「大腦」的模型和作為「雙手」的工具後，你可能會想：是什麼在中間協調它們呢？是什麼來決定何時該思考、何時又該使用哪個工具？這就是我們下一頁要探討的——連接兩者的「神經系統」：<strong>Orchestration Layer</strong>。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-13" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 13 頁：Tools_The_'Hands'_of_the_AI_Agent
+
+#### 【本頁重點摘要】
+*   工具是連接 AI 大腦（模型）與現實世界的「雙手」，讓它不只能思考，更能行動。
+*   工具主要分為兩大類：**資訊檢索**（讀取世界）與**執行動作**（改變世界）。
+*   **資訊檢索**：透過 RAG 查閱外部文件、或用 NL2SQL 查詢資料庫，讓 AI 的回答有所依據，避免胡亂編造。
+*   **執行動作**：透過呼叫 API 或執行程式碼來完成任務，例如寄送郵件、更新客戶資料，甚至讓人類介入確認（HITL）。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好的，我們剛剛談完了作為「大腦」的模型。但如果一個大腦沒有手腳，它就只能空想，無法與世界互動。這就是「工具」登場的時刻。
+
+> 如果說模型是 AI 代理的「大腦」，那麼工具就是連接其推理能力與現實世界的「雙手」。
+
+工具讓代理不再局限於它預先訓練好的靜態知識，而是能夠真正地感知並改變世界。我們可以把這些工具分成兩大類。
+
+##### ① 第一類：資訊檢索 (Retrieving Information)
+
+這類工具的核心目標是「接地氣」，也就是**確保代理的回答是基於事實的**，而不是憑空想像。這也是我們大幅減少模型產生「幻覺」或胡說八道現象的關鍵。
+
+*   最基礎的工具就是 **RAG**，也就是「檢索增強生成」。你可以把它想像成給代理一張「圖書館借書證」，讓它可以去查詢外部的知識庫，比如公司的內部文件、產品手冊，甚至是透過 Google 搜尋最新的網路資訊。
+*   另一種則是 **NL2SQL**，也就是自然語言轉 SQL。這讓代理可以直接用人話查詢結構化的資料庫。例如，你可以直接問它：「我們上一季最暢銷的產品是什麼？」代理就能自己把這句話轉成 SQL 查詢指令，從資料庫裡找出答案。
+
+##### ② 第二類：執行動作 (Executing Actions)
+
+如果說第一類工具是讓代理「讀取」世界，那第二類工具就是讓它「改變」世界。這是代理真正釋放其力量的地方。
+
+*   我們可以把公司既有的 **API 或程式碼**包裝成工具，讓代理能夠去執行具體的任務。例如，**發送一封電子郵件**、**安排一個會議**，或者**在 ServiceNow 系統中更新一筆客戶紀錄**。
+*   對於更動態的任務，代理甚至可以在一個安全的「沙箱」環境中，**即時編寫並執行程式碼**。比如，寫一段 Python 腳本來解決一個複雜的計算問題。這讓它從一個知識淵博的助理，轉變為一個能自主行動的執行者。
+
+##### ③ 最特別的工具：人在迴路中 (Human in the Loop)
+
+最後，還有一個非常重要的工具，就是「人在迴路中」，也就是 **HITL**。這個工具允許代理在執行關鍵步驟前，主動暫停工作流程，並向人類請求確認。
+
+> 例如，在執行一筆不可逆的交易或刪除重要資料前，代理會呼叫 `ask_for_confirmation()` 這個工具，彈出一個視窗問你：「您確定要這麼做嗎？」
+
+這確保了在執行高風險任務時，最終的決定權仍然掌握在人類手中，我們始終保有控制權。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「資訊檢索」和「執行動作」這兩大分類後，可以稍微停頓一下，讓聽眾消化「讀取世界」和「改變世界」這兩個核心概念的區別。
+*   **補充案例**：可以強調「更新 ServiceNow 客戶紀錄」這個例子，說明代理如何與企業現有的 IT 系統無縫整合，而不只是做一些簡單的通用任務。
+*   **轉場橋樑 (Bridge)**：
+    > 了解了作為「大腦」的模型和作為「雙手」的工具後，你可能會想：是什麼在中間協調它們呢？是什麼來決定何時該思考、何時又該使用哪個工具？這就是我們下一頁要探討的——連接兩者的「神經系統」：**Orchestration Layer**。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-14">
+            <div class="slide">
+                <h2>Slide 14</h2>
+                <div class="rendered-content">
+                    <h1>The Orchestration Layer: The &quot;Nervous System&quot;</h1>
+<p>This layer connects the brain (model) and hands (tools), running the &quot;Think, Act, Observe&quot; loop.</p>
+<ul>
+<li><strong>Core Function:</strong> Manages the agent's state, planning, and reasoning strategy.</li>
+<li><strong>Key Design Choices:</strong>
+<ul>
+<li><strong>Framework:</strong> Use no-code builders for speed or code-first frameworks (like ADK) for control and customization.</li>
+<li><strong>Observability:</strong> The framework must provide detailed traces and logs to debug the agent's reasoning.</li>
+</ul>
+</li>
+<li><strong>Developer's Role:</strong>
+<ul>
+<li><strong>Instruct:</strong> Define the agent's persona, domain knowledge, and rules through a system prompt.</li>
+<li><strong>Augment:</strong> Manage short-term (conversation history) and long-term (persistent knowledge via RAG) memory.</li>
+</ul>
+</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 14</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(14, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(14, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-14" class="note-content rendered-content">
+                    <h3>🎙️ 第 14 頁：The Orchestration Layer: The 'Nervous System'</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>協同層 (Orchestration Layer) 如同代理人的「中樞神經系統」，負責連接模型（大腦）與工具（雙手）。</li>
+<li>它的核心功能是運行「思考-行動-觀察」循環，並管理代理人的狀態、計畫與記憶。</li>
+<li>關鍵的設計選擇包含：要使用無程式碼 (no-code) 的快速建構器，還是程式碼優先 (code-first) 的專業框架。</li>
+<li>開發者的角色是透過系統提示來「指導」代理人的個性與規則，並透過管理短期與長期記憶來「增強」其能力。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，如果我們把前面談到的模型比喻為代理人的「大腦」，把工具比喻為「雙手」，那麼這一頁我們要探討的「協同層」，就是連接這一切、讓代理人真正活起來的<strong>中樞神經系統</strong>。</p>
+<h5>① 核心功能：代理人的指揮家</h5>
+<p>這套神經系統的核心工作，就是運行我們在前面章節提到的「思考-行動-觀察」這個核心循環。它就像一個狀態機，精準地管理著代理人的所有計畫、記憶和策略。</p>
+<blockquote>
+<p>我很喜歡白皮書裡的一個比喻：協同層不只是技術的管道，它更像是「整個代理人交響樂的指揮家」。它來決定模型何時該進行推理、哪個工具應該在此刻被調用，以及工具執行完的結果，又該如何回饋給大腦，以影響下一步的決策。</p>
+</blockquote>
+<p>沒有這個指揮家，大腦和雙手就是分離的，無法協同作業來完成任何有意義的任務。</p>
+<h5>② 關鍵設計選擇：框架與可觀測性</h5>
+<p>在建構這個神經系統時，我們有兩個關鍵的設計選擇。</p>
+<p>第一個是<strong>框架 (Framework)</strong> 的選擇。我們可以選擇「無程式碼」的建構器，這能讓業務專家快速地搭建簡單的自動化流程。但對於更複雜、更關鍵的系統，我們通常會選擇「程式碼優先」的框架，例如 Google 的 Agent Development Kit (ADK)，它能提供工程師所需要的深度控制、客製化與整合能力。</p>
+<p>第二個，也是更重要的一點，是<strong>可觀測性 (Observability)</strong>。這點至關重要。因為代理人的行為有時是隨機、不可預測的。</p>
+<blockquote>
+<p>當代理人的行為不符合預期時，你不能只是在模型的「思想」中下一個斷點 (breakpoint)。一個強大的框架，必須能生成詳細的追蹤記錄 (Traces) 和日誌 (Logs)，讓你完整看見代理人從思考、選擇工具、到觀察結果的整個推理軌跡。只有這樣，你才能真正地進行除錯。</p>
+</blockquote>
+<h5>③ 開發者的角色：指導與增強</h5>
+<p>在這個框架之上，開發者的角色也發生了轉變。我們不再是寫死邏輯的工程師，而是更像一位導演。我們的任務有兩個：<strong>指導 (Instruct)</strong> 與 <strong>增強 (Augment)</strong>。</p>
+<ul>
+<li><strong>指導</strong>，是透過「系統提示 (System Prompt)」來完成的。這份提示就像是代理人的「憲法」，我們在裡面定義它的角色、個性、專業領域知識，以及使用工具的規則與時機。</li>
+<li><strong>增強</strong>，則是透過管理代理人的「記憶體」來實現。這又分為兩種：
+<ul>
+<li><strong>短期記憶</strong>：就像一個「便條紙」，記錄著當前對話的歷史，讓代理人知道上下文。</li>
+<li><strong>長期記憶</strong>：這通常是透過連接外部的向量資料庫 (Vector DB) 來實現的，讓代理人能夠「記住」跨對話的用戶偏好或歷史資訊，提供真正個人化的體驗。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：「可觀測性」是一個非常關鍵但抽象的概念。在講到「不能在思想中下斷點」這個比喻時，可以稍微加重語氣並停頓一下，讓聽眾消化這個概念的重要性。</li>
+<li><strong>核心比喻</strong>：請務必善用「中樞神經系統」和「交響樂指揮家」這兩個比喻，它們能幫助聽眾快速理解協同層的抽象角色。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了如何指揮一個代理人內部的大腦、雙手與神經系統後，下一個自然的問題是：當任務變得更複雜時，我們是否需要一個「代理人團隊」？下一頁，我們將探討多代理人系統與其設計模式。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-14" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 14 頁：The Orchestration Layer: The 'Nervous System'
+
+#### 【本頁重點摘要】
+*   協同層 (Orchestration Layer) 如同代理人的「中樞神經系統」，負責連接模型（大腦）與工具（雙手）。
+*   它的核心功能是運行「思考-行動-觀察」循環，並管理代理人的狀態、計畫與記憶。
+*   關鍵的設計選擇包含：要使用無程式碼 (no-code) 的快速建構器，還是程式碼優先 (code-first) 的專業框架。
+*   開發者的角色是透過系統提示來「指導」代理人的個性與規則，並透過管理短期與長期記憶來「增強」其能力。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，如果我們把前面談到的模型比喻為代理人的「大腦」，把工具比喻為「雙手」，那麼這一頁我們要探討的「協同層」，就是連接這一切、讓代理人真正活起來的**中樞神經系統**。
+
+##### ① 核心功能：代理人的指揮家
+
+這套神經系統的核心工作，就是運行我們在前面章節提到的「思考-行動-觀察」這個核心循環。它就像一個狀態機，精準地管理著代理人的所有計畫、記憶和策略。
+
+> 我很喜歡白皮書裡的一個比喻：協同層不只是技術的管道，它更像是「整個代理人交響樂的指揮家」。它來決定模型何時該進行推理、哪個工具應該在此刻被調用，以及工具執行完的結果，又該如何回饋給大腦，以影響下一步的決策。
+
+沒有這個指揮家，大腦和雙手就是分離的，無法協同作業來完成任何有意義的任務。
+
+##### ② 關鍵設計選擇：框架與可觀測性
+
+在建構這個神經系統時，我們有兩個關鍵的設計選擇。
+
+第一個是**框架 (Framework)** 的選擇。我們可以選擇「無程式碼」的建構器，這能讓業務專家快速地搭建簡單的自動化流程。但對於更複雜、更關鍵的系統，我們通常會選擇「程式碼優先」的框架，例如 Google 的 Agent Development Kit (ADK)，它能提供工程師所需要的深度控制、客製化與整合能力。
+
+第二個，也是更重要的一點，是**可觀測性 (Observability)**。這點至關重要。因為代理人的行為有時是隨機、不可預測的。
+
+> 當代理人的行為不符合預期時，你不能只是在模型的「思想」中下一個斷點 (breakpoint)。一個強大的框架，必須能生成詳細的追蹤記錄 (Traces) 和日誌 (Logs)，讓你完整看見代理人從思考、選擇工具、到觀察結果的整個推理軌跡。只有這樣，你才能真正地進行除錯。
+
+##### ③ 開發者的角色：指導與增強
+
+在這個框架之上，開發者的角色也發生了轉變。我們不再是寫死邏輯的工程師，而是更像一位導演。我們的任務有兩個：**指導 (Instruct)** 與 **增強 (Augment)**。
+
+*   **指導**，是透過「系統提示 (System Prompt)」來完成的。這份提示就像是代理人的「憲法」，我們在裡面定義它的角色、個性、專業領域知識，以及使用工具的規則與時機。
+*   **增強**，則是透過管理代理人的「記憶體」來實現。這又分為兩種：
+    *   **短期記憶**：就像一個「便條紙」，記錄著當前對話的歷史，讓代理人知道上下文。
+    *   **長期記憶**：這通常是透過連接外部的向量資料庫 (Vector DB) 來實現的，讓代理人能夠「記住」跨對話的用戶偏好或歷史資訊，提供真正個人化的體驗。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：「可觀測性」是一個非常關鍵但抽象的概念。在講到「不能在思想中下斷點」這個比喻時，可以稍微加重語氣並停頓一下，讓聽眾消化這個概念的重要性。
+*   **核心比喻**：請務必善用「中樞神經系統」和「交響樂指揮家」這兩個比喻，它們能幫助聽眾快速理解協同層的抽象角色。
+*   **轉場橋樑 (Bridge)**：
+    > 了解了如何指揮一個代理人內部的大腦、雙手與神經系統後，下一個自然的問題是：當任務變得更複雜時，我們是否需要一個「代理人團隊」？下一頁，我們將探討多代理人系統與其設計模式。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-15">
+            <div class="slide">
+                <h2>Slide 15</h2>
+                <div class="rendered-content">
+                    <h1>Multi-Agent Systems and Design Patterns</h1>
+<p>For complex tasks, a &quot;team of specialists&quot; is more effective than a single super-agent.</p>
+<ul>
+<li><strong>Coordinator Pattern:</strong> A &quot;manager&quot; agent segments a task and routes sub-tasks to specialist agents.</li>
+<li><strong>Sequential Pattern:</strong> An assembly line where the output of one agent is the input for the next.</li>
+<li><strong>Iterative Refinement Pattern:</strong> A &quot;generator&quot; agent creates content, and a &quot;critic&quot; agent evaluates it against quality standards.</li>
+<li><strong>Human-in-the-Loop (HITL) Pattern:</strong> Creates a deliberate pause for human approval before a critical action is taken.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 15</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(15, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(15, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-15" class="note-content rendered-content">
+                    <h3>🎙️ 第 15 頁：Multi-Agent_Systems_and_Design_Patterns</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>面對複雜任務，與其打造一個萬能的「超級 Agent」，不如建立一個由各領域專家組成的「Agent 團隊」。</li>
+<li><strong>協調者模式 (Coordinator)</strong>：由一位經理 Agent 分派任務給專家 Agent。</li>
+<li><strong>序列模式 (Sequential)</strong>：像工廠產線一樣，一個 Agent 的產出是下一個的輸入。</li>
+<li><strong>迭代優化模式 (Iterative Refinement)</strong>：由「生成者」與「評論家」Agent 合作，不斷提升產出品質。</li>
+<li><strong>人在環路模式 (HITL)</strong>：在關鍵決策點暫停，尋求人類批准，確保安全。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們前面談了很多單一 Agent 的架構。但現實世界的任務往往非常複雜，如果試圖打造一個什麼都會的「超級 Agent」，很快就會變得效率低落且難以維護。所以，我們需要一種更聰明的方法，那就是<strong>模仿人類的組織運作，打造一個由 AI 組成的『專家團隊』</strong>。這就是多 Agent 系統的核心思想。</p>
+<p>為了有效組織這個團隊，業界已經發展出一些成熟的設計模式，我們來看看四個最關鍵的。</p>
+<h5>① 協調者模式 (Coordinator Pattern)</h5>
+<p>首先是「協調者模式」。大家可以想像一下，這就像在團隊裡有一位「專案經理」Agent。當它接到一個複雜的任務，比如「發布一款新產品」，它不會自己從頭做到尾。</p>
+<blockquote>
+<p>它的工作是分析任務、拆解任務，然後聰明地將各個子任務分派給最適合的「專家 Agent」。</p>
+</blockquote>
+<p>例如，它會把市場分析交給「研究員 Agent」，把新聞稿撰寫交給「寫手 Agent」，把網頁開發交給「工程師 Agent」。最後，這位經理會負責匯總所有專家的成果，給出一個完整、全面的最終答案。這非常適合處理動態、非線性的複雜任務。</p>
+<h5>② 序列模式 (Sequential Pattern)</h5>
+<p>第二種是「序列模式」。如果說協調者模式像一個專案團隊，那序列模式就更像一條<strong>數位化的工廠產線</strong>。在這個模式下，工作流程是線性的，前一個 Agent 的輸出，會直接成為下一個 Agent 的輸入。例如，第一個 Agent 負責從文件中提取原始數據，第二個 Agent 負責將數據整理成表格，第三個 Agent 再根據表格產生分析報告。一步接著一步，非常清晰。</p>
+<h5>③ 迭代優化模式 (Iterative Refinement Pattern)</h5>
+<p>接著是「迭代優化模式」，這是一個確保產出品質的絕佳方法。這個模式裡有兩個核心角色：一個是「生成者」Agent，負責創作出內容；另一個是「評論家」Agent，負責根據預設的品質標準來評估內容。</p>
+<p>這就像寫作一樣，生成者寫出初稿，評論家進行審核，提出修改意見，然後生成者再根據意見修改。這個「生成、評估、修改」的循環會不斷重複，直到產出達到最高品質為止。</p>
+<h5>④ 人在環路模式 (Human-in-the-Loop, HITL)</h5>
+<p>最後，也是最重要的一個模式，叫做「人在環路」。在處理高風險、高成本的任務時，我們不能完全放任 Agent 自主行動。這個模式的核心，就是在工作流程中<strong>設置一個刻意的「暫停點」</strong>。當 Agent 準備執行一個關鍵動作，比如「確認下單」或「刪除資料庫」時，它必須停下來，明確地請求人類使用者批准。這為我們的自動化系統，加上了一道至關重要的安全鎖。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：「模仿人類組織運作」這個比喻很重要，可以稍微停頓，讓聽眾消化這個概念。</li>
+<li><strong>補充案例</strong>：在講「迭代優化模式」時，可以提示聽眾參考手冊中的圖 3 (Figure 3)，那張圖非常形象地展示了這個生成與回饋的循環。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了這些強大的設計模式後，我們等於擁有了打造複雜 Agent 團隊的藍圖。但光有藍圖還不夠，我們該如何將這些在本機上設計好的 Agent，真正部署到線上，讓它們變成一個穩定、可靠的服務呢？下一頁，我們就來探討這個關鍵問題：Agent 的部署與產品化服務。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-15" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 15 頁：Multi-Agent_Systems_and_Design_Patterns
+
+#### 【本頁重點摘要】
+*   面對複雜任務，與其打造一個萬能的「超級 Agent」，不如建立一個由各領域專家組成的「Agent 團隊」。
+*   **協調者模式 (Coordinator)**：由一位經理 Agent 分派任務給專家 Agent。
+*   **序列模式 (Sequential)**：像工廠產線一樣，一個 Agent 的產出是下一個的輸入。
+*   **迭代優化模式 (Iterative Refinement)**：由「生成者」與「評論家」Agent 合作，不斷提升產出品質。
+*   **人在環路模式 (HITL)**：在關鍵決策點暫停，尋求人類批准，確保安全。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們前面談了很多單一 Agent 的架構。但現實世界的任務往往非常複雜，如果試圖打造一個什麼都會的「超級 Agent」，很快就會變得效率低落且難以維護。所以，我們需要一種更聰明的方法，那就是**模仿人類的組織運作，打造一個由 AI 組成的『專家團隊』**。這就是多 Agent 系統的核心思想。
+
+為了有效組織這個團隊，業界已經發展出一些成熟的設計模式，我們來看看四個最關鍵的。
+
+##### ① 協調者模式 (Coordinator Pattern)
+首先是「協調者模式」。大家可以想像一下，這就像在團隊裡有一位「專案經理」Agent。當它接到一個複雜的任務，比如「發布一款新產品」，它不會自己從頭做到尾。
+
+> 它的工作是分析任務、拆解任務，然後聰明地將各個子任務分派給最適合的「專家 Agent」。
+
+例如，它會把市場分析交給「研究員 Agent」，把新聞稿撰寫交給「寫手 Agent」，把網頁開發交給「工程師 Agent」。最後，這位經理會負責匯總所有專家的成果，給出一個完整、全面的最終答案。這非常適合處理動態、非線性的複雜任務。
+
+##### ② 序列模式 (Sequential Pattern)
+第二種是「序列模式」。如果說協調者模式像一個專案團隊，那序列模式就更像一條**數位化的工廠產線**。在這個模式下，工作流程是線性的，前一個 Agent 的輸出，會直接成為下一個 Agent 的輸入。例如，第一個 Agent 負責從文件中提取原始數據，第二個 Agent 負責將數據整理成表格，第三個 Agent 再根據表格產生分析報告。一步接著一步，非常清晰。
+
+##### ③ 迭代優化模式 (Iterative Refinement Pattern)
+接著是「迭代優化模式」，這是一個確保產出品質的絕佳方法。這個模式裡有兩個核心角色：一個是「生成者」Agent，負責創作出內容；另一個是「評論家」Agent，負責根據預設的品質標準來評估內容。
+
+這就像寫作一樣，生成者寫出初稿，評論家進行審核，提出修改意見，然後生成者再根據意見修改。這個「生成、評估、修改」的循環會不斷重複，直到產出達到最高品質為止。
+
+##### ④ 人在環路模式 (Human-in-the-Loop, HITL)
+最後，也是最重要的一個模式，叫做「人在環路」。在處理高風險、高成本的任務時，我們不能完全放任 Agent 自主行動。這個模式的核心，就是在工作流程中**設置一個刻意的「暫停點」**。當 Agent 準備執行一個關鍵動作，比如「確認下單」或「刪除資料庫」時，它必須停下來，明確地請求人類使用者批准。這為我們的自動化系統，加上了一道至關重要的安全鎖。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：「模仿人類組織運作」這個比喻很重要，可以稍微停頓，讓聽眾消化這個概念。
+*   **補充案例**：在講「迭代優化模式」時，可以提示聽眾參考手冊中的圖 3 (Figure 3)，那張圖非常形象地展示了這個生成與回饋的循環。
+*   **轉場橋樑 (Bridge)**：
+    > 了解了這些強大的設計模式後，我們等於擁有了打造複雜 Agent 團隊的藍圖。但光有藍圖還不夠，我們該如何將這些在本機上設計好的 Agent，真正部署到線上，讓它們變成一個穩定、可靠的服務呢？下一頁，我們就來探討這個關鍵問題：Agent 的部署與產品化服務。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-16">
+            <div class="slide">
+                <h2>Slide 16</h2>
+                <div class="rendered-content">
+                    <h1>Agent Deployment and Production Services</h1>
+<p>Deployment gives the agent its &quot;body and legs,&quot; turning a local prototype into a scalable, reliable service.</p>
+<ul>
+<li><strong>Core Need:</strong> Agents require services for session history, memory persistence, logging, and security.</li>
+<li><strong>Deployment Options:</strong>
+<ul>
+<li><strong>Standard Infrastructure:</strong> Use Docker containers on runtimes like Cloud Run or GKE for maximum control.</li>
+<li><strong>Managed Platforms:</strong> Purpose-built options like Vertex AI Agent Engine simplify deployment and management.</li>
+</ul>
+</li>
+<li><strong>Getting Started:</strong> Many frameworks offer simple deploy commands for initial exploration, but production environments require investment in CI/CD and automated testing.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 16</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(16, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(16, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-16" class="note-content rendered-content">
+                    <h3>🎙️ 第 16 頁：Agent_Deployment_and_Production_Services</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>部署是將本地原型轉化為可擴展、可靠服務的關鍵，如同為 Agent 安裝「身體和雙腿」。</li>
+<li>一個有效的 Agent 需要多項核心服務支援，包含會話歷史、記憶體持久化、日誌記錄與安全性。</li>
+<li>部署主要有兩種路徑：追求最大控制權的<strong>標準基礎設施</strong>（如 Docker、Cloud Run）與簡化管理的<strong>託管平台</strong>（如 Vertex AI Agent Engine）。</li>
+<li>雖然許多框架提供一鍵部署的簡易功能，但真正的生產環境需要對 CI/CD 和自動化測試進行更深入的投入。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好的，我們已經探討了如何設計和建構一個 Agent 的大腦、雙手與神經系統。但一個只存在於筆記型電腦上的 Agent，終究只是一個原型。要讓它真正發揮價值，我們需要給它「身體和雙腿」——也就是將它部署成一個能夠 24 小時運行、可供他人與其他 Agent 使用的穩定服務。</p>
+<h5>① 核心服務：不僅是運行而已</h5>
+<p>部署 Agent 遠不止是讓程式碼跑起來這麼簡單。幸運的是，Agent 作為一種新型態的軟體，我們可以借鑒數十年來應用程式託管的成熟經驗。</p>
+<blockquote>
+<p>一個生產級的 Agent，必須依賴一系列關鍵服務才能有效運作。這包括了我們前面提到的<strong>會話歷史</strong>與<strong>記憶體持久化</strong>，還有更重要的<strong>日誌記錄</strong>與<strong>安全性</strong>。</p>
+</blockquote>
+<p>作為 Agent 的建構者，你的責任不僅是開發功能，更要決定記錄哪些日誌以便追蹤問題、採取何種安全措施來保護<strong>資料隱私</strong>，並確保符合相關的<strong>法規遵循</strong>要求。</p>
+<h5>② 部署路徑：控制權 vs. 簡便性</h5>
+<p>在部署時，你面臨一個關鍵的選擇，這取決於你的團隊和需求。</p>
+<ul>
+<li>
+<p><strong>第一條路：完全控制</strong>。如果你是一位希望完全掌握技術堆疊的軟體開發者，或者需要將 Agent 整合到現有的 DevOps 流程中，那麼你可以選擇<strong>標準的基礎設施</strong>。這意味著將你的 Agent 打包到 <strong>Docker</strong> 容器中，然後部署到像 <strong>Cloud Run</strong> 或 <strong>GKE (Google Kubernetes Engine)</strong> 這樣的行業標準執行環境上。這條路給了你最大的靈活性和控制權。</p>
+</li>
+<li>
+<p><strong>第二條路：簡化管理</strong>。如果你不是 DevOps 專家，或者希望快速啟動並運行，那麼專為 Agent 設計的<strong>託管平台</strong>會是更好的選擇。例如 <strong>Vertex AI Agent Engine</strong>，它將執行環境和其他所需服務整合在一個平台中，大幅簡化了部署和管理的複雜性。</p>
+</li>
+</ul>
+<h5>③ 從探索到生產：真正的挑戰</h5>
+<p>許多 Agent 框架都提供了簡單的 <code>deploy</code> 指令，讓你可以輕鬆地進行早期探索和測試。這非常棒，但我們必須清楚，這只是第一步。</p>
+<p>要真正進入一個安全、可靠的生產環境，通常需要<strong>更大的時間投入和最佳實踐的應用</strong>。這意味著你需要為你的 Agent 建立完整的 <strong>CI/CD (持續整合/持續部署) 流程</strong>，並撰寫<strong>自動化測試</strong>，以確保每次更新都不會引入新的問題。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「控制權 vs. 簡便性」這兩種部署路徑後，可以稍微停頓，讓聽眾思考哪種路徑更適合他們的團隊。</li>
+<li><strong>強化類比</strong>：再次強調「身體和雙腿」的類比，幫助聽眾記住部署的核心價值——讓 Agent 動起來，成為一個真正可用的實體。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>部署完成後，我們的 Agent 終於有了身體和雙腿，開始在真實世界中運行。但這也帶來了新的挑戰：當這個隨機、非確定性的系統開始出現非預期行為時，我們該如何管理和除錯？這就引出了我們下一個至關重要的主題：<strong>Agent Ops</strong>。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-16" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 16 頁：Agent_Deployment_and_Production_Services
+
+#### 【本頁重點摘要】
+*   部署是將本地原型轉化為可擴展、可靠服務的關鍵，如同為 Agent 安裝「身體和雙腿」。
+*   一個有效的 Agent 需要多項核心服務支援，包含會話歷史、記憶體持久化、日誌記錄與安全性。
+*   部署主要有兩種路徑：追求最大控制權的**標準基礎設施**（如 Docker、Cloud Run）與簡化管理的**託管平台**（如 Vertex AI Agent Engine）。
+*   雖然許多框架提供一鍵部署的簡易功能，但真正的生產環境需要對 CI/CD 和自動化測試進行更深入的投入。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好的，我們已經探討了如何設計和建構一個 Agent 的大腦、雙手與神經系統。但一個只存在於筆記型電腦上的 Agent，終究只是一個原型。要讓它真正發揮價值，我們需要給它「身體和雙腿」——也就是將它部署成一個能夠 24 小時運行、可供他人與其他 Agent 使用的穩定服務。
+
+##### ① 核心服務：不僅是運行而已
+部署 Agent 遠不止是讓程式碼跑起來這麼簡單。幸運的是，Agent 作為一種新型態的軟體，我們可以借鑒數十年來應用程式託管的成熟經驗。
+
+> 一個生產級的 Agent，必須依賴一系列關鍵服務才能有效運作。這包括了我們前面提到的**會話歷史**與**記憶體持久化**，還有更重要的**日誌記錄**與**安全性**。
+
+作為 Agent 的建構者，你的責任不僅是開發功能，更要決定記錄哪些日誌以便追蹤問題、採取何種安全措施來保護**資料隱私**，並確保符合相關的**法規遵循**要求。
+
+##### ② 部署路徑：控制權 vs. 簡便性
+在部署時，你面臨一個關鍵的選擇，這取決於你的團隊和需求。
+
+*   **第一條路：完全控制**。如果你是一位希望完全掌握技術堆疊的軟體開發者，或者需要將 Agent 整合到現有的 DevOps 流程中，那麼你可以選擇**標準的基礎設施**。這意味著將你的 Agent 打包到 **Docker** 容器中，然後部署到像 **Cloud Run** 或 **GKE (Google Kubernetes Engine)** 這樣的行業標準執行環境上。這條路給了你最大的靈活性和控制權。
+
+*   **第二條路：簡化管理**。如果你不是 DevOps 專家，或者希望快速啟動並運行，那麼專為 Agent 設計的**託管平台**會是更好的選擇。例如 **Vertex AI Agent Engine**，它將執行環境和其他所需服務整合在一個平台中，大幅簡化了部署和管理的複雜性。
+
+##### ③ 從探索到生產：真正的挑戰
+許多 Agent 框架都提供了簡單的 `deploy` 指令，讓你可以輕鬆地進行早期探索和測試。這非常棒，但我們必須清楚，這只是第一步。
+
+要真正進入一個安全、可靠的生產環境，通常需要**更大的時間投入和最佳實踐的應用**。這意味著你需要為你的 Agent 建立完整的 **CI/CD (持續整合/持續部署) 流程**，並撰寫**自動化測試**，以確保每次更新都不會引入新的問題。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「控制權 vs. 簡便性」這兩種部署路徑後，可以稍微停頓，讓聽眾思考哪種路徑更適合他們的團隊。
+*   **強化類比**：再次強調「身體和雙腿」的類比，幫助聽眾記住部署的核心價值——讓 Agent 動起來，成為一個真正可用的實體。
+*   **轉場橋樑 (Bridge)**：
+    > 部署完成後，我們的 Agent 終於有了身體和雙腿，開始在真實世界中運行。但這也帶來了新的挑戰：當這個隨機、非確定性的系統開始出現非預期行為時，我們該如何管理和除錯？這就引出了我們下一個至關重要的主題：**Agent Ops**。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-17">
+            <div class="slide">
+                <h2>Slide 17</h2>
+                <div class="rendered-content">
+                    <h1>Agent Ops: Managing the Unpredictable</h1>
+<p>Agent Ops is a new operational philosophy for managing stochastic, non-deterministic AI systems.</p>
+<ul>
+<li><strong>An Evolution of DevOps/MLOps:</strong> Tailored for the unique challenges of building, deploying, and governing AI agents.</li>
+<li><strong>New Testing Paradigm:</strong> Traditional software tests assert <code>output == expected</code>. For agents, this is insufficient.</li>
+<li><strong>Focus on Quality:</strong> Because language is complex and responses are probabilistic, evaluation must shift from simple pass/fail to assessing overall &quot;quality&quot; against a rubric, often using another LM as a judge.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 17</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(17, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(17, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-17" class="note-content rendered-content">
+                    <h3>🎙️ 第 17 頁：Agent_Ops_Managing_the_Unpredictable</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>Agent Ops 是一套全新的營運哲學，專為管理具備隨機性、非確定性行為的 AI Agents 而設計，是 DevOps 和 MLOps 的自然演進。</li>
+<li>傳統軟體的「輸出等於預期」的單元測試模式，對 Agents 而言完全不適用，因為它們的回應本質上是機率性的。</li>
+<li>評估重點必須從簡單的「通過/失敗」轉向整體的「品質」評估，這通常需要借助另一個強大的語言模型（LM）來擔任「裁判」的角色。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，各位。當你打造出第一個 Agent 時，那種興奮感是無與倫比的。但接著，你開始進入測試階段...然後你會發現自己不斷地、一遍又一遍地手動測試它的行為。當你修好一個 bug，是不是又引發了另一個問題？這就是傳統開發模式在面對 Agent 時遇到的第一個巨大挑戰。</p>
+<h5>① 傳統測試的失靈</h5>
+<p>我們正經歷一場從傳統「確定性軟體 (deterministic software)」到新型「隨機性系統 (stochastic systems)」的轉變。在傳統世界裡，測試很單純，我們寫一個單元測試，然後斷言 <code>output == expected</code>。輸出必須精確地等於預期，這是一個非黑即白的結果。</p>
+<p>但這個模式在 Agent 面前徹底崩潰了。Agent 的回應在本質上是「機率性」的。它可能用五種不同的說法，給出五個完全正確的答案。你該如何為這種情況編寫測試呢？答案是，你沒辦法。</p>
+<blockquote>
+<p>我們需要一套全新的營運哲學，來應對這個充滿不確定性的新現實。</p>
+</blockquote>
+<h5>② Agent Ops：從 DevOps 到新典範</h5>
+<p>這就是 <strong>Agent Ops</strong> 登場的時刻。你可以將它視為我們所熟悉的 DevOps 和 MLOps 的自然演進，但它專為治理、部署和建構 AI Agents 的獨特挑戰而量身打造。</p>
+<p>最大的轉變，就是我們不再追求單純的「通過或失敗」。因為語言是複雜的，一個好的回應不僅僅是「正確」，它還必須符合我們的「品質」要求。這個 Agent 的回答，是否完成了所有該做的事？是否避免了所有不該做的事？它的語氣是否恰當？</p>
+<h5>③ 以 AI 裁判 AI：LM 即裁判</h5>
+<p>為了解決這個問題，我們引入了一個非常有趣的概念：「LM as a Judge」，也就是讓一個語言模型來擔任裁判。我們使用一個強大的模型，根據預先定義好的評分標準（rubric），來自動評估我們 Agent 的輸出品質。</p>
+<p>這套方法，就是 Agent Ops 的核心。它提供了一套有紀律、有結構的方法，來管理這種全新的不確定性。它最終的目標，是將「不可預測性」這個看似負債的特性，轉化為一個可以被管理、被衡量、而且最終值得信賴的強大功能。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「傳統測試的失靈」後，可以稍微停頓一下，讓聽眾思考這個問題的棘手之處，然後再引出 Agent Ops 這個解決方案。</li>
+<li><strong>補充案例</strong>：你可以用一個比喻：傳統測試就像「百米賽跑」，只看誰先到終點；而 Agent Ops 則像「體操比賽」，需要裁判根據一套複雜的規則，從執行、風格、難度等多個維度來打分，評估的是整體的「品質」。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了我們需要一套新的哲學，以及「用 AI 評估 AI」的核心思想後，下一個問題自然就是：具體該怎麼做？我們該衡量哪些指標？開發流程該如何調整？下一頁，我們將深入探討 Agent Ops 的具體實踐方法，從指標驅動開發到如何進行偵錯。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-17" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 17 頁：Agent_Ops_Managing_the_Unpredictable
+
+#### 【本頁重點摘要】
+*   Agent Ops 是一套全新的營運哲學，專為管理具備隨機性、非確定性行為的 AI Agents 而設計，是 DevOps 和 MLOps 的自然演進。
+*   傳統軟體的「輸出等於預期」的單元測試模式，對 Agents 而言完全不適用，因為它們的回應本質上是機率性的。
+*   評估重點必須從簡單的「通過/失敗」轉向整體的「品質」評估，這通常需要借助另一個強大的語言模型（LM）來擔任「裁判」的角色。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，各位。當你打造出第一個 Agent 時，那種興奮感是無與倫比的。但接著，你開始進入測試階段...然後你會發現自己不斷地、一遍又一遍地手動測試它的行為。當你修好一個 bug，是不是又引發了另一個問題？這就是傳統開發模式在面對 Agent 時遇到的第一個巨大挑戰。
+
+##### ① 傳統測試的失靈
+我們正經歷一場從傳統「確定性軟體 (deterministic software)」到新型「隨機性系統 (stochastic systems)」的轉變。在傳統世界裡，測試很單純，我們寫一個單元測試，然後斷言 `output == expected`。輸出必須精確地等於預期，這是一個非黑即白的結果。
+
+但這個模式在 Agent 面前徹底崩潰了。Agent 的回應在本質上是「機率性」的。它可能用五種不同的說法，給出五個完全正確的答案。你該如何為這種情況編寫測試呢？答案是，你沒辦法。
+
+> 我們需要一套全新的營運哲學，來應對這個充滿不確定性的新現實。
+
+##### ② Agent Ops：從 DevOps 到新典範
+這就是 **Agent Ops** 登場的時刻。你可以將它視為我們所熟悉的 DevOps 和 MLOps 的自然演進，但它專為治理、部署和建構 AI Agents 的獨特挑戰而量身打造。
+
+最大的轉變，就是我們不再追求單純的「通過或失敗」。因為語言是複雜的，一個好的回應不僅僅是「正確」，它還必須符合我們的「品質」要求。這個 Agent 的回答，是否完成了所有該做的事？是否避免了所有不該做的事？它的語氣是否恰當？
+
+##### ③ 以 AI 裁判 AI：LM 即裁判
+為了解決這個問題，我們引入了一個非常有趣的概念：「LM as a Judge」，也就是讓一個語言模型來擔任裁判。我們使用一個強大的模型，根據預先定義好的評分標準（rubric），來自動評估我們 Agent 的輸出品質。
+
+這套方法，就是 Agent Ops 的核心。它提供了一套有紀律、有結構的方法，來管理這種全新的不確定性。它最終的目標，是將「不可預測性」這個看似負債的特性，轉化為一個可以被管理、被衡量、而且最終值得信賴的強大功能。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「傳統測試的失靈」後，可以稍微停頓一下，讓聽眾思考這個問題的棘手之處，然後再引出 Agent Ops 這個解決方案。
+*   **補充案例**：你可以用一個比喻：傳統測試就像「百米賽跑」，只看誰先到終點；而 Agent Ops 則像「體操比賽」，需要裁判根據一套複雜的規則，從執行、風格、難度等多個維度來打分，評估的是整體的「品質」。
+*   **轉場橋樑 (Bridge)**：
+    > 了解了我們需要一套新的哲學，以及「用 AI 評估 AI」的核心思想後，下一個問題自然就是：具體該怎麼做？我們該衡量哪些指標？開發流程該如何調整？下一頁，我們將深入探討 Agent Ops 的具體實踐方法，從指標驅動開發到如何進行偵錯。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-18">
+            <div class="slide">
+                <h2>Slide 18</h2>
+                <div class="rendered-content">
+                    <h1>Agent Ops: Metrics, Development, and Debugging</h1>
+<ul>
+<li><strong>Measure What Matters:</strong> Define business KPIs (e.g., goal completion rates, user satisfaction) to measure real-world impact.</li>
+<li><strong>Use an &quot;LM as Judge&quot;:</strong> Automatically assess agent output quality against a predefined rubric and a &quot;golden dataset&quot; of prompts.</li>
+<li><strong>Metrics-Driven Development:</strong> Use automated quality scores to create a confident go/no-go process for deploying changes.</li>
+<li><strong>Debug with Traces:</strong> Use OpenTelemetry traces to get a step-by-step recording of the agent's execution path (trajectory) to diagnose the root cause of failures.</li>
+<li><strong>Cherish Human Feedback:</strong> Use bug reports and user feedback to create new, permanent test cases, vaccinating the system against future errors.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 18</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(18, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(18, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-18" class="note-content rendered-content">
+                    <h3>🎙️ 第 18 頁：Agent Ops：指標、開發與偵錯</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>衡量關鍵指標</strong>：專注於能反映真實商業價值的 KPI，而不僅是技術正確性。</li>
+<li><strong>讓大型語言模型（LM）擔任裁判</strong>：使用 LM 根據預定義的標準，自動化地評估代理人的輸出品質。</li>
+<li><strong>指標驅動開發</strong>：依據自動化品質分數，建立部署新版本的「Go/No-Go」決策流程。</li>
+<li><strong>使用追蹤日誌（Traces）偵錯</strong>：利用 OpenTelemetry 記錄代理人的完整執行路徑，以診斷問題根源。</li>
+<li><strong>珍視人類回饋</strong>：將使用者的回饋轉化為永久性的測試案例，持續強化系統。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好的，我們剛剛了解了 Agent Ops 是一種管理「不可預測性」的全新營運哲學。現在，讓我們深入探討支撐這個理念的五個核心實踐，也就是從「是什麼」進到「該怎麼做」。</p>
+<h5>① 首先，衡量真正重要的事 (Measure What Matters)</h5>
+<p>在 Agent Ops 的世界裡，我們不能只問「代理人有沒有壞掉？」。我們必須像在做 A/B 測試一樣，問自己：<strong>它是否真的創造了價值？</strong></p>
+<blockquote>
+<p>這意味著我們的關鍵績效指標 (KPI) 必須超越技術層面，去衡量真實世界的影響。例如：<strong>目標完成率</strong>、<strong>用戶滿意度分數</strong>、任務處理的<strong>延遲時間</strong>、每次互動的<strong>營運成本</strong>，以及最重要的，它對公司營收或客戶留存率帶來了什麼改變。</p>
+</blockquote>
+<h5>② 第二，讓大型語言模型擔任裁判 (Use an &quot;LM as Judge&quot;)</h5>
+<p>傳統軟體的「通過／不通過」測試在這裡行不通，因為語言是充滿彈性的。所以，我們轉而評估「品質」。</p>
+<p>我們使用一個強大的語言模型，就像一位公正的法官，根據一份預先定義好的「評分標準」來評估代理人的表現。這份標準會問：它的回答正確嗎？它的論述是否<strong>基於事實</strong>？它是否遵循了所有指示？這個自動化評估流程會在一套「黃金標準資料集」上運行，為我們提供一個穩定、一致的品質分數。</p>
+<h5>③ 第三，指標驅動開發 (Metrics-Driven Development)</h5>
+<p>一旦我們有了自動化的品質分數，開發流程就不再是憑感覺了。</p>
+<p>這個過程很簡單：當我們要推出新版本時，就讓它在整個評估資料集上跑一遍，然後將它的分數與現有的正式版本直接比較。這個系統消除了所有猜測，讓我們對每一次部署都充滿信心。為了追求最高的安全性，我們通常還會搭配 <strong>A/B 部署</strong>，逐步推出新版本，並同時比較真實世界的指標和模擬分數。</p>
+<h5>④ 第四，用追蹤日log (Traces) 進行偵錯</h5>
+<p>當你的指標下滑，或使用者回報一個 bug，你最需要回答的問題就是「為什麼？」。</p>
+<blockquote>
+<p>OpenTelemetry 的「Trace」就是解答。它就像一個高解析度的飛行紀錄器，一步步記錄下代理人完整的執行軌跡。</p>
+</blockquote>
+<p>透過 Trace，你可以看到模型收到的<strong>確切提示</strong>、它內部的推理過程、它選擇呼叫的<strong>特定工具</strong>、為該工具生成的<strong>精確參數</strong>，以及工具回傳的原始數據。所有細節一覽無遺，讓你能夠精準診斷問題的根源。</p>
+<h5>⑤ 最後一點，也最重要的一點：珍視人類的回饋</h5>
+<p>人類的回饋不是待辦清單上的麻煩事；它是你最寶貴、資訊密度最高的資源。</p>
+<p>當使用者按下「不喜歡」的按鈕時，他們其實是送給你一份禮物：一個你的自動化測試腳本沒有涵蓋到的、真實世界的「邊界案例」。我們的任務就是「閉合這個循環」：捕捉這些回饋、重現問題，然後將這個場景轉化為一個新的、<strong>永久性的測試案例</strong>。</p>
+<blockquote>
+<p>這就像是為你的系統<strong>接種疫苗</strong>，確保它不僅修復了眼前的 bug，更能對這一整類的錯誤永遠免疫。</p>
+</blockquote>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講完這五點後，可以稍微停頓一下，讓資訊沉澱。這五個實踐是 Agent Ops 的核心工作循環。</li>
+<li><strong>強化比喻</strong>：「為系統接種疫苗」這個比喻非常有力，可以加強語氣來強調「從錯誤中學習並永久免疫」的概念。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：我們已經建立了一個高品質、可偵錯、且能透過回饋持續進步的代理人。但它並非孤立存在。下一步，就是將它與更廣闊的世界連結起來。
+<blockquote>
+<p>那麼，一個成熟的代理人該如何與人類、其他代理人，甚至是金融系統進行互動呢？下一頁，我們將探討「代理人的互操作性」。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-18" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 18 頁：Agent Ops：指標、開發與偵錯
+
+#### 【本頁重點摘要】
+*   **衡量關鍵指標**：專注於能反映真實商業價值的 KPI，而不僅是技術正確性。
+*   **讓大型語言模型（LM）擔任裁判**：使用 LM 根據預定義的標準，自動化地評估代理人的輸出品質。
+*   **指標驅動開發**：依據自動化品質分數，建立部署新版本的「Go/No-Go」決策流程。
+*   **使用追蹤日誌（Traces）偵錯**：利用 OpenTelemetry 記錄代理人的完整執行路徑，以診斷問題根源。
+*   **珍視人類回饋**：將使用者的回饋轉化為永久性的測試案例，持續強化系統。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好的，我們剛剛了解了 Agent Ops 是一種管理「不可預測性」的全新營運哲學。現在，讓我們深入探討支撐這個理念的五個核心實踐，也就是從「是什麼」進到「該怎麼做」。
+
+##### ① 首先，衡量真正重要的事 (Measure What Matters)
+在 Agent Ops 的世界裡，我們不能只問「代理人有沒有壞掉？」。我們必須像在做 A/B 測試一樣，問自己：**它是否真的創造了價值？**
+
+> 這意味著我們的關鍵績效指標 (KPI) 必須超越技術層面，去衡量真實世界的影響。例如：**目標完成率**、**用戶滿意度分數**、任務處理的**延遲時間**、每次互動的**營運成本**，以及最重要的，它對公司營收或客戶留存率帶來了什麼改變。
+
+##### ② 第二，讓大型語言模型擔任裁判 (Use an "LM as Judge")
+傳統軟體的「通過／不通過」測試在這裡行不通，因為語言是充滿彈性的。所以，我們轉而評估「品質」。
+
+我們使用一個強大的語言模型，就像一位公正的法官，根據一份預先定義好的「評分標準」來評估代理人的表現。這份標準會問：它的回答正確嗎？它的論述是否**基於事實**？它是否遵循了所有指示？這個自動化評估流程會在一套「黃金標準資料集」上運行，為我們提供一個穩定、一致的品質分數。
+
+##### ③ 第三，指標驅動開發 (Metrics-Driven Development)
+一旦我們有了自動化的品質分數，開發流程就不再是憑感覺了。
+
+這個過程很簡單：當我們要推出新版本時，就讓它在整個評估資料集上跑一遍，然後將它的分數與現有的正式版本直接比較。這個系統消除了所有猜測，讓我們對每一次部署都充滿信心。為了追求最高的安全性，我們通常還會搭配 **A/B 部署**，逐步推出新版本，並同時比較真實世界的指標和模擬分數。
+
+##### ④ 第四，用追蹤日log (Traces) 進行偵錯
+當你的指標下滑，或使用者回報一個 bug，你最需要回答的問題就是「為什麼？」。
+
+> OpenTelemetry 的「Trace」就是解答。它就像一個高解析度的飛行紀錄器，一步步記錄下代理人完整的執行軌跡。
+
+透過 Trace，你可以看到模型收到的**確切提示**、它內部的推理過程、它選擇呼叫的**特定工具**、為該工具生成的**精確參數**，以及工具回傳的原始數據。所有細節一覽無遺，讓你能夠精準診斷問題的根源。
+
+##### ⑤ 最後一點，也最重要的一點：珍視人類的回饋
+人類的回饋不是待辦清單上的麻煩事；它是你最寶貴、資訊密度最高的資源。
+
+當使用者按下「不喜歡」的按鈕時，他們其實是送給你一份禮物：一個你的自動化測試腳本沒有涵蓋到的、真實世界的「邊界案例」。我們的任務就是「閉合這個循環」：捕捉這些回饋、重現問題，然後將這個場景轉化為一個新的、**永久性的測試案例**。
+
+> 這就像是為你的系統**接種疫苗**，確保它不僅修復了眼前的 bug，更能對這一整類的錯誤永遠免疫。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講完這五點後，可以稍微停頓一下，讓資訊沉澱。這五個實踐是 Agent Ops 的核心工作循環。
+*   **強化比喻**：「為系統接種疫苗」這個比喻非常有力，可以加強語氣來強調「從錯誤中學習並永久免疫」的概念。
+*   **轉場橋樑 (Bridge)**：我們已經建立了一個高品質、可偵錯、且能透過回饋持續進步的代理人。但它並非孤立存在。下一步，就是將它與更廣闊的世界連結起來。
+    > 那麼，一個成熟的代理人該如何與人類、其他代理人，甚至是金融系統進行互動呢？下一頁，我們將探討「代理人的互操作性」。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-19">
+            <div class="slide">
+                <h2>Slide 19</h2>
+                <div class="rendered-content">
+                    <h1>Agent Interoperability</h1>
+<p>Agents must connect with users, other agents, and financial systems to form a complete ecosystem.</p>
+<ul>
+<li><strong>Agents and Humans:</strong> Interaction via UIs, computer control, and real-time, multimodal &quot;live mode&quot; conversations (e.g., Gemini Live API).</li>
+<li><strong>Agents and Agents:</strong> The <strong>Agent2Agent (A2A)</strong> protocol provides a universal standard for agents to discover each other (via Agent Cards) and communicate through asynchronous tasks.</li>
+<li><strong>Agents and Money:</strong> Emerging protocols like <strong>Agent Payments Protocol (AP2)</strong> and <strong>x402</strong> are creating a trust layer for agents to securely transact on behalf of users, enabling a true agentic economy.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 19</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(19, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(19, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-19" class="note-content rendered-content">
+                    <h3>🎙️ 第 19 頁：Agent Interoperability: Humans, Agents, and Money</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>本頁探討 AI 代理（Agent）如何與外部世界的三大核心對象進行互操作：人類、其他代理，以及金融系統。</li>
+<li><strong>人機互動</strong>：從基本的聊天機器人，進化到能控制使用者介面、甚至透過「即時模式」進行自然對話的型態。</li>
+<li><strong>代理間協作</strong>：透過 <strong>A2A (Agent2Agent)</strong> 協議，代理之間可以像同事一樣發現彼此、分配任務，形成一個協作生態系。</li>
+<li><strong>代理與金錢</strong>：介紹 <strong>AP2</strong> 和 <strong>x402</strong> 等新興協議，旨在建立信任層，讓代理能安全地代表使用者進行金融交易。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好的，我們已經建立了高品質的代理，現在要問的是：它們如何與世界互動？這就像是為我們打造的智慧大腦裝上「臉」和「嘴巴」。代理的互操作性，可以分為三個主要層面：如何與人類溝通、如何與其他代理協作，以及一個非常有趣的話題——如何與金錢互動。</p>
+<h5>① 首先，來看代理與人類的互動 (Agents and Humans)</h5>
+<p>最簡單的形式，就是我們都熟悉的<strong>聊天機器人</strong>，我們輸入文字，它回覆文字。但這只是起點。更進階的代理，可以提供結構化的資料（例如 JSON），來驅動豐富、動態的前端使用者體驗。</p>
+<p>甚至，代理還能做到所謂的「電腦使用」(Computer Use)，也就是說，它能直接控制你的使用者介面，幫你導航到某個頁面、點擊按鈕，或預先填寫表單。</p>
+<blockquote>
+<p>但真正改變遊戲規則的，是「即時模式」(live mode) 的出現，例如透過 Gemini Live API。這不再是打字，而是真正的即時、多模態溝通。</p>
+</blockquote>
+<p>想像一下，你可以和代理<strong>雙向串流對話</strong>，就像跟真人一樣，隨時可以打斷它。透過存取設備的攝影機和麥克風，代理能看到你所見、聽到你所言，並以極低的延遲回應。這開啟了全新的應用場景：比如，一位技術人員在修理設備時，可以獲得免持的語音指導；或是一位購物者，可以即時獲得穿搭建議。這讓代理從一個工具，變成了更直觀、更易於協作的夥伴。</p>
+<h5>② 接下來，是代理與代理之間的互動 (Agents and Agents)</h5>
+<p>當企業內部有越來越多不同團隊打造的專用代理時，如果沒有一個通用標準，我們很快就會陷入一個由脆弱、客製化 API 構成的「混亂網絡」中，難以維護。</p>
+<p>為了解決這個問題，<strong>A2A (Agent2Agent) 協議</strong>應運而生。你可以把它想像成「代理人經濟的通用握手協議」。</p>
+<ul>
+<li><strong>發現 (Discovery)</strong>：A2A 允許任何代理發布一張被稱為「代理人名片」(Agent Card) 的數位名片。這是一個簡單的 JSON 文件，宣告了它的能力、網路端點和互動所需的安全憑證。這讓代理之間的互相發現變得簡單而標準化。</li>
+<li><strong>溝通 (Communication)</strong>：一旦發現對方，代理之間會以非同步的「任務」(tasks) 進行溝通，而不是簡單的一問一答。一個客戶端代理可以發送一個任務給伺服器端代理，並在一個長期運行的連接上接收進度更新。</li>
+</ul>
+<p>這種強大而標準化的通訊協議，是實現我們之前提到的「第三級協作多代理系統」的最後一塊拼圖，將孤立的代理轉變為一個真正可互操作的生態系統。</p>
+<h5>③ 最後，我們來談談代理與金錢 (Agents and Money)</h5>
+<p>當代理開始為我們執行任務時，有些任務不可避免地會涉及購買、銷售或協商。目前的網路是為人類點擊「購買」按鈕而設計的，責任在於人類。</p>
+<blockquote>
+<p>但如果一個自主代理點擊了「購買」，這就引發了一場「信任危機」——如果出了問題，誰該負責？</p>
+</blockquote>
+<p>這涉及到授權、真實性和問責制的複雜問題。為了釋放真正的代理經濟，我們需要新的標準，讓代理能夠安全、可靠地代表其使用者進行交易。</p>
+<p>目前有兩個關鍵協議正在為此鋪路：</p>
+<ul>
+<li><strong>代理支付協議 (AP2)</strong>：它引入了經過加密簽名的數位「授權令」(mandates)，作為使用者意圖的可驗證證明，為每筆交易創建了不可否認的審計追蹤。</li>
+<li><strong>x402 協議</strong>：它利用標準的 HTTP 402「需要付款」狀態碼，實現了無摩擦的機器對機器微支付，讓代理可以按次付費使用 API 或數位內容。</li>
+</ul>
+<p>這些協議正在為未來的代理網路，建立至關重要的信任基礎。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講到「信任危機」時，可以稍微停頓一下，讓聽眾思考這個問題的嚴肅性。</li>
+<li><strong>善用比喻</strong>：記得使用「通用握手協議」和「數位名片」等比喻，讓 A2A 的概念更容易理解。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>我們剛剛討論了賦予代理連接、協作甚至花錢的能力。這自然引出了一個關鍵問題：我們如何確保它們安全、可靠地做到這一切？下一頁，我們將深入探討保護單一代理時所面臨的核心權衡——「信任與實用性」的取捨。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-19" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 19 頁：Agent Interoperability: Humans, Agents, and Money
+
+#### 【本頁重點摘要】
+*   本頁探討 AI 代理（Agent）如何與外部世界的三大核心對象進行互操作：人類、其他代理，以及金融系統。
+*   **人機互動**：從基本的聊天機器人，進化到能控制使用者介面、甚至透過「即時模式」進行自然對話的型態。
+*   **代理間協作**：透過 **A2A (Agent2Agent)** 協議，代理之間可以像同事一樣發現彼此、分配任務，形成一個協作生態系。
+*   **代理與金錢**：介紹 **AP2** 和 **x402** 等新興協議，旨在建立信任層，讓代理能安全地代表使用者進行金融交易。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好的，我們已經建立了高品質的代理，現在要問的是：它們如何與世界互動？這就像是為我們打造的智慧大腦裝上「臉」和「嘴巴」。代理的互操作性，可以分為三個主要層面：如何與人類溝通、如何與其他代理協作，以及一個非常有趣的話題——如何與金錢互動。
+
+##### ① 首先，來看代理與人類的互動 (Agents and Humans)
+最簡單的形式，就是我們都熟悉的**聊天機器人**，我們輸入文字，它回覆文字。但這只是起點。更進階的代理，可以提供結構化的資料（例如 JSON），來驅動豐富、動態的前端使用者體驗。
+
+甚至，代理還能做到所謂的「電腦使用」(Computer Use)，也就是說，它能直接控制你的使用者介面，幫你導航到某個頁面、點擊按鈕，或預先填寫表單。
+
+> 但真正改變遊戲規則的，是「即時模式」(live mode) 的出現，例如透過 Gemini Live API。這不再是打字，而是真正的即時、多模態溝通。
+
+想像一下，你可以和代理**雙向串流對話**，就像跟真人一樣，隨時可以打斷它。透過存取設備的攝影機和麥克風，代理能看到你所見、聽到你所言，並以極低的延遲回應。這開啟了全新的應用場景：比如，一位技術人員在修理設備時，可以獲得免持的語音指導；或是一位購物者，可以即時獲得穿搭建議。這讓代理從一個工具，變成了更直觀、更易於協作的夥伴。
+
+##### ② 接下來，是代理與代理之間的互動 (Agents and Agents)
+當企業內部有越來越多不同團隊打造的專用代理時，如果沒有一個通用標準，我們很快就會陷入一個由脆弱、客製化 API 構成的「混亂網絡」中，難以維護。
+
+為了解決這個問題，**A2A (Agent2Agent) 協議**應運而生。你可以把它想像成「代理人經濟的通用握手協議」。
+
+*   **發現 (Discovery)**：A2A 允許任何代理發布一張被稱為「代理人名片」(Agent Card) 的數位名片。這是一個簡單的 JSON 文件，宣告了它的能力、網路端點和互動所需的安全憑證。這讓代理之間的互相發現變得簡單而標準化。
+*   **溝通 (Communication)**：一旦發現對方，代理之間會以非同步的「任務」(tasks) 進行溝通，而不是簡單的一問一答。一個客戶端代理可以發送一個任務給伺服器端代理，並在一個長期運行的連接上接收進度更新。
+
+這種強大而標準化的通訊協議，是實現我們之前提到的「第三級協作多代理系統」的最後一塊拼圖，將孤立的代理轉變為一個真正可互操作的生態系統。
+
+##### ③ 最後，我們來談談代理與金錢 (Agents and Money)
+當代理開始為我們執行任務時，有些任務不可避免地會涉及購買、銷售或協商。目前的網路是為人類點擊「購買」按鈕而設計的，責任在於人類。
+
+> 但如果一個自主代理點擊了「購買」，這就引發了一場「信任危機」——如果出了問題，誰該負責？
+
+這涉及到授權、真實性和問責制的複雜問題。為了釋放真正的代理經濟，我們需要新的標準，讓代理能夠安全、可靠地代表其使用者進行交易。
+
+目前有兩個關鍵協議正在為此鋪路：
+*   **代理支付協議 (AP2)**：它引入了經過加密簽名的數位「授權令」(mandates)，作為使用者意圖的可驗證證明，為每筆交易創建了不可否認的審計追蹤。
+*   **x402 協議**：它利用標準的 HTTP 402「需要付款」狀態碼，實現了無摩擦的機器對機器微支付，讓代理可以按次付費使用 API 或數位內容。
+
+這些協議正在為未來的代理網路，建立至關重要的信任基礎。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講到「信任危機」時，可以稍微停頓一下，讓聽眾思考這個問題的嚴肅性。
+*   **善用比喻**：記得使用「通用握手協議」和「數位名片」等比喻，讓 A2A 的概念更容易理解。
+*   **轉場橋樑 (Bridge)**：
+    > 我們剛剛討論了賦予代理連接、協作甚至花錢的能力。這自然引出了一個關鍵問題：我們如何確保它們安全、可靠地做到這一切？下一頁，我們將深入探討保護單一代理時所面臨的核心權衡——「信任與實用性」的取捨。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-20">
+            <div class="slide">
+                <h2>Slide 20</h2>
+                <div class="rendered-content">
+                    <h1>Securing a Single Agent: The Trust Trade-Off</h1>
+<p>There is a fundamental tension between an agent's utility (power) and its security.</p>
+<ul>
+<li><strong>Primary Risks:</strong>
+<ul>
+<li><strong>Rogue Actions:</strong> Unintended or harmful behaviors.</li>
+<li><strong>Data Disclosure:</strong> Leaking sensitive or private information.</li>
+</ul>
+</li>
+<li><strong>Best Practice: Defense-in-Depth</strong>
+<ol>
+<li><strong>Deterministic Guardrails:</strong> Hardcoded rules outside the model's control that provide predictable limits (e.g., block any purchase over $100).</li>
+<li><strong>Reasoning-Based Defenses:</strong> Use AI to secure AI. Employ specialized &quot;guard models&quot; to examine the agent's plan and flag risky steps before execution.</li>
+</ol>
+</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 20</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(20, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(20, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-20" class="note-content rendered-content">
+                    <h3>🎙️ 第 20 頁：確保單一代理程式的安全性：信任的權衡</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>建立代理程式存在一個根本性的矛盾：賦予它的能力（Utility）越強，潛在的安全風險就越高。</li>
+<li>主要風險有兩大類：執行惡意或非預期的「流氓行為」（Rogue Actions），以及洩漏敏感資料。</li>
+<li>最佳實踐是採用「深度防禦」策略，結合兩種防護層：
+<ol>
+<li><strong>確定性護欄</strong>：寫死的、不可逾越的規則。</li>
+<li><strong>基於推理的防禦</strong>：利用 AI 來監督 AI 的行為。</li>
+</ol>
+</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，當我們開始打造第一個 AI 代理程式時，我們馬上會面臨一個非常核心的矛盾，那就是「功能」與「安全」之間的權衡。</p>
+<p>為了讓代理程式有用，我們必須賦予它權力——讓它能自主做決定，使用工具去發送郵件、查詢資料庫。但我們每給予一分權力，就引入了相對應的一分風險。</p>
+<blockquote>
+<p>這就像是給代理程式一條牽繩，我們希望繩子夠長，讓它能完成任務，但又必須夠短，確保它不會失控衝到馬路上——特別是當這條「馬路」涉及到不可逆轉的操作，或是公司的核心機密資料時。</p>
+</blockquote>
+<p>那麼，具體來說，風險是什麼？我們又該如何管理呢？</p>
+<h5>① 第一個挑戰：主要的資安風險</h5>
+<p>我們主要擔心兩件事：</p>
+<ul>
+<li>第一，是<strong>流氓行為 (Rogue Actions)</strong>。也就是代理程式執行了我們不希望它做的、甚至是惡意的行為。</li>
+<li>第二，是<strong>資料洩漏 (Data Disclosure)</strong>。也就是它在不經意間，洩漏了公司的敏感資訊或客戶的隱私。</li>
+</ul>
+<p>這裡最關鍵的一點是，我們<strong>不能完全依賴 AI 模型自身的判斷力</strong>。因為模型可能會被一種叫做「提示詞注入 (Prompt Injection)」的技術所操控。所以，單純地告訴模型「要乖乖的」是絕對不夠的。</p>
+<h5>② 第二個關鍵：深度防禦 (Defense-in-Depth)</h5>
+<p>既然不能只靠模型，我們就必須建立一個多層次的「深度防禦」系統。這就像蓋城堡一樣，不能只有一道城牆。</p>
+<ul>
+<li>
+<p><strong>第一層防禦，是「確定性護欄 (Deterministic Guardrails)」</strong>。</p>
+<blockquote>
+<p>這些是我們寫死的、硬編碼的規則，它們在模型推理的範圍之外，形成一個絕對的安全關卡。</p>
+</blockquote>
+<p>舉個例子，我們可以設定一條規則：「任何超過 100 美元的採購，都必須被阻擋」，或者「在代理程式呼叫外部 API 之前，必須跳出視窗，取得真人的明確批准」。這一層提供了可預測、可審計的硬性限制。</p>
+</li>
+<li>
+<p><strong>第二層防禦，是「基於推理的防禦 (Reasoning-Based Defenses)」</strong>。
+這很有趣，它的核心思想是「用 AI 來保護 AI」。我們會部署一些小而專精的「守衛模型 (Guard Models)」，它們就像團隊裡的資安分析師。在主要代理程式執行任何計畫之前，這些守衛模型會先審查它的計畫，如果發現任何有風險或違反政策的步驟，就會立刻舉手示警。</p>
+</li>
+</ul>
+<p>總結來說，這種結合了<strong>程式碼的剛性確定性</strong>與 <strong>AI 的情境感知能力</strong>的混合模式，為我們的代理程式打造了一個強大的安全基礎，確保它的強大能力，始終與我們的目標保持一致。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「牽繩」這個比喻後，可以稍微停頓一下，讓聽眾消化這個概念。這個比喻非常直觀，能有效傳達核心矛盾。</li>
+<li><strong>補充案例</strong>：可以強調「守衛模型」就像是另一個代理程式，它的唯一工作就是監督主代理程式，這有助於引出下一頁「多代理程式」的概念。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>好的，我們剛剛討論了如何為「單一」代理程式建立內部的安全護欄。但如果我們公司裡有數十個、數百個代理程式呢？我們該如何管理誰能存取什麼？這就引出了下一個至關重要的議題：代理程式的「身份識別」與「政策執行」。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-20" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 20 頁：確保單一代理程式的安全性：信任的權衡
+
+#### 【本頁重點摘要】
+*   建立代理程式存在一個根本性的矛盾：賦予它的能力（Utility）越強，潛在的安全風險就越高。
+*   主要風險有兩大類：執行惡意或非預期的「流氓行為」（Rogue Actions），以及洩漏敏感資料。
+*   最佳實踐是採用「深度防禦」策略，結合兩種防護層：
+    1.  **確定性護欄**：寫死的、不可逾越的規則。
+    2.  **基於推理的防禦**：利用 AI 來監督 AI 的行為。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，當我們開始打造第一個 AI 代理程式時，我們馬上會面臨一個非常核心的矛盾，那就是「功能」與「安全」之間的權衡。
+
+為了讓代理程式有用，我們必須賦予它權力——讓它能自主做決定，使用工具去發送郵件、查詢資料庫。但我們每給予一分權力，就引入了相對應的一分風險。
+
+> 這就像是給代理程式一條牽繩，我們希望繩子夠長，讓它能完成任務，但又必須夠短，確保它不會失控衝到馬路上——特別是當這條「馬路」涉及到不可逆轉的操作，或是公司的核心機密資料時。
+
+那麼，具體來說，風險是什麼？我們又該如何管理呢？
+
+##### ① 第一個挑戰：主要的資安風險
+
+我們主要擔心兩件事：
+
+*   第一，是**流氓行為 (Rogue Actions)**。也就是代理程式執行了我們不希望它做的、甚至是惡意的行為。
+*   第二，是**資料洩漏 (Data Disclosure)**。也就是它在不經意間，洩漏了公司的敏感資訊或客戶的隱私。
+
+這裡最關鍵的一點是，我們**不能完全依賴 AI 模型自身的判斷力**。因為模型可能會被一種叫做「提示詞注入 (Prompt Injection)」的技術所操控。所以，單純地告訴模型「要乖乖的」是絕對不夠的。
+
+##### ② 第二個關鍵：深度防禦 (Defense-in-Depth)
+
+既然不能只靠模型，我們就必須建立一個多層次的「深度防禦」系統。這就像蓋城堡一樣，不能只有一道城牆。
+
+*   **第一層防禦，是「確定性護欄 (Deterministic Guardrails)」**。
+    > 這些是我們寫死的、硬編碼的規則，它們在模型推理的範圍之外，形成一個絕對的安全關卡。
+
+    舉個例子，我們可以設定一條規則：「任何超過 100 美元的採購，都必須被阻擋」，或者「在代理程式呼叫外部 API 之前，必須跳出視窗，取得真人的明確批准」。這一層提供了可預測、可審計的硬性限制。
+
+*   **第二層防禦，是「基於推理的防禦 (Reasoning-Based Defenses)」**。
+    這很有趣，它的核心思想是「用 AI 來保護 AI」。我們會部署一些小而專精的「守衛模型 (Guard Models)」，它們就像團隊裡的資安分析師。在主要代理程式執行任何計畫之前，這些守衛模型會先審查它的計畫，如果發現任何有風險或違反政策的步驟，就會立刻舉手示警。
+
+總結來說，這種結合了**程式碼的剛性確定性**與 **AI 的情境感知能力**的混合模式，為我們的代理程式打造了一個強大的安全基礎，確保它的強大能力，始終與我們的目標保持一致。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「牽繩」這個比喻後，可以稍微停頓一下，讓聽眾消化這個概念。這個比喻非常直觀，能有效傳達核心矛盾。
+*   **補充案例**：可以強調「守衛模型」就像是另一個代理程式，它的唯一工作就是監督主代理程式，這有助於引出下一頁「多代理程式」的概念。
+*   **轉場橋樑 (Bridge)**：
+    > 好的，我們剛剛討論了如何為「單一」代理程式建立內部的安全護欄。但如果我們公司裡有數十個、數百個代理程式呢？我們該如何管理誰能存取什麼？這就引出了下一個至關重要的議題：代理程式的「身份識別」與「政策執行」。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-21">
+            <div class="slide">
+                <h2>Slide 21</h2>
+                <div class="rendered-content">
+                    <h1>Agent Identity and Policy Enforcement</h1>
+<ul>
+<li><strong>Agents as a New Principal:</strong> An agent is an autonomous actor, not just code. It requires its own verifiable identity, distinct from its user and developer.
+<ul>
+<li><strong>Authentication (AuthN):</strong> Standards like SPIFFE can provide a cryptographically verifiable &quot;digital passport&quot; for each agent.</li>
+</ul>
+</li>
+<li><strong>Principle of Least Privilege:</strong> Once an agent has an identity, it can be granted specific, minimal permissions (e.g., SalesAgent can access the CRM, but HRonboardingAgent cannot).</li>
+<li><strong>Policy Enforcement (AuthZ):</strong> Policies are rules that constrain an agent's capabilities, limiting access to specific tools, data, and other agents to only what is required for its job.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 21</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(21, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(21, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-21" class="note-content rendered-content">
+                    <h3>🎙️ 第 21 頁：Agent_Identity_and_Policy_Enforcement</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>新的安全主體</strong>：AI Agent 是繼「人類使用者」和「服務帳號」之後的第三種安全實體 (Principal)，它需要自己獨立、可驗證的身份。</li>
+<li><strong>最小權限原則</strong>：一旦 Agent 擁有身份，我們就應該只授予它完成任務所必需的最小權限，不多也不少。</li>
+<li><strong>政策強制執行</strong>：透過制定明確的政策 (Policy)，來限制 Agent 能使用的工具、存取的資料以及與之互動的其他 Agent，從而將最小權限原則落到實處。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，我們剛剛討論了如何為單一 Agent 建立防禦機制。但這引出了一個更根本的問題：在我們的資安系統裡，一個 Agent 到底「是誰」？它不是開發者本人，也不是使用它的使用者。那麼，我們該如何識別並管理它呢？</p>
+<p>這就是我們這一頁要談的核心：Agent 的身份與政策。</p>
+<h5>① Agent：一種全新的安全「實體 (Principal)」</h5>
+<p>在傳統的資安模型中，我們通常只處理兩類實體：第一種是<strong>人類使用者</strong>，他們透過 OAuth 或單一登入 (SSO) 進行身份驗證；第二種是<strong>服務帳號</strong>，像是應用程式或容器，它們透過 IAM 系統來驗證身份。</p>
+<p>但 Agent 的出現，創造了全新的第三類實體。</p>
+<blockquote>
+<p>An agent is not merely a piece of code; it is an autonomous actor, a new kind of principal that requires its own verifiable identity.</p>
+</blockquote>
+<p>它是一個代表使用者、被賦予「代理權限」的自主行動者。因此，它必須擁有自己獨立的、可驗證的「數位護照」。像 <strong>SPIFFE</strong> 這樣的開放標準，就是用來提供這種可加密驗證的 Agent 身份的技術。</p>
+<p>簡單來說，我們必須清楚地區分：<strong>是誰在用 Agent</strong> (使用者)、<strong>Agent 本身是誰</strong> (Agent 身份)，以及<strong>運行 Agent 的服務是誰</strong> (服務帳號)。</p>
+<h5>② 最小權限原則 (Principle of Least Privilege)</h5>
+<p>一旦我們能清楚地識別出每一個 Agent 的身份，我們就能實施資安領域最重要的原則之一：<strong>最小權限原則</strong>。</p>
+<p>這概念很簡單：只給予完成工作所必需的權限。</p>
+<p>例如，一個 <strong>SalesAgent</strong> (銷售助理 Agent) 可能需要讀寫 CRM 客戶關係管理系統的權限，但它絕對不應該能碰到人資系統的資料。反過來說，一個 <strong>HRonboardingAgent</strong> (新人入職 Agent) 就不應該有權限去動 CRM 裡的客戶數據。</p>
+<p>透過為每個 Agent 身份精準地配置權限，即使某個 Agent 被駭或行為異常，其可能造成的損害也能被控制在最小範圍內。</p>
+<h5>③ 政策強制執行 (Policy Enforcement, AuthZ)</h5>
+<p>如果說身份驗證 (Authentication, AuthN) 是回答「你是誰？」，那麼授權 (Authorization, AuthZ) 就是回答「你能做什麼？」。而「政策 (Policy)」就是用來定義和執行這些授權規則的工具。</p>
+<p>政策就像是為 Agent 設定的行為準則，它明確規定了：</p>
+<ul>
+<li>這個 Agent <strong>可以</strong>使用哪些工具或 API？</li>
+<li>它<strong>可以</strong>存取哪些內部資料或外部服務？</li>
+<li>它可以和哪些其他的 Agent 進行協作？</li>
+</ul>
+<p>我們的目標，是將前面提到的「最小權限原則」透過這些具體的政策，轉化為系統中可以強制執行的程式碼與設定。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在解釋完「使用者、服務帳號、Agent」這三種實體後，可以稍微停頓一下，讓聽眾消化這個新的分類概念。這是理解 Agent 安全的關鍵。</li>
+<li><strong>補充案例</strong>：可以口頭舉例：「想像一下，如果你的個人助理 Agent 擁有你所有帳號的最高權限，那將是一場災難。這就是為什麼我們需要為它建立一個獨立且受限的身份。」</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>好了，我們現在已經為單一的 Agent 建立了穩固的身份和權限管理基礎。但現實是，一個企業很快就會擁有數十、甚至數百個這樣的 Agent。當 Agent 的數量開始激增，我們該如何避免陷入「Agent  sprawl (無序擴散)」的管理混亂中呢？下一頁，我們將探討如何將安全體系從單一 Agent 擴展到整個企業級的 Agent 機隊。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-21" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 21 頁：Agent_Identity_and_Policy_Enforcement
+
+#### 【本頁重點摘要】
+*   **新的安全主體**：AI Agent 是繼「人類使用者」和「服務帳號」之後的第三種安全實體 (Principal)，它需要自己獨立、可驗證的身份。
+*   **最小權限原則**：一旦 Agent 擁有身份，我們就應該只授予它完成任務所必需的最小權限，不多也不少。
+*   **政策強制執行**：透過制定明確的政策 (Policy)，來限制 Agent 能使用的工具、存取的資料以及與之互動的其他 Agent，從而將最小權限原則落到實處。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，我們剛剛討論了如何為單一 Agent 建立防禦機制。但這引出了一個更根本的問題：在我們的資安系統裡，一個 Agent 到底「是誰」？它不是開發者本人，也不是使用它的使用者。那麼，我們該如何識別並管理它呢？
+
+這就是我們這一頁要談的核心：Agent 的身份與政策。
+
+##### ① Agent：一種全新的安全「實體 (Principal)」
+在傳統的資安模型中，我們通常只處理兩類實體：第一種是**人類使用者**，他們透過 OAuth 或單一登入 (SSO) 進行身份驗證；第二種是**服務帳號**，像是應用程式或容器，它們透過 IAM 系統來驗證身份。
+
+但 Agent 的出現，創造了全新的第三類實體。
+
+> An agent is not merely a piece of code; it is an autonomous actor, a new kind of principal that requires its own verifiable identity.
+
+它是一個代表使用者、被賦予「代理權限」的自主行動者。因此，它必須擁有自己獨立的、可驗證的「數位護照」。像 **SPIFFE** 這樣的開放標準，就是用來提供這種可加密驗證的 Agent 身份的技術。
+
+簡單來說，我們必須清楚地區分：**是誰在用 Agent** (使用者)、**Agent 本身是誰** (Agent 身份)，以及**運行 Agent 的服務是誰** (服務帳號)。
+
+##### ② 最小權限原則 (Principle of Least Privilege)
+一旦我們能清楚地識別出每一個 Agent 的身份，我們就能實施資安領域最重要的原則之一：**最小權限原則**。
+
+這概念很簡單：只給予完成工作所必需的權限。
+
+例如，一個 **SalesAgent** (銷售助理 Agent) 可能需要讀寫 CRM 客戶關係管理系統的權限，但它絕對不應該能碰到人資系統的資料。反過來說，一個 **HRonboardingAgent** (新人入職 Agent) 就不應該有權限去動 CRM 裡的客戶數據。
+
+透過為每個 Agent 身份精準地配置權限，即使某個 Agent 被駭或行為異常，其可能造成的損害也能被控制在最小範圍內。
+
+##### ③ 政策強制執行 (Policy Enforcement, AuthZ)
+如果說身份驗證 (Authentication, AuthN) 是回答「你是誰？」，那麼授權 (Authorization, AuthZ) 就是回答「你能做什麼？」。而「政策 (Policy)」就是用來定義和執行這些授權規則的工具。
+
+政策就像是為 Agent 設定的行為準則，它明確規定了：
+*   這個 Agent **可以**使用哪些工具或 API？
+*   它**可以**存取哪些內部資料或外部服務？
+*   它可以和哪些其他的 Agent 進行協作？
+
+我們的目標，是將前面提到的「最小權限原則」透過這些具體的政策，轉化為系統中可以強制執行的程式碼與設定。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在解釋完「使用者、服務帳號、Agent」這三種實體後，可以稍微停頓一下，讓聽眾消化這個新的分類概念。這是理解 Agent 安全的關鍵。
+*   **補充案例**：可以口頭舉例：「想像一下，如果你的個人助理 Agent 擁有你所有帳號的最高權限，那將是一場災難。這就是為什麼我們需要為它建立一個獨立且受限的身份。」
+*   **轉場橋樑 (Bridge)**：
+    > 好了，我們現在已經為單一的 Agent 建立了穩固的身份和權限管理基礎。但現實是，一個企業很快就會擁有數十、甚至數百個這樣的 Agent。當 Agent 的數量開始激增，我們該如何避免陷入「Agent  sprawl (無序擴散)」的管理混亂中呢？下一頁，我們將探討如何將安全體系從單一 Agent 擴展到整個企業級的 Agent 機隊。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-22">
+            <div class="slide">
+                <h2>Slide 22</h2>
+                <div class="rendered-content">
+                    <h1>Scaling Security to an Enterprise Fleet</h1>
+<p>Scaling from one agent to hundreds requires a higher-order governance layer to manage complexity and prevent &quot;agent sprawl.&quot;</p>
+<ul>
+<li><strong>Central Control Plane:</strong> A gateway that serves as a mandatory entry point for all agentic traffic (user-to-agent, agent-to-tool, agent-to-agent).</li>
+<li><strong>Functions of the Control Plane:</strong>
+<ol>
+<li><strong>Runtime Policy Enforcement:</strong> Centralizes authentication and authorization, providing a &quot;single pane of glass&quot; for observability and auditing.</li>
+<li><strong>Centralized Governance:</strong> A registry or &quot;app store&quot; for agents and tools allows for discovery, reuse, security reviews, and versioning.</li>
+</ol>
+</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 22</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(22, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(22, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-22" class="note-content rendered-content">
+                    <h3>🎙️ 第 22 頁：Scaling_Security_to_an_Enterprise_Fleet</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>當從單一 Agent 擴展到數百個時，會產生「Agent 擴散 (sprawl)」的混亂問題。</li>
+<li>解決方案是建立一個更高層級的治理層，稱為「中央控制平面 (Central Control Plane)」，作為所有 Agent 流量的統一入口。</li>
+<li>此控制平面有兩大核心功能：
+<ol>
+<li><strong>執行時期政策強制 (Runtime Policy Enforcement)</strong>：集中處理認證與授權，提供統一的可觀測性。</li>
+<li><strong>集中化治理 (Centralized Governance)</strong>：建立一個 Agent 與工具的「企業應用商店」，進行探索、複用與版本控制。</li>
+</ol>
+</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們剛剛談完了如何保護單一一個 Agent。這就像是成功訓練了一位頂尖的保鑣。但真正的挑戰在於，當你需要管理一支由數百位保鑣組成的維安團隊時，情況會變得多麽複雜。這就是我們所說的「Agent 擴散 (Agent Sprawl)」。</p>
+<p>想像一下，一個繁忙的大都市裡有成千上萬輛自動駕駛汽車——這些就是我們的使用者、Agent 和工具。如果沒有紅綠燈、沒有車牌、沒有一個中央交通控制系統，結果會是什麼？絕對是一片混亂。</p>
+<h5>① 中央控制平面：Agent 世界的交通樞紐</h5>
+<p>為了解決這個問題，我們需要引入一個更高層級的架構：「中央控制平面」，或稱之為「閘道 (Gateway)」。</p>
+<blockquote>
+<p>這個閘道，就是我們 Agent 大都會的交通控制系統。它建立了一個強制性的入口點，所有 Agent 相關的流量——無論是使用者對 Agent 的請求、Agent 呼叫工具、還是 Agent 之間的協作——都必須經過這裡。</p>
+</blockquote>
+<p>透過在這個關鍵的十字路口進行把關，企業就能夠檢查、路由、監控和管理每一次的互動。</p>
+<h5>② 核心功能一：執行時期政策強制</h5>
+<p>這個控制平面的第一個主要功能，就是作為<strong>執行時期政策的強制點</strong>。</p>
+<p>它就像是城市入口的警衛，負責處理兩件事：</p>
+<ul>
+<li><strong>認證 (Authentication)</strong>：也就是問「你是誰？」</li>
+<li><strong>授權 (Authorization)</strong>：接著問「你有權限做這件事嗎？」</li>
+</ul>
+<p>將所有安全強制措施集中在這裡，最大的好處是提供了一個「單一窗口 (single pane of glass)」來實現全面的<strong>可觀測性</strong>。每一次交易的日誌、指標和追蹤都匯集於此，將原本混亂如義大利麵般的 Agent 工作流程，轉變成一個透明且可稽核的系統。</p>
+<h5>③ 核心功能二：集中化治理</h5>
+<p>當然，光有警衛還不夠，他需要一本規則手冊來決定誰可以做什麼。這就是第二個功能：<strong>集中化治理</strong>。</p>
+<p>為了有效地執行政策，閘道需要一個「真相的來源 (source of truth)」。在我們的架構中，這就是一個<strong>中央註冊庫 (central registry)</strong>。</p>
+<blockquote>
+<p>你可以把它想像成一個專為 Agent 和工具打造的「企業內部應用商店 (enterprise app store)」。</p>
+</blockquote>
+<p>開發人員可以在這裡發現和重複使用現有的資產，避免重複造輪子。而管理者則擁有了一份完整的資產清單。更重要的是，它為 Agent 和工具建立了一個正式的生命週期管理流程，包括：發布前的<strong>安全審查</strong>、<strong>版本控制</strong>，以及制定精細化的政策，來規定哪個業務部門可以存取哪些 Agent。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「大都會與交通控制」這個比喻後，可以稍微停頓一下，讓聽眾消化這個畫面。這個比喻非常關鍵。</li>
+<li><strong>補充案例</strong>：可以強調「企業應用商店」這個概念，這能讓聽眾立刻理解「探索」與「複用」的價值。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>透過結合執行時的閘道和中央治理註冊庫，我們就將混亂擴散的風險，轉變成一個受控、安全且高效的生態系統。但一個城市不會永遠不變，它需要適應環境。那麼，我們如何確保這支龐大的 Agent 團隊，不僅能安全運作，還能不斷學習與進化呢？下一頁，我們就來探討這個問題。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-22" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 22 頁：Scaling_Security_to_an_Enterprise_Fleet
+
+#### 【本頁重點摘要】
+*   當從單一 Agent 擴展到數百個時，會產生「Agent 擴散 (sprawl)」的混亂問題。
+*   解決方案是建立一個更高層級的治理層，稱為「中央控制平面 (Central Control Plane)」，作為所有 Agent 流量的統一入口。
+*   此控制平面有兩大核心功能：
+    1.  **執行時期政策強制 (Runtime Policy Enforcement)**：集中處理認證與授權，提供統一的可觀測性。
+    2.  **集中化治理 (Centralized Governance)**：建立一個 Agent 與工具的「企業應用商店」，進行探索、複用與版本控制。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們剛剛談完了如何保護單一一個 Agent。這就像是成功訓練了一位頂尖的保鑣。但真正的挑戰在於，當你需要管理一支由數百位保鑣組成的維安團隊時，情況會變得多麽複雜。這就是我們所說的「Agent 擴散 (Agent Sprawl)」。
+
+想像一下，一個繁忙的大都市裡有成千上萬輛自動駕駛汽車——這些就是我們的使用者、Agent 和工具。如果沒有紅綠燈、沒有車牌、沒有一個中央交通控制系統，結果會是什麼？絕對是一片混亂。
+
+##### ① 中央控制平面：Agent 世界的交通樞紐
+為了解決這個問題，我們需要引入一個更高層級的架構：「中央控制平面」，或稱之為「閘道 (Gateway)」。
+
+> 這個閘道，就是我們 Agent 大都會的交通控制系統。它建立了一個強制性的入口點，所有 Agent 相關的流量——無論是使用者對 Agent 的請求、Agent 呼叫工具、還是 Agent 之間的協作——都必須經過這裡。
+
+透過在這個關鍵的十字路口進行把關，企業就能夠檢查、路由、監控和管理每一次的互動。
+
+##### ② 核心功能一：執行時期政策強制
+這個控制平面的第一個主要功能，就是作為**執行時期政策的強制點**。
+
+它就像是城市入口的警衛，負責處理兩件事：
+*   **認證 (Authentication)**：也就是問「你是誰？」
+*   **授權 (Authorization)**：接著問「你有權限做這件事嗎？」
+
+將所有安全強制措施集中在這裡，最大的好處是提供了一個「單一窗口 (single pane of glass)」來實現全面的**可觀測性**。每一次交易的日誌、指標和追蹤都匯集於此，將原本混亂如義大利麵般的 Agent 工作流程，轉變成一個透明且可稽核的系統。
+
+##### ③ 核心功能二：集中化治理
+當然，光有警衛還不夠，他需要一本規則手冊來決定誰可以做什麼。這就是第二個功能：**集中化治理**。
+
+為了有效地執行政策，閘道需要一個「真相的來源 (source of truth)」。在我們的架構中，這就是一個**中央註冊庫 (central registry)**。
+
+> 你可以把它想像成一個專為 Agent 和工具打造的「企業內部應用商店 (enterprise app store)」。
+
+開發人員可以在這裡發現和重複使用現有的資產，避免重複造輪子。而管理者則擁有了一份完整的資產清單。更重要的是，它為 Agent 和工具建立了一個正式的生命週期管理流程，包括：發布前的**安全審查**、**版本控制**，以及制定精細化的政策，來規定哪個業務部門可以存取哪些 Agent。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「大都會與交通控制」這個比喻後，可以稍微停頓一下，讓聽眾消化這個畫面。這個比喻非常關鍵。
+*   **補充案例**：可以強調「企業應用商店」這個概念，這能讓聽眾立刻理解「探索」與「複用」的價值。
+*   **轉場橋樑 (Bridge)**：
+    > 透過結合執行時的閘道和中央治理註冊庫，我們就將混亂擴散的風險，轉變成一個受控、安全且高效的生態系統。但一個城市不會永遠不變，它需要適應環境。那麼，我們如何確保這支龐大的 Agent 團隊，不僅能安全運作，還能不斷學習與進化呢？下一頁，我們就來探討這個問題。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-23">
+            <div class="slide">
+                <h2>Slide 23</h2>
+                <div class="rendered-content">
+                    <h1>How Agents Evolve and Learn</h1>
+<p>To avoid performance degradation or &quot;aging,&quot; agents must be designed to learn and adapt autonomously.</p>
+<ul>
+<li><strong>Learning Sources:</strong>
+<ul>
+<li><strong>Runtime Experience:</strong> Session logs, traces, and especially Human-in-the-Loop (HITL) feedback.</li>
+<li><strong>External Signals:</strong> Updated documents, new policies, or critiques from other agents.</li>
+</ul>
+</li>
+<li><strong>Adaptation Techniques:</strong>
+<ul>
+<li><strong>Enhanced Context Engineering:</strong> Continuously refining prompts and retrieved information.</li>
+<li><strong>Tool Optimization and Creation:</strong> Identifying capability gaps and creating new tools (e.g., a Python script) on the fly.</li>
+</ul>
+</li>
+<li><strong>Example:</strong> A compliance agent learns a new data anonymization rule from a human expert's correction and automatically applies it in the future.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 23</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(23, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(23, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-23" class="note-content rendered-content">
+                    <h3>🎙️ 第 23 頁：How_Agents_Evolve_and_Learn</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>為了避免效能衰退或「老化 (aging)」，AI 代理人必須被設計成能夠自主學習與適應。</li>
+<li>學習的來源主要有二：一是來自運作時的經驗，特別是人類的回饋 (HITL)；二是來自外部訊號，如新的政策文件。</li>
+<li>適應的方式包括：優化上下文工程 (如改善提示) 以及動態地創造或改進工具。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們已經建立了一個強大的代理人，但工作還沒有結束。事實上，一個代理人被部署的那一刻，就是它開始「老化」的第一天。如果我們不為它設計學習與進化的能力，它很快就會過時。</p>
+<blockquote>
+<p>在真實世界中運作的代理人，面對的是一個政策、技術和數據格式不斷變化的動態環境。如果沒有適應能力，代理人的表現將隨著時間推移而下降——這個過程通常被稱為「老化 (aging)」——最終導致其效用和信任度的喪失。</p>
+</blockquote>
+<p>那麼，我們該如何讓代理人保持年輕、持續進化呢？答案在於賦予它們學習的能力。</p>
+<h5>① 學習的來源：經驗與訊號</h5>
+<p>代理人主要透過兩種方式來學習。</p>
+<p>第一種是 <strong>運行時的經驗 (Runtime Experience)</strong>。這就像人類從工作中學習一樣。代理人會從它的工作記錄中學習，比如會話日誌、追蹤數據，以及它自己的記憶。但其中最關鍵、最有價值的，就是來自 <strong>人類在環 (Human-in-the-Loop)</strong> 的直接回饋。當一個人類專家介入並修正代理人的行為時，這就成了一個權威性的指導，告訴代理人「下次應該這樣做」。</p>
+<p>第二種是 <strong>外部訊號 (External Signals)</strong>。這包括了公司發布的新政策、政府更新的法規指南，甚至是來自其他代理人的批評與建議。這些都是讓代理人與時俱進的重要資訊來源。</p>
+<h5>② 適應的技術：優化與創造</h5>
+<p>學到了新知識後，代理人需要將其轉化為行動。這主要透過兩種技術來實現。</p>
+<p>第一種是 <strong>強化上下文工程 (Enhanced Context Engineering)</strong>。系統會持續地優化它提供給大腦（也就是語言模型）的資訊，比如改善提示詞、更新小樣本範例，或是從記憶中檢索更精準的資訊，從而提高下一次任務的成功率。</p>
+<p>第二種，也是更強大的一種，是 <strong>工具的優化與創造 (Tool Optimization and Creation)</strong>。這代表代理人能夠意識到自己能力的不足，並主動去彌補。例如，它可能會發現自己需要一個特定的 Python 腳本來完成計算，於是它就 <strong>即時地</strong> 創建並執行這個腳本。這讓代理人從一個工具使用者，進化成了一個工具創造者。</p>
+<h5>③ 實戰案例：懂得新規範的合規代理人</h5>
+<p>讓我們來看一個具體的例子。想像在一個像金融或生命科學這樣受到嚴格監管的行業，我們有一個代理人團隊負責生成報告。</p>
+<p>這個團隊裡有一位 <strong>報告代理人 (Reporting Agent)</strong> 負責撰寫報告草稿，還有一位 <strong>批判代理人 (Critiquing Agent)</strong> 負責根據已知的合規指南來審查報告。</p>
+<p>有一天，批判代理人發現一份報告的內容有點模糊，不確定是否符合最新的隱私規定，於是它將這個問題 <strong>升級</strong> 給一位人類專家。專家審查後指出：「根據新規定，所有關於家庭統計的數據都必須匿名化處理。」</p>
+<p>這時，團隊裡的 <strong>學習代理人 (Learning Agent)</strong> 就會觀察到這次互動，並將人類專家的這個修正，轉化為一條新的、可重複使用的規則。</p>
+<p>下一次，當報告代理人再寫出類似的報告時，批判代理人就會自動應用這條「匿名化」的新規則，不再需要人類的介入。透過這個「批判、人類回饋、歸納學習」的循環，整個系統就自主地適應了不斷變化的合規要求。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「老化 (aging)」這個概念後，可以稍微停頓一下，讓聽眾思考一下這個問題的嚴重性。</li>
+<li><strong>補充案例</strong>：可以提到，除了這兩種適應技術，學術界也正在積極研究更進階的方法，例如從人類回饋中進行強化學習 (RLHF)，或是動態地重組多代理人系統的設計模式。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>這種在職學習非常強大，但如果我們能在一個專門的、安全的環境中加速這種進化過程呢？這就帶我們進入了下一個前沿領域：模擬環境與「代理人健身房 (Agent Gym)」。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-23" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 23 頁：How_Agents_Evolve_and_Learn
+
+#### 【本頁重點摘要】
+*   為了避免效能衰退或「老化 (aging)」，AI 代理人必須被設計成能夠自主學習與適應。
+*   學習的來源主要有二：一是來自運作時的經驗，特別是人類的回饋 (HITL)；二是來自外部訊號，如新的政策文件。
+*   適應的方式包括：優化上下文工程 (如改善提示) 以及動態地創造或改進工具。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們已經建立了一個強大的代理人，但工作還沒有結束。事實上，一個代理人被部署的那一刻，就是它開始「老化」的第一天。如果我們不為它設計學習與進化的能力，它很快就會過時。
+
+> 在真實世界中運作的代理人，面對的是一個政策、技術和數據格式不斷變化的動態環境。如果沒有適應能力，代理人的表現將隨著時間推移而下降——這個過程通常被稱為「老化 (aging)」——最終導致其效用和信任度的喪失。
+
+那麼，我們該如何讓代理人保持年輕、持續進化呢？答案在於賦予它們學習的能力。
+
+##### ① 學習的來源：經驗與訊號
+
+代理人主要透過兩種方式來學習。
+
+第一種是 **運行時的經驗 (Runtime Experience)**。這就像人類從工作中學習一樣。代理人會從它的工作記錄中學習，比如會話日誌、追蹤數據，以及它自己的記憶。但其中最關鍵、最有價值的，就是來自 **人類在環 (Human-in-the-Loop)** 的直接回饋。當一個人類專家介入並修正代理人的行為時，這就成了一個權威性的指導，告訴代理人「下次應該這樣做」。
+
+第二種是 **外部訊號 (External Signals)**。這包括了公司發布的新政策、政府更新的法規指南，甚至是來自其他代理人的批評與建議。這些都是讓代理人與時俱進的重要資訊來源。
+
+##### ② 適應的技術：優化與創造
+
+學到了新知識後，代理人需要將其轉化為行動。這主要透過兩種技術來實現。
+
+第一種是 **強化上下文工程 (Enhanced Context Engineering)**。系統會持續地優化它提供給大腦（也就是語言模型）的資訊，比如改善提示詞、更新小樣本範例，或是從記憶中檢索更精準的資訊，從而提高下一次任務的成功率。
+
+第二種，也是更強大的一種，是 **工具的優化與創造 (Tool Optimization and Creation)**。這代表代理人能夠意識到自己能力的不足，並主動去彌補。例如，它可能會發現自己需要一個特定的 Python 腳本來完成計算，於是它就 **即時地** 創建並執行這個腳本。這讓代理人從一個工具使用者，進化成了一個工具創造者。
+
+##### ③ 實戰案例：懂得新規範的合規代理人
+
+讓我們來看一個具體的例子。想像在一個像金融或生命科學這樣受到嚴格監管的行業，我們有一個代理人團隊負責生成報告。
+
+這個團隊裡有一位 **報告代理人 (Reporting Agent)** 負責撰寫報告草稿，還有一位 **批判代理人 (Critiquing Agent)** 負責根據已知的合規指南來審查報告。
+
+有一天，批判代理人發現一份報告的內容有點模糊，不確定是否符合最新的隱私規定，於是它將這個問題 **升級** 給一位人類專家。專家審查後指出：「根據新規定，所有關於家庭統計的數據都必須匿名化處理。」
+
+這時，團隊裡的 **學習代理人 (Learning Agent)** 就會觀察到這次互動，並將人類專家的這個修正，轉化為一條新的、可重複使用的規則。
+
+下一次，當報告代理人再寫出類似的報告時，批判代理人就會自動應用這條「匿名化」的新規則，不再需要人類的介入。透過這個「批判、人類回饋、歸納學習」的循環，整個系統就自主地適應了不斷變化的合規要求。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「老化 (aging)」這個概念後，可以稍微停頓一下，讓聽眾思考一下這個問題的嚴重性。
+*   **補充案例**：可以提到，除了這兩種適應技術，學術界也正在積極研究更進階的方法，例如從人類回饋中進行強化學習 (RLHF)，或是動態地重組多代理人系統的設計模式。
+*   **轉場橋樑 (Bridge)**：
+    > 這種在職學習非常強大，但如果我們能在一個專門的、安全的環境中加速這種進化過程呢？這就帶我們進入了下一個前沿領域：模擬環境與「代理人健身房 (Agent Gym)」。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-24">
+            <div class="slide">
+                <h2>Slide 24</h2>
+                <div class="rendered-content">
+                    <h1>Simulation and Agent Gym: The Next Frontier</h1>
+<p>An <strong>Agent Gym</strong> is a dedicated, offline platform for optimizing multi-agent systems.</p>
+<ul>
+<li><strong>Key Attributes:</strong>
+<ol>
+<li><strong>Off-Production:</strong> Operates outside the live execution path, allowing for extensive testing.</li>
+<li><strong>Simulation Environment:</strong> Lets agents &quot;exercise&quot; on new data and learn through trial-and-error.</li>
+<li><strong>Synthetic Data Generation:</strong> Pressure-tests agents with realistic and adversarial scenarios.</li>
+<li><strong>Extensible Tooling:</strong> Can adopt new optimization tools as they become available.</li>
+<li><strong>Human-in-the-Loop:</strong> Connects to human domain experts to guide optimization for complex &quot;tribal knowledge&quot; scenarios.</li>
+</ol>
+</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 24</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(24, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(24, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-24" class="note-content rendered-content">
+                    <h3>🎙️ 第 24 頁：Simulation_and_Agent_Gym_The_Next_Frontier</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>Agent Gym 的定義</strong>：一個專門用來「離線」訓練和優化多代理系統的平台，如同 AI 的健身房或飛行模擬器。</li>
+<li><strong>核心功能</strong>：透過模擬環境、合成數據和可擴展的工具集，讓代理程式在安全的沙箱中進行試錯學習與壓力測試。</li>
+<li><strong>人機協作</strong>：當遇到僅靠數據無法解決的「部落知識」時，Agent Gym 能夠主動連接人類領域專家，尋求指導。</li>
+<li><strong>最終目標</strong>：在不影響線上服務的前提下，系統性地提升代理程式的性能、韌性和智慧。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+到目前為止，我們討論了代理程式如何在工作中「即時」學習。但這就像邊開飛機邊修引擎，總有些風險。那麼，如果我們能為 AI 建立一個專屬的「飛行模擬器」呢？這就是我們接下來要談的下一個前沿領域：<strong>模擬與代理健身房 (Simulation and Agent Gym)</strong>。</p>
+<blockquote>
+<p>Agent Gym 是一個專門設計的、完全離線的平台，它的唯一目的，就是在不干擾實際營運的情況下，讓我們的多代理系統變得更強大、更聰明。</p>
+</blockquote>
+<p>這座「健身房」有五個非常關鍵的特性：</p>
+<h5>① 首先，它是「離線運作 (Off-Production)」的。</h5>
+<p>這意味著它完全獨立於我們正在運行的生產環境。我們可以在這個沙箱裡進行各種極端的測試，使用任何我們想用的模型或工具，而不用擔心會弄亂線上的服務。這是一個<strong>零風險的訓練場</strong>。</p>
+<h5>② 其次，它提供了一個「模擬環境 (Simulation Environment)」。</h5>
+<p>這就像給代理程式一個可以盡情「鍛鍊」的虛擬世界。它可以在這裡處理新的數據、透過大量的<strong>反覆試錯</strong>來學習，而不會產生任何真實世界的後果。這是最高效的學習方式之一。</p>
+<h5>③ 第三，它能「生成高階的合成數據 (Synthetic Data Generation)」。</h5>
+<p>這個健身房不只是提供普通的訓練數據，它還能創造出極度真實、甚至帶有敵意的場景來對代理程式進行<strong>壓力測試</strong>。這包括了像是「紅隊演練 (red-teaming)」或動態評估等高級技術，目的就是要找出代理程式的極限和弱點。</p>
+<h5>④ 第四，它的「工具集是可擴展的 (Extensible Tooling)」。</h5>
+<p>這個健身房的工具庫不是固定的。它可以隨著時間的推移，學習並<strong>採納新的工具</strong>，甚至可以圍繞一個全新的概念，自己創造出新的工具。這讓它的優化能力能夠不斷進化。</p>
+<h5>⑤ 最後，也是最重要的一點，它懂得「與人互動 (Human-in-the-Loop)」。</h5>
+<p>企業中總有一些問題，是數據和文件裡找不到答案的，我們稱之為「部落知識 (tribal knowledge)」。當 Agent Gym 遇到這種棘手的邊界案例時，它不會卡住，而是會主動去<strong>諮詢人類的領域專家</strong>，尋求指導，然後將這些專家的智慧融入到下一輪的優化中。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講完「部落知識」後，可以稍微停頓一下，讓聽眾思考一下這個概念——AI 主動向人類請教，這是一個非常強大的協作模式。</li>
+<li><strong>補充案例</strong>：可以口頭補充：「這正是目前最頂尖的 AI 系統，如 AlphaGo 或更複雜的科學研究代理，所採用的訓練模式——在投入實戰前，進行數百萬次的模擬對抗與優化。」</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了這個先進的訓練理論後，大家可能會好奇，真實世界中到底有沒有這樣強大的代理系統？答案是肯定的。下一頁，我們就來看一個令人驚嘆的實際案例：<strong>Google 的 Co-Scientist</strong>，一個被設計用來加速科學發現的虛擬研究夥伴。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-24" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 24 頁：Simulation_and_Agent_Gym_The_Next_Frontier
+
+#### 【本頁重點摘要】
+*   **Agent Gym 的定義**：一個專門用來「離線」訓練和優化多代理系統的平台，如同 AI 的健身房或飛行模擬器。
+*   **核心功能**：透過模擬環境、合成數據和可擴展的工具集，讓代理程式在安全的沙箱中進行試錯學習與壓力測試。
+*   **人機協作**：當遇到僅靠數據無法解決的「部落知識」時，Agent Gym 能夠主動連接人類領域專家，尋求指導。
+*   **最終目標**：在不影響線上服務的前提下，系統性地提升代理程式的性能、韌性和智慧。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+到目前為止，我們討論了代理程式如何在工作中「即時」學習。但這就像邊開飛機邊修引擎，總有些風險。那麼，如果我們能為 AI 建立一個專屬的「飛行模擬器」呢？這就是我們接下來要談的下一個前沿領域：**模擬與代理健身房 (Simulation and Agent Gym)**。
+
+> Agent Gym 是一個專門設計的、完全離線的平台，它的唯一目的，就是在不干擾實際營運的情況下，讓我們的多代理系統變得更強大、更聰明。
+
+這座「健身房」有五個非常關鍵的特性：
+
+##### ① 首先，它是「離線運作 (Off-Production)」的。
+這意味著它完全獨立於我們正在運行的生產環境。我們可以在這個沙箱裡進行各種極端的測試，使用任何我們想用的模型或工具，而不用擔心會弄亂線上的服務。這是一個**零風險的訓練場**。
+
+##### ② 其次，它提供了一個「模擬環境 (Simulation Environment)」。
+這就像給代理程式一個可以盡情「鍛鍊」的虛擬世界。它可以在這裡處理新的數據、透過大量的**反覆試錯**來學習，而不會產生任何真實世界的後果。這是最高效的學習方式之一。
+
+##### ③ 第三，它能「生成高階的合成數據 (Synthetic Data Generation)」。
+這個健身房不只是提供普通的訓練數據，它還能創造出極度真實、甚至帶有敵意的場景來對代理程式進行**壓力測試**。這包括了像是「紅隊演練 (red-teaming)」或動態評估等高級技術，目的就是要找出代理程式的極限和弱點。
+
+##### ④ 第四，它的「工具集是可擴展的 (Extensible Tooling)」。
+這個健身房的工具庫不是固定的。它可以隨著時間的推移，學習並**採納新的工具**，甚至可以圍繞一個全新的概念，自己創造出新的工具。這讓它的優化能力能夠不斷進化。
+
+##### ⑤ 最後，也是最重要的一點，它懂得「與人互動 (Human-in-the-Loop)」。
+企業中總有一些問題，是數據和文件裡找不到答案的，我們稱之為「部落知識 (tribal knowledge)」。當 Agent Gym 遇到這種棘手的邊界案例時，它不會卡住，而是會主動去**諮詢人類的領域專家**，尋求指導，然後將這些專家的智慧融入到下一輪的優化中。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講完「部落知識」後，可以稍微停頓一下，讓聽眾思考一下這個概念——AI 主動向人類請教，這是一個非常強大的協作模式。
+*   **補充案例**：可以口頭補充：「這正是目前最頂尖的 AI 系統，如 AlphaGo 或更複雜的科學研究代理，所採用的訓練模式——在投入實戰前，進行數百萬次的模擬對抗與優化。」
+*   **轉場橋樑 (Bridge)**：
+    > 了解了這個先進的訓練理論後，大家可能會好奇，真實世界中到底有沒有這樣強大的代理系統？答案是肯定的。下一頁，我們就來看一個令人驚嘆的實際案例：**Google 的 Co-Scientist**，一個被設計用來加速科學發現的虛擬研究夥伴。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-25">
+            <div class="slide">
+                <h2>Slide 25</h2>
+                <div class="rendered-content">
+                    <h1>Example: Google Co-Scientist</h1>
+<ul>
+<li><strong>Function:</strong> An advanced AI agent designed to be a virtual research collaborator, accelerating scientific discovery.</li>
+<li><strong>Process:</strong>
+<ol>
+<li>A broad research goal is defined and grounded in specified knowledge sources.</li>
+<li>A &quot;Supervisor&quot; agent acts as a project manager, creating a detailed plan.</li>
+<li>The Supervisor delegates tasks to a team of specialized agents.</li>
+<li>The agents collaborate, sometimes for days, to generate, evaluate, and refine novel hypotheses, improving both the ideas and the process for creating them.</li>
+</ol>
+</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 25</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(25, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(25, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-25" class="note-content rendered-content">
+                    <h3>🎙️ 第 25 頁：範例：Google Co-Scientist</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>核心功能</strong>：Google Co-Scientist 是一個先進的 AI 代理人，其設計宗旨在於擔任虛擬的研究協作者，以加速科學發現的進程。</li>
+<li><strong>運作模式</strong>：它採用一個「總監-專家團隊」的多代理人架構。由一個「總監 (Supervisor)」代理人擔任專案經理，將宏觀的研究目標拆解成詳細計畫，再分派給眾多「專家」代理人執行。</li>
+<li><strong>持續進化</strong>：這個系統不僅僅是執行任務，它會持續運作數小時甚至數天，透過不斷的循環與後設循環 (meta loops)，不僅優化產出的假說，更會改進系統本身「評估與創造新想法」的方法。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好的，我們前面探討了許多關於代理人系統的理論與架構，從 Level 0 一路談到了 Level 3 的協作系統。現在，讓我們來看一個真正令人震撼的實際案例：Google 的「Co-Scientist」，它完美地展示了一個高度協作的代理人團隊是如何運作的。</p>
+<h5>① 什麼是 Co-Scientist？</h5>
+<p>簡單來說，Co-Scientist 是一個被設計來<strong>加速科學發現</strong>的虛擬研究夥伴。它的起點很簡單：一位人類研究員提出一個宏大的研究目標，並為它提供相關的知識基礎，這可以包含公開的研究論文，也可以是企業內部的專有數據。</p>
+<p>從這裡開始，Co-Scientist 就接手了。它的目標，就是系統性地去探索一個複雜的問題空間，然後產生並評估大量新穎的科學假說。</p>
+<h5>② 如同研究室主管的「總監代理人」</h5>
+<p>這個系統最核心的設計，就是它會<strong>生成一個完整的代理人生態系</strong>來分工合作。</p>
+<p>你可以把這個系統想像成一個頂尖的研究專案經理。當它收到研究目標後，一個被稱為「總監 (Supervisor)」的代理人會首先介入。它的工作是：</p>
+<ol>
+<li><strong>制定詳細計畫</strong>：將模糊的目標轉化為具體的、可執行的步驟。</li>
+<li><strong>委派任務</strong>：接著，它會像一位實驗室主管一樣，將這些子任務分派給一個由眾多「專家代理人」組成的團隊。</li>
+<li><strong>分配資源</strong>：更重要的是，它還會負責分配運算能力等關鍵資源給這些專家。</li>
+</ol>
+<p>這種架構確保了整個研究專案可以輕易地擴展，並且讓整個團隊在朝著最終目標前進的過程中，方法論本身也能不斷進步。</p>
+<h5>③ 不只產出答案，更優化「思考方式」</h5>
+<p>這整個過程最驚人的部分在於，它不是一次性的。這些代理人團隊會持續工作<strong>數小時，甚至數天</strong>。</p>
+<p>它們會不斷地運行「循環」與「後設循環 (meta loops)」。這代表著，它們不僅僅是在優化產出的科學假說本身。</p>
+<blockquote>
+<p>Co-Scientist 的代理人團隊，同時也在改進它們<strong>判斷與創造新想法的方式</strong>。</p>
+</blockquote>
+<p>換句話說，這個系統不只是一個執行者，它是一個會學習如何學習、會思考如何思考的「自我進化創造引擎」。它在解決問題的同時，也在讓自己變得更聰明。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在解釋「後設循環 (meta loops)」以及系統會「改進創造新想法的方式」時，可以稍微停頓一下。這是本頁最關鍵、最震撼的概念，給聽眾一點時間去消化它的深遠意涵。</li>
+<li><strong>補充比喻</strong>：可以將「總監代理人」比喻為一位頂尖大學的教授，而「專家代理人」則像是他手下的博士生團隊，每個人都在各自的領域深度鑽研，共同推進一個重大的研究專案。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>Co-Scientist 向我們展示了，代理人團隊如何協作來解決複雜的「科學研究」問題。但如果我們的目標不是尋找科學答案，而是要發現一種全新的、更有效率的「演算法」呢？這就帶我們進入下一個驚人的範例：AlphaEvolve。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-25" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 25 頁：範例：Google Co-Scientist
+
+#### 【本頁重點摘要】
+*   **核心功能**：Google Co-Scientist 是一個先進的 AI 代理人，其設計宗旨在於擔任虛擬的研究協作者，以加速科學發現的進程。
+*   **運作模式**：它採用一個「總監-專家團隊」的多代理人架構。由一個「總監 (Supervisor)」代理人擔任專案經理，將宏觀的研究目標拆解成詳細計畫，再分派給眾多「專家」代理人執行。
+*   **持續進化**：這個系統不僅僅是執行任務，它會持續運作數小時甚至數天，透過不斷的循環與後設循環 (meta loops)，不僅優化產出的假說，更會改進系統本身「評估與創造新想法」的方法。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好的，我們前面探討了許多關於代理人系統的理論與架構，從 Level 0 一路談到了 Level 3 的協作系統。現在，讓我們來看一個真正令人震撼的實際案例：Google 的「Co-Scientist」，它完美地展示了一個高度協作的代理人團隊是如何運作的。
+
+##### ① 什麼是 Co-Scientist？
+簡單來說，Co-Scientist 是一個被設計來**加速科學發現**的虛擬研究夥伴。它的起點很簡單：一位人類研究員提出一個宏大的研究目標，並為它提供相關的知識基礎，這可以包含公開的研究論文，也可以是企業內部的專有數據。
+
+從這裡開始，Co-Scientist 就接手了。它的目標，就是系統性地去探索一個複雜的問題空間，然後產生並評估大量新穎的科學假說。
+
+##### ② 如同研究室主管的「總監代理人」
+這個系統最核心的設計，就是它會**生成一個完整的代理人生態系**來分工合作。
+
+你可以把這個系統想像成一個頂尖的研究專案經理。當它收到研究目標後，一個被稱為「總監 (Supervisor)」的代理人會首先介入。它的工作是：
+1.  **制定詳細計畫**：將模糊的目標轉化為具體的、可執行的步驟。
+2.  **委派任務**：接著，它會像一位實驗室主管一樣，將這些子任務分派給一個由眾多「專家代理人」組成的團隊。
+3.  **分配資源**：更重要的是，它還會負責分配運算能力等關鍵資源給這些專家。
+
+這種架構確保了整個研究專案可以輕易地擴展，並且讓整個團隊在朝著最終目標前進的過程中，方法論本身也能不斷進步。
+
+##### ③ 不只產出答案，更優化「思考方式」
+這整個過程最驚人的部分在於，它不是一次性的。這些代理人團隊會持續工作**數小時，甚至數天**。
+
+它們會不斷地運行「循環」與「後設循環 (meta loops)」。這代表著，它們不僅僅是在優化產出的科學假說本身。
+
+> Co-Scientist 的代理人團隊，同時也在改進它們**判斷與創造新想法的方式**。
+
+換句話說，這個系統不只是一個執行者，它是一個會學習如何學習、會思考如何思考的「自我進化創造引擎」。它在解決問題的同時，也在讓自己變得更聰明。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在解釋「後設循環 (meta loops)」以及系統會「改進創造新想法的方式」時，可以稍微停頓一下。這是本頁最關鍵、最震撼的概念，給聽眾一點時間去消化它的深遠意涵。
+*   **補充比喻**：可以將「總監代理人」比喻為一位頂尖大學的教授，而「專家代理人」則像是他手下的博士生團隊，每個人都在各自的領域深度鑽研，共同推進一個重大的研究專案。
+*   **轉場橋樑 (Bridge)**：
+    > Co-Scientist 向我們展示了，代理人團隊如何協作來解決複雜的「科學研究」問題。但如果我們的目標不是尋找科學答案，而是要發現一種全新的、更有效率的「演算法」呢？這就帶我們進入下一個驚人的範例：AlphaEvolve。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-26">
+            <div class="slide">
+                <h2>Slide 26</h2>
+                <div class="rendered-content">
+                    <h1>Example: AlphaEvolve</h1>
+<ul>
+<li><strong>Function:</strong> An AI agent that discovers and optimizes complex algorithms in fields like mathematics and computer science.</li>
+<li><strong>Process: Evolutionary Partnership</strong>
+<ol>
+<li><strong>Generate:</strong> The AI generates potential solutions as human-readable code.</li>
+<li><strong>Evaluate:</strong> An automated evaluator scores the solutions.</li>
+<li><strong>Evolve:</strong> The most promising ideas are used as inspiration for the next generation of code.</li>
+</ol>
+</li>
+<li><strong>Human-AI Collaboration:</strong> Experts guide the AI by defining the problem and refining evaluation metrics, ensuring the final solutions are both powerful and practical.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 26</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(26, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(26, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-26" class="note-content rendered-content">
+                    <h3>🎙️ 第 26 頁：Example_of_Advanced_Agents_AlphaEvolve</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>AlphaEvolve 是一個能自主發現並優化複雜演算法的 AI 代理人，專注於數學與電腦科學領域。</li>
+<li>其核心流程是「演化式夥伴關係」：透過「生成程式碼、評估優劣、再進化」的循環，持續迭代出更優秀的解決方案。</li>
+<li>人類專家的角色至關重要，負責定義問題與評估指標，引導 AI 走向實用且強大的解決方案，防止 AI 鑽漏洞。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白，用一個引人入勝的問題開始)</p>
+<p>在看過 Co-Scientist 如何像一個研究團隊一樣探索科學之後，我們來看另一個更驚人的例子。如果一個 AI 不僅能解決問題，甚至能「發明」出更佳的解法呢？這就是 <strong>AlphaEvolve</strong> 的世界。</p>
+<h5>① 什麼是 AlphaEvolve？</h5>
+<p>簡單來說，AlphaEvolve 是一個專門在數學和電腦科學等複雜領域，<strong>自主探索並優化演算法</strong>的 AI 代理人。它的目標不是單純地執行任務，而是去創造出執行任務的、更聰明、更有效率的<strong>方法</strong>。</p>
+<h5>② 它的運作方式：程式碼的演化論</h5>
+<p>它的核心是一個非常迷人的概念，稱為<strong>演化式夥伴關係</strong>。這就像是達爾文的演化論，但是應用在程式碼上。</p>
+<p>過程是這樣的：</p>
+<ol>
+<li>首先，AI 會利用像 Gemini 這樣模型的創造力，<strong>生成 (Generate)</strong> 解決問題的潛在方案，而且是人類可以閱讀的程式碼。</li>
+<li>接著，一個自動化的<strong>評估系統 (Evaluate)</strong> 會為這些方案的品質打分數。</li>
+<li>最後，系統會淘汰表現不好的方案，並讓最高分的方案進行<strong>演化 (Evolve)</strong>——也就是把它們當作靈感，去創造下一代、更優秀的程式碼。</li>
+</ol>
+<p>這個「生成、評估、演化」的循環會不斷重複，每一代都比上一代更強。</p>
+<blockquote>
+<p>AlphaEvolve 特別擅長解決那些「驗證一個解法的好壞相對容易，但要從零開始找到那個解法卻極其困難」的問題。</p>
+</blockquote>
+<h5>③ 人類與 AI 的完美協作</h5>
+<p>但這並不是讓 AI 盲目地自己演化。<strong>人類專家</strong>在這裡扮演了不可或缺的「領航員」角色。</p>
+<p>專家的任務是<strong>定義問題</strong>，並且更重要的是，<strong>設定評估指標</strong>——也就是告訴 AI，「什麼才算是好的結果」。這種引導至關重要，因為它能防止系統為了衝高分數而<strong>利用規則的漏洞</strong>，找到一些理論上可行但實際上沒用的方案。</p>
+<p>而且，因為 AI 產出的是人類能讀懂的程式碼，這大大增加了<strong>透明度與信任感</strong>，也讓我們可以直接修改或整合它的成果。這是一種深度的人機合作。</p>
+<h5>④ 驚人的成果</h5>
+<p>這聽起來可能很未來，但 AlphaEvolve 已經取得了實質性的突破。例如，它<strong>改進了 Google 資料中心、晶片設計和 AI 訓練的效率</strong>，甚至還<strong>發現了比人類幾十年來所知的更快的矩陣乘法演算法</strong>。這些都是它能力的最好證明。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在解釋完「生成、評估、演化」這個循環後，可以稍微停頓，讓聽眾消化這個類似「程式碼自然選擇」的強大概念。</li>
+<li><strong>補充案例</strong>：可以強調「發現新的矩陣乘法演算法」這一點，因為這是一個數學領域長期以來的重大挑戰，更能凸顯 AlphaEvolve 的顛覆性潛力。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>從 Co-Scientist 探索科學新知，到 AlphaEvolve 優化我們世界的底層邏輯，我們看到了 AI 代理人已經從單純的執行者，演變為真正的創造者與合作夥伴。接下來，讓我們總結今天的所有內容，並展望這項技術的未來。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-26" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 26 頁：Example_of_Advanced_Agents_AlphaEvolve
+
+#### 【本頁重點摘要】
+*   AlphaEvolve 是一個能自主發現並優化複雜演算法的 AI 代理人，專注於數學與電腦科學領域。
+*   其核心流程是「演化式夥伴關係」：透過「生成程式碼、評估優劣、再進化」的循環，持續迭代出更優秀的解決方案。
+*   人類專家的角色至關重要，負責定義問題與評估指標，引導 AI 走向實用且強大的解決方案，防止 AI 鑽漏洞。
+
+---
+
+#### 【逐字講稿】
+
+(開場白，用一個引人入勝的問題開始)
+
+在看過 Co-Scientist 如何像一個研究團隊一樣探索科學之後，我們來看另一個更驚人的例子。如果一個 AI 不僅能解決問題，甚至能「發明」出更佳的解法呢？這就是 **AlphaEvolve** 的世界。
+
+##### ① 什麼是 AlphaEvolve？
+簡單來說，AlphaEvolve 是一個專門在數學和電腦科學等複雜領域，**自主探索並優化演算法**的 AI 代理人。它的目標不是單純地執行任務，而是去創造出執行任務的、更聰明、更有效率的**方法**。
+
+##### ② 它的運作方式：程式碼的演化論
+它的核心是一個非常迷人的概念，稱為**演化式夥伴關係**。這就像是達爾文的演化論，但是應用在程式碼上。
+
+過程是這樣的：
+1.  首先，AI 會利用像 Gemini 這樣模型的創造力，**生成 (Generate)** 解決問題的潛在方案，而且是人類可以閱讀的程式碼。
+2.  接著，一個自動化的**評估系統 (Evaluate)** 會為這些方案的品質打分數。
+3.  最後，系統會淘汰表現不好的方案，並讓最高分的方案進行**演化 (Evolve)**——也就是把它們當作靈感，去創造下一代、更優秀的程式碼。
+
+這個「生成、評估、演化」的循環會不斷重複，每一代都比上一代更強。
+
+> AlphaEvolve 特別擅長解決那些「驗證一個解法的好壞相對容易，但要從零開始找到那個解法卻極其困難」的問題。
+
+##### ③ 人類與 AI 的完美協作
+但這並不是讓 AI 盲目地自己演化。**人類專家**在這裡扮演了不可或缺的「領航員」角色。
+
+專家的任務是**定義問題**，並且更重要的是，**設定評估指標**——也就是告訴 AI，「什麼才算是好的結果」。這種引導至關重要，因為它能防止系統為了衝高分數而**利用規則的漏洞**，找到一些理論上可行但實際上沒用的方案。
+
+而且，因為 AI 產出的是人類能讀懂的程式碼，這大大增加了**透明度與信任感**，也讓我們可以直接修改或整合它的成果。這是一種深度的人機合作。
+
+##### ④ 驚人的成果
+這聽起來可能很未來，但 AlphaEvolve 已經取得了實質性的突破。例如，它**改進了 Google 資料中心、晶片設計和 AI 訓練的效率**，甚至還**發現了比人類幾十年來所知的更快的矩陣乘法演算法**。這些都是它能力的最好證明。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在解釋完「生成、評估、演化」這個循環後，可以稍微停頓，讓聽眾消化這個類似「程式碼自然選擇」的強大概念。
+*   **補充案例**：可以強調「發現新的矩陣乘法演算法」這一點，因為這是一個數學領域長期以來的重大挑戰，更能凸顯 AlphaEvolve 的顛覆性潛力。
+*   **轉場橋樑 (Bridge)**：
+    > 從 Co-Scientist 探索科學新知，到 AlphaEvolve 優化我們世界的底層邏輯，我們看到了 AI 代理人已經從單純的執行者，演變為真正的創造者與合作夥伴。接下來，讓我們總結今天的所有內容，並展望這項技術的未來。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-27">
+            <div class="slide">
+                <h2>Slide 27</h2>
+                <div class="rendered-content">
+                    <h1>Conclusion and Future Outlook</h1>
+<ul>
+<li><strong>Pivotal Evolution:</strong> Agents mark a shift from AI as a passive tool to an active, autonomous partner in problem-solving.</li>
+<li><strong>Architectural Core:</strong> Success relies on the seamless integration of the Model, Tools, and Orchestration Layer operating in a continuous &quot;Think, Act, Observe&quot; loop.</li>
+<li><strong>A New Developer Paradigm:</strong> The developer's role evolves from &quot;bricklayer&quot; to &quot;director,&quot; responsible for guiding, constraining, and debugging an autonomous entity.</li>
+<li><strong>Engineering Rigor is Key:</strong> True power is unlocked not by the prompt alone, but by robust tool contracts, resilient error handling, sophisticated context management, and comprehensive evaluation.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 27</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(27, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(27, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-27" class="note-content rendered-content">
+                    <h3>🎙️ 第 27 頁：Conclusion_and_Future_Outlook</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>關鍵演進</strong>：AI 代理（Agent）標誌著人工智慧從被動的內容生成工具，演變為主動、自主解決問題的合作夥伴。</li>
+<li><strong>核心架構</strong>：成功的代理系統，建立在「模型（大腦）」、「工具（雙手）」與「協同層（神經系統）」的無縫整合之上，並透過「思考、行動、觀察」的循環來運作。</li>
+<li><strong>開發者新範式</strong>：開發者的角色從過去精確定義每一步邏輯的「砌磚工」，轉變為負責引導、約束和偵錯自主實體的「導演」。</li>
+<li><strong>工程嚴謹性的重要</strong>：真正的力量並非來自單一的提示（Prompt），而是來自整個系統的工程嚴謹性，包含工具、錯誤處理、情境管理與綜合評估。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，我們走到了這次分享的終點。今天，我們一起探索了生成式 AI 的下一個篇章——一個從被動預測轉向主動執行的時代。這不僅僅是技術的升級，這是一場根本性的演變。</p>
+<h5>① 關鍵的演進：從工具到夥伴</h5>
+<p>首先，請記住這個最重要的轉變：AI 代理（Agent）的出現，代表 AI 不再只是一個等待指令的被動工具。過去，我們讓它寫文案、翻譯、畫圖；現在，我們賦予它目標，讓它成為一個能自主規劃、解決問題的「主動夥伴」。這就像從擁有一本百科全書，進化到擁有一位能運用書中所有知識去完成任務的專家。</p>
+<h5>② 成功的核心：大腦、雙手與神經系統</h5>
+<p>而打造這位專家的秘訣，就在於我們今天反覆強調的核心架構。成功的關鍵，來自於三個部分的無縫整合：</p>
+<ul>
+<li>強大的<strong>模型 (Model)</strong>，作為代理的「大腦」，負責推理與決策。</li>
+<li>實用的<strong>工具 (Tools)</strong>，作為代理的「雙手」，讓它能與真實世界互動、執行任務。</li>
+<li>以及高效的<strong>協同層 (Orchestration Layer)</strong>，作為「神經系統」，串連起大腦與雙手，在「思考、行動、觀察」這個永不停止的循環中，驅動代理完成使命。</li>
+</ul>
+<blockquote>
+<p>這套「思考、行動、觀察」的循環，正是將 AI 的智慧轉化為實際成果的引擎。</p>
+</blockquote>
+<h5>③ 開發者的新角色：從砌磚工到導演</h5>
+<p>這個新時代，也徹底改變了我們開發者的角色。我們不再是傳統意義上的「砌磚工」，不再需要為每一個邏輯步驟編寫精確的程式碼。</p>
+<blockquote>
+<p>我們的角色，更像是一位「導演」。</p>
+</blockquote>
+<p>我們的工作是設定場景（也就是給予指令與世界觀）、挑選演員（選擇合適的模型與工具）、並提供劇本（也就是關鍵的上下文與數據）。我們的核心任務，變成了如何去<strong>引導、約束、並偵錯</strong>這個擁有自主能力的「演員」，確保它能完美地演出我們期望的成果。</p>
+<h5>④ 成功的關鍵：超越提示的工程嚴謹性</h5>
+<p>最後，也是最重要的一點：一個強大代理的成功，<strong>絕不僅僅取決於一個巧妙的提示 (Prompt)</strong>。</p>
+<p>真正的力量，來自於整個系統的<strong>工程嚴謹性</strong>。這包括：</p>
+<ul>
+<li><strong>穩健的工具接口</strong>：確保代理的「雙手」強而有力。</li>
+<li><strong>彈性的錯誤處理</strong>：讓代理在遇到挫折時能自我修正。</li>
+<li><strong>精密的上下文管理</strong>：確保代理在正確的「記憶」下做決策。</li>
+<li><strong>以及全面的評估體系</strong>：讓我們能客觀地衡量它的表現，並持續優化。</li>
+</ul>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講到這裡，語氣可以更加坚定有力，帶著總結與展望的氣勢。這是整場演說的最高潮與收尾。</li>
+<li><strong>補充案例</strong>：可以簡單提及前面介紹的 Google Co-Scientist 或 AlphaEvolve，作為「這一切不只是理論，而是正在發生的未來」的有力證明。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>我們已經為大家描繪了打造自主代理的藍圖。這不僅是軟體的下一個前沿，更是我們與智慧系統協作方式的未來。現在，這份藍圖就在各位手中，是時候開始打造屬於你們自己的、能夠改變世界的 AI 代理了。謝謝大家！</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-27" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 27 頁：Conclusion_and_Future_Outlook
+
+#### 【本頁重點摘要】
+*   **關鍵演進**：AI 代理（Agent）標誌著人工智慧從被動的內容生成工具，演變為主動、自主解決問題的合作夥伴。
+*   **核心架構**：成功的代理系統，建立在「模型（大腦）」、「工具（雙手）」與「協同層（神經系統）」的無縫整合之上，並透過「思考、行動、觀察」的循環來運作。
+*   **開發者新範式**：開發者的角色從過去精確定義每一步邏輯的「砌磚工」，轉變為負責引導、約束和偵錯自主實體的「導演」。
+*   **工程嚴謹性的重要**：真正的力量並非來自單一的提示（Prompt），而是來自整個系統的工程嚴謹性，包含工具、錯誤處理、情境管理與綜合評估。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，我們走到了這次分享的終點。今天，我們一起探索了生成式 AI 的下一個篇章——一個從被動預測轉向主動執行的時代。這不僅僅是技術的升級，這是一場根本性的演變。
+
+##### ① 關鍵的演進：從工具到夥伴
+首先，請記住這個最重要的轉變：AI 代理（Agent）的出現，代表 AI 不再只是一個等待指令的被動工具。過去，我們讓它寫文案、翻譯、畫圖；現在，我們賦予它目標，讓它成為一個能自主規劃、解決問題的「主動夥伴」。這就像從擁有一本百科全書，進化到擁有一位能運用書中所有知識去完成任務的專家。
+
+##### ② 成功的核心：大腦、雙手與神經系統
+而打造這位專家的秘訣，就在於我們今天反覆強調的核心架構。成功的關鍵，來自於三個部分的無縫整合：
+*   強大的**模型 (Model)**，作為代理的「大腦」，負責推理與決策。
+*   實用的**工具 (Tools)**，作為代理的「雙手」，讓它能與真實世界互動、執行任務。
+*   以及高效的**協同層 (Orchestration Layer)**，作為「神經系統」，串連起大腦與雙手，在「思考、行動、觀察」這個永不停止的循環中，驅動代理完成使命。
+
+> 這套「思考、行動、觀察」的循環，正是將 AI 的智慧轉化為實際成果的引擎。
+
+##### ③ 開發者的新角色：從砌磚工到導演
+這個新時代，也徹底改變了我們開發者的角色。我們不再是傳統意義上的「砌磚工」，不再需要為每一個邏輯步驟編寫精確的程式碼。
+
+> 我們的角色，更像是一位「導演」。
+
+我們的工作是設定場景（也就是給予指令與世界觀）、挑選演員（選擇合適的模型與工具）、並提供劇本（也就是關鍵的上下文與數據）。我們的核心任務，變成了如何去**引導、約束、並偵錯**這個擁有自主能力的「演員」，確保它能完美地演出我們期望的成果。
+
+##### ④ 成功的關鍵：超越提示的工程嚴謹性
+最後，也是最重要的一點：一個強大代理的成功，**絕不僅僅取決於一個巧妙的提示 (Prompt)**。
+
+真正的力量，來自於整個系統的**工程嚴謹性**。這包括：
+*   **穩健的工具接口**：確保代理的「雙手」強而有力。
+*   **彈性的錯誤處理**：讓代理在遇到挫折時能自我修正。
+*   **精密的上下文管理**：確保代理在正確的「記憶」下做決策。
+*   **以及全面的評估體系**：讓我們能客觀地衡量它的表現，並持續優化。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講到這裡，語氣可以更加坚定有力，帶著總結與展望的氣勢。這是整場演說的最高潮與收尾。
+*   **補充案例**：可以簡單提及前面介紹的 Google Co-Scientist 或 AlphaEvolve，作為「這一切不只是理論，而是正在發生的未來」的有力證明。
+*   **轉場橋樑 (Bridge)**：
+    > 我們已經為大家描繪了打造自主代理的藍圖。這不僅是軟體的下一個前沿，更是我們與智慧系統協作方式的未來。現在，這份藍圖就在各位手中，是時候開始打造屬於你們自己的、能夠改變世界的 AI 代理了。謝謝大家！
+
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function toggleNoteView(pageIndex, viewType) {
+            const pageElement = document.getElementById('page-' + pageIndex);
+            if (!pageElement) return;
+
+            const renderedView = pageElement.querySelector('#note-rendered-' + pageIndex);
+            const rawView = pageElement.querySelector('#note-raw-' + pageIndex);
+            const renderedBtn = pageElement.querySelector('button[onclick*="'rendered'"]');
+            const rawBtn = pageElement.querySelector('button[onclick*="'raw'"]');
+
+            if (viewType === 'rendered') {
+                renderedView.style.display = 'block';
+                rawView.style.display = 'none';
+                renderedBtn.classList.add('active');
+                rawBtn.classList.remove('active');
+            } else {
+                renderedView.style.display = 'none';
+                rawView.style.display = 'block';
+                rawBtn.classList.add('active');
+                renderedBtn.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
