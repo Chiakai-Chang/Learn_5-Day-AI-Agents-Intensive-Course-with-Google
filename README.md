@@ -16,3 +16,8 @@
 - [課程內容](https://www.kaggle.com/whitepaper-context-engineering-sessions-and-memory)
 - [Chiakai 產的 AI 簡報+備忘稿](https://chiakai-chang.github.io/Learn_5-Day-AI-Agents-Intensive-Course-with-Google/Day3_Context_Engineering/guide.html)
 
+## Day 4 (Agent Quality)
+- [summary podcast](https://www.youtube.com/watch?v=LFQRy-Ci-lk)
+- [課程內容](https://www.kaggle.com/whitepaper-agent-quality)
+- [Chiakai 產的 AI 簡報+備忘稿](https://chiakai-chang.github.io/Learn_5-Day-AI-Agents-Intensive-Course-with-Google/Day4_Agent_Quality/guide.html)
+
