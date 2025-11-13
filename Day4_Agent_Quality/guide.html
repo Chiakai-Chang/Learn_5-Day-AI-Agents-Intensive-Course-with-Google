@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPTPlaner Guide</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 1200px; margin: auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+        .page { display: flex; border-bottom: 2px solid #eee; padding: 20px 0; }
+        .slide { flex: 1; padding-right: 20px; border-right: 1px solid #ddd; min-width: 0; } /* Fix: Added min-width */
+        .notes { flex: 1; padding-left: 20px; min-width: 0; } /* Fix: Added min-width */
+        h1, h2 { border-bottom: 1px solid #ddd; padding-bottom: 10px; color: #444; }
+        pre { background: #f9f9f9; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; border: 1px solid #eee; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; }
+        
+        .note-toggle { margin-bottom: 15px; }
+        .toggle-btn { padding: 8px 15px; border: 1px solid #ccc; background-color: #f0f0f0; cursor: pointer; border-radius: 5px; margin-right: 5px; }
+        .toggle-btn.active { background-color: #007bff; color: white; border-color: #007bff; }
+
+        /* Generic styles for rendered markdown content */
+        .rendered-content h1, .rendered-content h2, .rendered-content h3, .rendered-content h4, .rendered-content h5, .rendered-content h6 { border-bottom: none; padding-bottom: 5px; margin-top: 20px; }
+        .rendered-content ul, .rendered-content ol { padding-left: 25px; }
+        .rendered-content code { background-color: #eee; padding: 2px 5px; border-radius: 3px; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; }
+        .rendered-content blockquote { border-left: 4px solid #ccc; padding-left: 15px; color: #666; margin-left: 0; }
+        .rendered-content table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+        .rendered-content th, .rendered-content td { border: 1px solid #ddd; padding: 8px; }
+        .rendered-content th { background-color: #f2f2f2; }
+        .rendered-content img { max-width: 100%; height: auto; display: block; margin: 1em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PPTPlaner Guide</h1>
+        <p>This guide displays the generated slides and notes side-by-side. Use the buttons to toggle between rendered and source view for the notes.</p>
+        <hr>
+        
+        <div class="page" id="page-1">
+            <div class="slide">
+                <h2>Slide 01</h2>
+                <div class="rendered-content">
+                    <h1>01: Introduction: The Agent Quality Challenge</h1>
+<h2>The Dawn of the Agentic Era</h2>
+<p>We are shifting from predictable, instruction-based tools to autonomous, goal-oriented AI agents. This profound shift shatters traditional models of quality assurance.</p>
+<p><strong>Agent quality is an architectural pillar, not a final testing phase.</strong></p>
+<h3>Three Core Messages:</h3>
+<ol>
+<li><strong>The Trajectory is the Truth:</strong> The true measure of quality lies in the entire decision-making process, not just the final output.</li>
+<li><strong>Observability is the Foundation:</strong> You cannot judge a process you cannot see. This requires a technical foundation of Logging, Tracing, and Metrics.</li>
+<li><strong>Evaluation is a Continuous Loop:</strong> The &quot;Agent Quality Flywheel&quot; turns data into actionable insights through a hybrid of AI-driven and Human-in-the-Loop (HITL) evaluation.</li>
+</ol>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 01</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(1, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(1, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-1" class="note-content rendered-content">
+                    <h3>🎙️ 第 01 頁：Introduction_The_Agent_Quality_Challenge</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>我們正從指令型工具轉向自主型 AI 代理，這徹底改變了傳統的品質保證（QA）模式。</li>
+<li>本講座的核心論點：<strong>代理人品質（Agent Quality）</strong> 必須成為一個架構級的支柱，而非開發週期的最終測試環節。</li>
+<li>我們將圍繞三大核心訊息展開：<strong>過程即是真相</strong>、<strong>可觀測性是基礎</strong>，以及<strong>評估是一個持續的循環</strong>。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位好。我們正站在一個全新時代的黎明——<strong>代理人時代 (Agentic Era)</strong> 的開端。</p>
+<p>這代表著軟體工程數十年來最深刻的轉變之一：我們不再只是打造那些遵循固定指令的、可預測的工具。我們現在設計的是能夠理解意圖、自主規劃、並執行複雜任務的 AI 代理人。</p>
+<p>而這個令人興奮的轉變，也徹底粉碎了我們過去對「品質保證」的傳統認知。</p>
+<h5>① 核心原則：品質是一種架構</h5>
+<p>這就帶出了我們今天整個分享最核心、也最激進的一個原則：</p>
+<blockquote>
+<p>Agent quality is an architectural pillar, not a final testing phase.
+(代理人的品質是一個架構支柱，而不是一個最終的測試階段。)</p>
+</blockquote>
+<p>這句話的意思是，我們不能再等到產品開發的最後，才來思考品質問題。品質必須從一開始就植入在系統的設計藍圖之中。一個高品質的代理人，是「被設計」出來的，而不是「被測試」出來的。</p>
+<h5>② 三大支柱：我們如何實現？</h5>
+<p>為了實踐這個原則，這份指南建立在三個核心訊息之上，這也將是我們接下來探討的重點：</p>
+<ul>
+<li>
+<p><strong>第一：過程即是真相 (The Trajectory is the Truth)</strong>。我們必須超越只評估最終結果的思維。一個代理人真正的品質與安全性，體現在它完整的決策過程之中。我們關心的不只是「它做了什麼」，更是「它『如何』思考並達成目標」。</p>
+</li>
+<li>
+<p><strong>第二：可觀測性是基礎 (Observability is the Foundation)</strong>。你無法評估一個你看不見的過程。我們將會深入探討「可觀測性」的三大技術支柱——日誌 (Logging)、追蹤 (Tracing) 和指標 (Metrics)——它們是捕捉代理人「思維過程」的必要工具。</p>
+</li>
+<li>
+<p><strong>第三：評估是一個持續的循環 (Evaluation is a Continuous Loop)</strong>。最後，我們會將這些概念整合成一個稱為「代理人品質飛輪 (Agent Quality Flywheel)」的操作手冊。這是一個結合了 AI 自動評估與真人專家（Human-in-the-Loop）判斷的系統，用以驅動代理人品質的不斷迭代與提升。</p>
+</li>
+</ul>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「代理人時代的開端」後，可以稍微停頓一下，讓聽眾感受這個轉變的重要性。</li>
+<li><strong>強調重點</strong>：在唸到 <code>Agent quality is an architectural pillar...</code> 這句引言時，可以放慢速度，加強語氣，確保聽眾理解這是核心思想。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>為了真正理解為什麼我們需要一套全新的品質框架，下一頁，我們將深入剖析這場「從可預測的程式碼，到不可預測的代理人」的典範轉移，看看技術的演進是如何讓我們的舊方法徹底失效的。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-1" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 01 頁：Introduction_The_Agent_Quality_Challenge
+
+#### 【本頁重點摘要】
+*   我們正從指令型工具轉向自主型 AI 代理，這徹底改變了傳統的品質保證（QA）模式。
+*   本講座的核心論點：**代理人品質（Agent Quality）** 必須成為一個架構級的支柱，而非開發週期的最終測試環節。
+*   我們將圍繞三大核心訊息展開：**過程即是真相**、**可觀測性是基礎**，以及**評估是一個持續的循環**。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位好。我們正站在一個全新時代的黎明——**代理人時代 (Agentic Era)** 的開端。
+
+這代表著軟體工程數十年來最深刻的轉變之一：我們不再只是打造那些遵循固定指令的、可預測的工具。我們現在設計的是能夠理解意圖、自主規劃、並執行複雜任務的 AI 代理人。
+
+而這個令人興奮的轉變，也徹底粉碎了我們過去對「品質保證」的傳統認知。
+
+##### ① 核心原則：品質是一種架構
+
+這就帶出了我們今天整個分享最核心、也最激進的一個原則：
+
+> Agent quality is an architectural pillar, not a final testing phase.
+> (代理人的品質是一個架構支柱，而不是一個最終的測試階段。)
+
+這句話的意思是，我們不能再等到產品開發的最後，才來思考品質問題。品質必須從一開始就植入在系統的設計藍圖之中。一個高品質的代理人，是「被設計」出來的，而不是「被測試」出來的。
+
+##### ② 三大支柱：我們如何實現？
+
+為了實踐這個原則，這份指南建立在三個核心訊息之上，這也將是我們接下來探討的重點：
+
+*   **第一：過程即是真相 (The Trajectory is the Truth)**。我們必須超越只評估最終結果的思維。一個代理人真正的品質與安全性，體現在它完整的決策過程之中。我們關心的不只是「它做了什麼」，更是「它『如何』思考並達成目標」。
+
+*   **第二：可觀測性是基礎 (Observability is the Foundation)**。你無法評估一個你看不見的過程。我們將會深入探討「可觀測性」的三大技術支柱——日誌 (Logging)、追蹤 (Tracing) 和指標 (Metrics)——它們是捕捉代理人「思維過程」的必要工具。
+
+*   **第三：評估是一個持續的循環 (Evaluation is a Continuous Loop)**。最後，我們會將這些概念整合成一個稱為「代理人品質飛輪 (Agent Quality Flywheel)」的操作手冊。這是一個結合了 AI 自動評估與真人專家（Human-in-the-Loop）判斷的系統，用以驅動代理人品質的不斷迭代與提升。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「代理人時代的開端」後，可以稍微停頓一下，讓聽眾感受這個轉變的重要性。
+*   **強調重點**：在唸到 `Agent quality is an architectural pillar...` 這句引言時，可以放慢速度，加強語氣，確保聽眾理解這是核心思想。
+*   **轉場橋樑 (Bridge)**：
+    > 為了真正理解為什麼我們需要一套全新的品質框架，下一頁，我們將深入剖析這場「從可預測的程式碼，到不可預測的代理人」的典範轉移，看看技術的演進是如何讓我們的舊方法徹底失效的。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-2">
+            <div class="slide">
+                <h2>Slide 02</h2>
+                <div class="rendered-content">
+                    <h1>02: The Paradigm Shift: From Predictable Code to Unpredictable Agents</h1>
+<h2>The Evolution of Evaluative Complexity</h2>
+<ol>
+<li><strong>Traditional Machine Learning:</strong> Evaluation relied on clear statistical metrics (Precision, Recall, F1-Score).</li>
+<li><strong>Passive LLMs:</strong> Evaluation became more complex, relying on human raters and benchmarking for generative, probabilistic outputs.</li>
+<li><strong>LLM+RAG:</strong> The evaluation surface expanded to include the performance of the retrieval system.</li>
+<li><strong>The Active AI Agent:</strong> A profound architectural shift. The LLM is now a reasoning &quot;brain&quot; in a system with new capabilities that break old evaluation models:
+<ul>
+<li><strong>Planning &amp; Multi-Step Reasoning:</strong> Compounding non-determinism at every step.</li>
+<li><strong>Tool Use &amp; Function Calling:</strong> Dynamic interaction with an uncontrollable external world.</li>
+<li><strong>Memory:</strong> Evolving behavior based on past interactions.</li>
+</ul>
+</li>
+<li><strong>Multi-Agent Systems:</strong> The ultimate complexity, evaluating emergent system-level phenomena.</li>
+</ol>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 02</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(2, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(2, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-2" class="note-content rendered-content">
+                    <h3>🎙️ 第 02 頁：The_Paradigm_Shift_From_Predictable_Code_to_Unpredictable_Agents</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>本頁追溯了 AI 評估的演進，說明為何傳統方法已不再適用。</li>
+<li>評估的複雜性從傳統機器學習的簡單指標，逐步升級到被動式 LLM、RAG 系統。</li>
+<li>「主動式 AI Agent」是關鍵的轉捩點，其三大能力（規劃、工具使用、記憶）徹底顛覆了舊有的評估模型。</li>
+<li>最終，多代理系統（Multi-Agent Systems）帶來了系統級的 emergent phenomenon，是評估的終極挑戰。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們剛剛談到，傳統的品質保證方法，在面對 AI Agent 時已經失靈了。現在，讓我們一起來走一趟時光隧道，看看這場「評估複雜性」的風暴是如何一步步形成的。這不僅僅是技術的演進，更是我們思維模式的徹底轉變。</p>
+<h5>① 階段一與二：從可預測到初步模糊</h5>
+<p>這趟旅程的起點，是我們都相當熟悉的<strong>傳統機器學習</strong>。在那個時代，評估相對單純。我們有一把清晰的尺，那就是像 Precision、Recall、F1-Score 這些統計指標。問題雖然複雜，但「正確」的定義是明確的。</p>
+<p>但接著，<strong>被動式大型語言模型 (Passive LLMs)</strong> 出現了。我們失去了那把簡單的尺。你怎麼衡量一段生成式文字的「準確度」呢？輸出是機率性的，同樣的輸入，每次結果都可能不同。評估開始變得複雜，我們開始依賴真人評分和模型對打（model-vs-model benchmarking）。但即便如此，系統基本上還是被動的：文字輸入，文字輸出。</p>
+<h5>② 階段三：RAG 帶來的系統性挑戰</h5>
+<p>下一個跳躍，是 <strong>檢索增強生成 (RAG)</strong> 的導入。這不只是多了一個元件，而是讓我們的評估範圍，從單一模型擴展到整個 pipeline。</p>
+<blockquote>
+<p>這時候，我們必須問一個更深層的問題：「Agent 給出糟糕的答案，究竟是因為 LLM 推理能力差，還是因為我們的向量資料庫檢索到了不相關的資訊？」</p>
+</blockquote>
+<p>失敗的根源，可能出現在系統的任何一個環節。我們的評估表面積，瞬間擴大了。</p>
+<h5>③ 階段四：主動式 AI Agent 的革命</h5>
+<p>而今天，我們正處於一場深刻的架構轉變之中：<strong>主動式 AI Agent (The Active AI Agent)</strong> 的崛起。LLM 不再只是一個文字生成器，它成了一個能夠在複雜系統中自主行動的「大腦」。它帶來了三種徹底打破舊有評估模型的核心能力：</p>
+<ul>
+<li><strong>規劃與多步驟推理 (Planning &amp; Multi-Step Reasoning)</strong>：Agent 會將複雜目標拆解成多個子任務。這就創造了一條「軌跡」(Trajectory)。而 LLM 的不確定性，在每一步都會被放大。第一步中一個微小的、隨機的詞彙選擇，到了第四步，可能已經讓 Agent 走上了一條完全不同、且無法挽回的推理路徑。</li>
+<li><strong>工具使用與函式呼叫 (Tool Use &amp; Function Calling)</strong>：Agent 開始透過 API 與真實世界互動。這引入了動態的環境變化。Agent 的下一步行動，完全取決於一個我們無法控制的外部世界的狀態。</li>
+<li><strong>記憶 (Memory)</strong>：Agent 開始擁有狀態。它不僅有追蹤當前任務的短期記憶，更有能從過去互動中學習的長期記憶。這意味著 Agent 的行為是會演變的。昨天有效的輸入，今天可能因為 Agent「學到」了新東西而產生完全不同的結果。</li>
+</ul>
+<h5>④ 階段五：多代理系統的終極複雜性</h5>
+<p>當我們以為這已經夠複雜時，最終的挑戰出現了：<strong>多代理系統 (Multi-Agent Systems)</strong>。我們評估的不再是單一軌跡，而是一個系統級別的「 emergent phenomenon」（湧現現象）。</p>
+<p>這帶來了全新的、根本性的挑戰，例如代理之間的資源爭搶、溝通瓶頸，甚至是整個系統的僵局。這些失敗，已經無法歸咎於任何單一 Agent 的錯誤。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講到「主動式 AI Agent」的三大能力時，可以稍微放慢速度，確保聽眾理解每項能力如何增加評估的複雜度。</li>
+<li><strong>補充案例</strong>：可以口頭舉例，比如一個旅行規劃 Agent，如果航空公司 API 超時（工具使用失敗），它是否能聰明地切換到備用方案，還是會直接崩潰。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>我們已經看到，從簡單的機器學習到複雜的多代理系統，評估的難度呈現指數級的增長。那麼，面對如此不可預測、盤根錯節的系統，我們該如何定義「好」與「壞」？我們又該從何處著手評估？下一頁，我們將介紹一個策略性框架，它將幫助我們在這片迷霧中找到方向，那就是「Agent 品質的四大支柱」。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-2" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 02 頁：The_Paradigm_Shift_From_Predictable_Code_to_Unpredictable_Agents
+
+#### 【本頁重點摘要】
+*   本頁追溯了 AI 評估的演進，說明為何傳統方法已不再適用。
+*   評估的複雜性從傳統機器學習的簡單指標，逐步升級到被動式 LLM、RAG 系統。
+*   「主動式 AI Agent」是關鍵的轉捩點，其三大能力（規劃、工具使用、記憶）徹底顛覆了舊有的評估模型。
+*   最終，多代理系統（Multi-Agent Systems）帶來了系統級的 emergent phenomenon，是評估的終極挑戰。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們剛剛談到，傳統的品質保證方法，在面對 AI Agent 時已經失靈了。現在，讓我們一起來走一趟時光隧道，看看這場「評估複雜性」的風暴是如何一步步形成的。這不僅僅是技術的演進，更是我們思維模式的徹底轉變。
+
+##### ① 階段一與二：從可預測到初步模糊
+這趟旅程的起點，是我們都相當熟悉的**傳統機器學習**。在那個時代，評估相對單純。我們有一把清晰的尺，那就是像 Precision、Recall、F1-Score 這些統計指標。問題雖然複雜，但「正確」的定義是明確的。
+
+但接著，**被動式大型語言模型 (Passive LLMs)** 出現了。我們失去了那把簡單的尺。你怎麼衡量一段生成式文字的「準確度」呢？輸出是機率性的，同樣的輸入，每次結果都可能不同。評估開始變得複雜，我們開始依賴真人評分和模型對打（model-vs-model benchmarking）。但即便如此，系統基本上還是被動的：文字輸入，文字輸出。
+
+##### ② 階段三：RAG 帶來的系統性挑戰
+下一個跳躍，是 **檢索增強生成 (RAG)** 的導入。這不只是多了一個元件，而是讓我們的評估範圍，從單一模型擴展到整個 pipeline。
+
+> 這時候，我們必須問一個更深層的問題：「Agent 給出糟糕的答案，究竟是因為 LLM 推理能力差，還是因為我們的向量資料庫檢索到了不相關的資訊？」
+
+失敗的根源，可能出現在系統的任何一個環節。我們的評估表面積，瞬間擴大了。
+
+##### ③ 階段四：主動式 AI Agent 的革命
+而今天，我們正處於一場深刻的架構轉變之中：**主動式 AI Agent (The Active AI Agent)** 的崛起。LLM 不再只是一個文字生成器，它成了一個能夠在複雜系統中自主行動的「大腦」。它帶來了三種徹底打破舊有評估模型的核心能力：
+
+*   **規劃與多步驟推理 (Planning & Multi-Step Reasoning)**：Agent 會將複雜目標拆解成多個子任務。這就創造了一條「軌跡」(Trajectory)。而 LLM 的不確定性，在每一步都會被放大。第一步中一個微小的、隨機的詞彙選擇，到了第四步，可能已經讓 Agent 走上了一條完全不同、且無法挽回的推理路徑。
+*   **工具使用與函式呼叫 (Tool Use & Function Calling)**：Agent 開始透過 API 與真實世界互動。這引入了動態的環境變化。Agent 的下一步行動，完全取決於一個我們無法控制的外部世界的狀態。
+*   **記憶 (Memory)**：Agent 開始擁有狀態。它不僅有追蹤當前任務的短期記憶，更有能從過去互動中學習的長期記憶。這意味著 Agent 的行為是會演變的。昨天有效的輸入，今天可能因為 Agent「學到」了新東西而產生完全不同的結果。
+
+##### ④ 階段五：多代理系統的終極複雜性
+當我們以為這已經夠複雜時，最終的挑戰出現了：**多代理系統 (Multi-Agent Systems)**。我們評估的不再是單一軌跡，而是一個系統級別的「 emergent phenomenon」（湧現現象）。
+
+這帶來了全新的、根本性的挑戰，例如代理之間的資源爭搶、溝通瓶頸，甚至是整個系統的僵局。這些失敗，已經無法歸咎於任何單一 Agent 的錯誤。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講到「主動式 AI Agent」的三大能力時，可以稍微放慢速度，確保聽眾理解每項能力如何增加評估的複雜度。
+*   **補充案例**：可以口頭舉例，比如一個旅行規劃 Agent，如果航空公司 API 超時（工具使用失敗），它是否能聰明地切換到備用方案，還是會直接崩潰。
+*   **轉場橋樑 (Bridge)**：
+    > 我們已經看到，從簡單的機器學習到複雜的多代理系統，評估的難度呈現指數級的增長。那麼，面對如此不可預測、盤根錯節的系統，我們該如何定義「好」與「壞」？我們又該從何處著手評估？下一頁，我們將介紹一個策略性框架，它將幫助我們在這片迷霧中找到方向，那就是「Agent 品質的四大支柱」。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-3">
+            <div class="slide">
+                <h2>Slide 03</h2>
+                <div class="rendered-content">
+                    <h1>03: A Framework: The Four Pillars of Agent Quality</h1>
+<p>To evaluate agents, we must shift from asking &quot;Did we build the product right?&quot; to <strong>&quot;Did we build the right product?&quot;</strong> This requires a holistic, user-centric framework.</p>
+<h2>The Four Pillars</h2>
+<ol>
+<li>
+<p><strong>Effectiveness (Goal Achievement):</strong></p>
+<ul>
+<li>Did the agent successfully and accurately achieve the user's actual intent?</li>
+<li>The ultimate measure of task success, tied to business KPIs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Efficiency (Operational Cost):</strong></p>
+<ul>
+<li>Did the agent solve the problem well?</li>
+<li>Measured in resources: tokens (cost), time (latency), and steps (complexity).</li>
+</ul>
+</li>
+<li>
+<p><strong>Robustness (Reliability):</strong></p>
+<ul>
+<li>How does the agent handle adversity and real-world messiness (e.g., API timeouts, ambiguous prompts)?</li>
+<li>A robust agent fails gracefully, retries, and clarifies.</li>
+</ul>
+</li>
+<li>
+<p><strong>Safety &amp; Alignment (Trustworthiness):</strong></p>
+<ul>
+<li>Does the agent operate within its defined ethical boundaries?</li>
+<li>The non-negotiable gate, encompassing fairness, bias, and security.</li>
+</ul>
+</li>
+</ol>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 03</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(3, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(3, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-3" class="note-content rendered-content">
+                    <h3>🎙️ 第 03 頁：A Framework: The Four Pillars of Agent Quality</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>評估 AI 代理人的核心思維轉變：從問「我們是否把產品做對了？」（驗證），轉向問「我們是否做了對的產品？」（確效）。</li>
+<li>高品質代理人的四大支柱：
+<ol>
+<li><strong>有效性 (Effectiveness)</strong>：能否達成用戶真實意圖。</li>
+<li><strong>效率 (Efficiency)</strong>：解決問題的成本是否合理。</li>
+<li><strong>穩健性 (Robustness)</strong>：應對真實世界混亂情況的能力。</li>
+<li><strong>安全性與對齊 (Safety &amp; Alignment)</strong>：絕不妥協的信任基石。</li>
+</ol>
+</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們剛剛看到了，傳統的軟體品保方法，在面對充滿不確定性的 AI 代理人時，已經不管用了。那麼，如果我們不能再依賴過去那些簡單的指標，我們該從何開始呢？</p>
+<p>答案是，我們必須從根本上改變我們提問的方式。我們不再問：「我們是否把產品<strong>做對了</strong>？」（Did we build the product right?）這是一個針對固定規格的<strong>驗證</strong>問題。</p>
+<blockquote>
+<p>我們現在必須問一個更深刻、更具策略性的問題：「我們是否<strong>做了對的產品</strong>？」（Did we build the right product?）這是一個關於<strong>確效</strong>的問題，評估的是它在真實世界中的價值、穩健性與可信賴度。</p>
+</blockquote>
+<p>為了回答這個問題，我們需要一個全新的、以使用者為中心的框架。我們將代理人的品質定義在四個互相連結的支柱之上。</p>
+<h5>① 第一個支柱：有效性 (Effectiveness)</h5>
+<p>這可以說是最重要的「黑盒子」問題：代理人最終是否成功且準確地達成了使用者的<strong>真實意圖</strong>？這直接關係到用戶指標和商業 KPI。</p>
+<p>舉個例子，對於一個電商代理人，問題不只是「它有沒有找到商品？」，而是「它最終有沒有<strong>促成一筆轉換</strong>？」；對於一個數據分析代理人，問題不是「它有沒有寫出程式碼？」，而是「這些程式碼產出的<strong>洞察是否正確</strong>？」有效性，是任務成功的最終衡量標準。</p>
+<h5>② 第二個支柱：效率 (Efficiency)</h5>
+<p>光是成功還不夠，我們還得問：代理人解決問題的方式<strong>漂亮嗎</strong>？</p>
+<p>想像一下，一個代理人花了 25 個步驟、5 次失敗的工具呼叫、和 3 次自我修正循環，才終於訂好一張機票。即使它最後成功了，我們能說這是一個高品質的代理人嗎？恐怕不行。</p>
+<p>效率，衡量的是消耗的資源，包含：<strong>Token 數量</strong>（這關乎成本）、<strong>處理時間</strong>（這關乎延遲），以及<strong>軌跡的複雜度</strong>（也就是它走了多少冤枉路）。</p>
+<h5>③ 第三個支柱：穩健性 (Robustness)</h5>
+<p>這個世界是混亂的。當 API 超時、網站版面改變、數據缺失，或使用者給出一個模稜兩可的指令時，代理人會怎麼辦？它會優雅地失敗，還是直接崩潰？</p>
+<p>一個穩健的代理人，在面對逆境時，會嘗試重試失敗的呼叫、在需要時向使用者請求澄清、並且清楚地報告它<strong>做不到什麼以及為什麼</strong>，而不是直接當機或開始胡說八道。</p>
+<h5>④ 第四個支柱：安全性與對齊 (Safety &amp; Alignment)</h5>
+<p>這是<strong>絕不能妥協的底線</strong>。代理人是否在我們定義的倫理邊界和約束內運作？</p>
+<p>這個支柱涵蓋了從「負責任 AI」的公平性與偏見指標，到防範提示詞注入和數據洩露等所有安全問題。它確保代理人始終專注於任務、拒絕有害指令，並作為你組織的一個值得信賴的代表。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「做對的產品」這個核心轉變後，可以稍微停頓一下，讓聽眾消化這個關鍵概念。</li>
+<li><strong>補充案例</strong>：講到「效率」時，可以加重語氣，生動地描述那個「花了 25 步才訂好機票」的笨拙代理人，讓聽眾感同身受。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>這四個支柱清楚地定義了什麼是高品質的代理人。但這也引出一個問題：如果我們只看最終答案，根本無法衡量這些過程。那麼，我們該如何實際評估這四大支柱呢？下一頁，我們將介紹一個策略性的評估層級。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-3" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 03 頁：A Framework: The Four Pillars of Agent Quality
+
+#### 【本頁重點摘要】
+*   評估 AI 代理人的核心思維轉變：從問「我們是否把產品做對了？」（驗證），轉向問「我們是否做了對的產品？」（確效）。
+*   高品質代理人的四大支柱：
+    1.  **有效性 (Effectiveness)**：能否達成用戶真實意圖。
+    2.  **效率 (Efficiency)**：解決問題的成本是否合理。
+    3.  **穩健性 (Robustness)**：應對真實世界混亂情況的能力。
+    4.  **安全性與對齊 (Safety & Alignment)**：絕不妥協的信任基石。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們剛剛看到了，傳統的軟體品保方法，在面對充滿不確定性的 AI 代理人時，已經不管用了。那麼，如果我們不能再依賴過去那些簡單的指標，我們該從何開始呢？
+
+答案是，我們必須從根本上改變我們提問的方式。我們不再問：「我們是否把產品**做對了**？」（Did we build the product right?）這是一個針對固定規格的**驗證**問題。
+
+> 我們現在必須問一個更深刻、更具策略性的問題：「我們是否**做了對的產品**？」（Did we build the right product?）這是一個關於**確效**的問題，評估的是它在真實世界中的價值、穩健性與可信賴度。
+
+為了回答這個問題，我們需要一個全新的、以使用者為中心的框架。我們將代理人的品質定義在四個互相連結的支柱之上。
+
+##### ① 第一個支柱：有效性 (Effectiveness)
+這可以說是最重要的「黑盒子」問題：代理人最終是否成功且準確地達成了使用者的**真實意圖**？這直接關係到用戶指標和商業 KPI。
+
+舉個例子，對於一個電商代理人，問題不只是「它有沒有找到商品？」，而是「它最終有沒有**促成一筆轉換**？」；對於一個數據分析代理人，問題不是「它有沒有寫出程式碼？」，而是「這些程式碼產出的**洞察是否正確**？」有效性，是任務成功的最終衡量標準。
+
+##### ② 第二個支柱：效率 (Efficiency)
+光是成功還不夠，我們還得問：代理人解決問題的方式**漂亮嗎**？
+
+想像一下，一個代理人花了 25 個步驟、5 次失敗的工具呼叫、和 3 次自我修正循環，才終於訂好一張機票。即使它最後成功了，我們能說這是一個高品質的代理人嗎？恐怕不行。
+
+效率，衡量的是消耗的資源，包含：**Token 數量**（這關乎成本）、**處理時間**（這關乎延遲），以及**軌跡的複雜度**（也就是它走了多少冤枉路）。
+
+##### ③ 第三個支柱：穩健性 (Robustness)
+這個世界是混亂的。當 API 超時、網站版面改變、數據缺失，或使用者給出一個模稜兩可的指令時，代理人會怎麼辦？它會優雅地失敗，還是直接崩潰？
+
+一個穩健的代理人，在面對逆境時，會嘗試重試失敗的呼叫、在需要時向使用者請求澄清、並且清楚地報告它**做不到什麼以及為什麼**，而不是直接當機或開始胡說八道。
+
+##### ④ 第四個支柱：安全性與對齊 (Safety & Alignment)
+這是**絕不能妥協的底線**。代理人是否在我們定義的倫理邊界和約束內運作？
+
+這個支柱涵蓋了從「負責任 AI」的公平性與偏見指標，到防範提示詞注入和數據洩露等所有安全問題。它確保代理人始終專注於任務、拒絕有害指令，並作為你組織的一個值得信賴的代表。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「做對的產品」這個核心轉變後，可以稍微停頓一下，讓聽眾消化這個關鍵概念。
+*   **補充案例**：講到「效率」時，可以加重語氣，生動地描述那個「花了 25 步才訂好機票」的笨拙代理人，讓聽眾感同身受。
+*   **轉場橋樑 (Bridge)**：
+    > 這四個支柱清楚地定義了什麼是高品質的代理人。但這也引出一個問題：如果我們只看最終答案，根本無法衡量這些過程。那麼，我們該如何實際評估這四大支柱呢？下一頁，我們將介紹一個策略性的評估層級。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-4">
+            <div class="slide">
+                <h2>Slide 04</h2>
+                <div class="rendered-content">
+                    <h1>04: The Art of Evaluation: A Strategic Hierarchy</h1>
+<p>Agent evaluation is not testing an output, but <strong>evaluating a process</strong>. This requires a top-down, strategic approach.</p>
+<h2>The &quot;Outside-In&quot; Evaluation Hierarchy</h2>
+<p>This model prioritizes the metric that ultimately matters—<strong>real-world success</strong>—before diving into the technical details of <em>why</em> that success occurred.</p>
+<p><strong>Strategic Anchor:</strong> &quot;Did we build the right product?&quot;</p>
+<p>This approach represents a necessary shift from focusing on internal compliance to judging the system's external value and alignment with user intent.</p>
+<p>It's a two-stage process:</p>
+<ol>
+<li><strong>Start with the Black Box:</strong> Evaluate the end-to-end result.</li>
+<li><strong>Then Open It Up:</strong> Analyze the internal trajectory to understand the 'why'.</li>
+</ol>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 04</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(4, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(4, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-4" class="note-content rendered-content">
+                    <h3>🎙️ 第 04 頁：The_Art_of_Evaluation_A_Strategic_Hierarchy</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>評估 AI Agent 的核心，是評估整個「決策過程」，而不僅僅是最終的產出。</li>
+<li>為此，我們需要一個名為「由外而內 (Outside-In)」的策略性評估層級。</li>
+<li>這個策略的根本問題，從「我們是否把產品做對了？」轉變為「我們是否做了對的產品？」。</li>
+<li>評估分為兩階段：先看「黑盒子」(最終結果)，再打開看「透明盒子」(內部決策路徑)。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，各位，我們前面談了定義品質的四大支柱。現在，我們要進入一個更核心的問題：到底該「如何」評估一個 AI Agent？這門學問，我們稱之為「評估的藝術」。</p>
+<p>傳統的軟體測試，像是在核對一張清單，我們問的是：「我們有沒有把產品『做對』(Did we build the product right?)」，也就是功能是否符合規格。但對於會自己思考、決策的 AI Agent，這種方法完全不夠用。</p>
+<blockquote>
+<p>Agent 的評估，是一場從「驗證 (Verification)」到「確認 (Validation)」的根本轉變。我們必須問一個更具策略性的問題：「我們是否『做了對的產品』(Did we build the right product?)」。</p>
+</blockquote>
+<p>這個問題，就是我們整個評估框架的「策略之錨」。它代表著我們必須從過去只關心內部規格的符合性，轉向去判斷這個系統在真實世界中，是否真的創造了價值、是否真的符合使用者的意圖。</p>
+<h5>① 什麼是「由外而內」的評估層級？</h5>
+<p>為了回答這個策略問題，我們提出了一個名為「由外而內 (Outside-In)」的評估層級。</p>
+<p>這是一個 <strong>由上而下</strong> 的策略模型。它的核心精神非常簡單：在我們深入研究任何技術細節之前，必須先專注於那個唯一、也最終極重要的指標——<strong>它在真實世界中是否成功？</strong></p>
+<p>如果我們一開始就陷入無數個元件級別的技術指標中，很容易就會迷失方向，忘了我們到底想解決什麼問題。所以，這個層級要求我們先從最重要的結果看起。</p>
+<h5>② 一個兩階段的評估流程</h5>
+<p>這個「由外而內」的評估，具體來說是一個兩階段的流程：</p>
+<ol>
+<li>
+<p><strong>首先，從「黑盒子 (Black Box)」開始</strong>：我們先不看 Agent 內部是怎麼想的。我們只看最終的結果。它成功了嗎？它解決使用者的問題了嗎？這個結果的品質好嗎？</p>
+</li>
+<li>
+<p><strong>接著，再打開「透明盒子 (Glass Box)」</strong>：當我們發現最終結果有瑕疵，或者即使結果正確，我們也想知道「為什麼」它能成功時，我們就要打開這個盒子。我們會去分析它完整的內部決策軌跡 (Trajectory)，去理解它每一步的「思考過程」。</p>
+</li>
+</ol>
+<p>這個由外而內的兩步驟，確保了我們的評估既有策略高度，又能深入到技術細節，找到問題的根本原因。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講到「我們是否『做了對的產品』？」這句關鍵問句時，可以稍微停頓，加強語氣，讓聽眾思考這與傳統軟體開發的區別。</li>
+<li><strong>補充案例</strong>：可以口頭舉例，比如一個訂票 Agent，黑盒子評估就是「票訂成功了嗎？」，而透明盒子評估就是「它是不是先查了天氣，發現可能下雨，所以推薦了有遮蔽的交通方式？還是它繞了一大圈，浪費了很多時間才訂到票？」</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了這個「由外而內」的策略框架後，下一頁，我們將具體探討這兩個階段——「黑盒子」與「透明盒子」——在實務上分別要看哪些指標，以及如何評估。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-4" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 04 頁：The_Art_of_Evaluation_A_Strategic_Hierarchy
+
+#### 【本頁重點摘要】
+*   評估 AI Agent 的核心，是評估整個「決策過程」，而不僅僅是最終的產出。
+*   為此，我們需要一個名為「由外而內 (Outside-In)」的策略性評估層級。
+*   這個策略的根本問題，從「我們是否把產品做對了？」轉變為「我們是否做了對的產品？」。
+*   評估分為兩階段：先看「黑盒子」(最終結果)，再打開看「透明盒子」(內部決策路徑)。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，各位，我們前面談了定義品質的四大支柱。現在，我們要進入一個更核心的問題：到底該「如何」評估一個 AI Agent？這門學問，我們稱之為「評估的藝術」。
+
+傳統的軟體測試，像是在核對一張清單，我們問的是：「我們有沒有把產品『做對』(Did we build the product right?)」，也就是功能是否符合規格。但對於會自己思考、決策的 AI Agent，這種方法完全不夠用。
+
+> Agent 的評估，是一場從「驗證 (Verification)」到「確認 (Validation)」的根本轉變。我們必須問一個更具策略性的問題：「我們是否『做了對的產品』(Did we build the right product?)」。
+
+這個問題，就是我們整個評估框架的「策略之錨」。它代表著我們必須從過去只關心內部規格的符合性，轉向去判斷這個系統在真實世界中，是否真的創造了價值、是否真的符合使用者的意圖。
+
+##### ① 什麼是「由外而內」的評估層級？
+
+為了回答這個策略問題，我們提出了一個名為「由外而內 (Outside-In)」的評估層級。
+
+這是一個 **由上而下** 的策略模型。它的核心精神非常簡單：在我們深入研究任何技術細節之前，必須先專注於那個唯一、也最終極重要的指標——**它在真實世界中是否成功？**
+
+如果我們一開始就陷入無數個元件級別的技術指標中，很容易就會迷失方向，忘了我們到底想解決什麼問題。所以，這個層級要求我們先從最重要的結果看起。
+
+##### ② 一個兩階段的評估流程
+
+這個「由外而內」的評估，具體來說是一個兩階段的流程：
+
+1.  **首先，從「黑盒子 (Black Box)」開始**：我們先不看 Agent 內部是怎麼想的。我們只看最終的結果。它成功了嗎？它解決使用者的問題了嗎？這個結果的品質好嗎？
+
+2.  **接著，再打開「透明盒子 (Glass Box)」**：當我們發現最終結果有瑕疵，或者即使結果正確，我們也想知道「為什麼」它能成功時，我們就要打開這個盒子。我們會去分析它完整的內部決策軌跡 (Trajectory)，去理解它每一步的「思考過程」。
+
+這個由外而內的兩步驟，確保了我們的評估既有策略高度，又能深入到技術細節，找到問題的根本原因。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講到「我們是否『做了對的產品』？」這句關鍵問句時，可以稍微停頓，加強語氣，讓聽眾思考這與傳統軟體開發的區別。
+*   **補充案例**：可以口頭舉例，比如一個訂票 Agent，黑盒子評估就是「票訂成功了嗎？」，而透明盒子評估就是「它是不是先查了天氣，發現可能下雨，所以推薦了有遮蔽的交通方式？還是它繞了一大圈，浪費了很多時間才訂到票？」
+*   **轉場橋樑 (Bridge)**：
+    > 了解了這個「由外而內」的策略框架後，下一頁，我們將具體探討這兩個階段——「黑盒子」與「透明盒子」——在實務上分別要看哪些指標，以及如何評估。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-5">
+            <div class="slide">
+                <h2>Slide 05</h2>
+                <div class="rendered-content">
+                    <h1>05: Evaluation in Practice: Black Box vs. Glass Box</h1>
+<h2>1. The &quot;Outside-In&quot; View (The Black Box)</h2>
+<p><strong>Question:</strong> &quot;Did the agent achieve the user's goal effectively?&quot;</p>
+<ul>
+<li><strong>What:</strong> Evaluate the final performance against the objective.</li>
+<li><strong>Metrics:</strong>
+<ul>
+<li><strong>Task Success Rate:</strong> Binary score of whether the problem was solved.</li>
+<li><strong>User Satisfaction:</strong> Direct user feedback (e.g., CSAT, thumbs up/down).</li>
+<li><strong>Overall Quality:</strong> Accuracy, completeness of the final output.</li>
+</ul>
+</li>
+</ul>
+<h2>2. The &quot;Inside-Out&quot; View (The Glass Box)</h2>
+<p><strong>Question:</strong> &quot;<em>Why</em> did the agent succeed or fail?&quot;</p>
+<ul>
+<li><strong>What:</strong> Analyze the agent's approach by assessing its execution trajectory.</li>
+<li><strong>Components to Assess:</strong>
+<ul>
+<li>LLM Planning (The &quot;Thought&quot;)</li>
+<li>Tool Usage (Selection &amp; Parameters)</li>
+<li>Tool Response Interpretation (The &quot;Observation&quot;)</li>
+<li>RAG Performance</li>
+<li>Trajectory Efficiency and Robustness</li>
+</ul>
+</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 05</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(5, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(5, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-5" class="note-content rendered-content">
+                    <h3>🎙️ 第 05 頁：Evaluation in Practice: Black Box vs. Glass Box Views</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>黑箱 (Black Box) 評估</strong>：從外部視角開始，只看最終結果，判斷「任務是否成功」。</li>
+<li><strong>白箱 (Glass Box) 評估</strong>：當任務失敗時，深入內部，分析代理人的完整「決策軌跡」，找出「為什麼失敗」。</li>
+<li>這是一個由外而內的兩步驟流程：先評估結果，再診斷過程。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們已經建立了「由外而內」的策略框架。現在，讓我們看看這個策略在實務中是如何運作的。它主要分為兩個核心視角：第一個是「黑箱」視角，第二個則是「白箱」視角。</p>
+<h5>① 「由外而內」的起點：黑箱評估 (The Black Box)</h5>
+<p>首先，我們從黑箱開始。這代表我們先不關心代理人內部是怎麼想的、過程有多複雜。我們只問一個最根本、也最重要的問題：「這個代理人，有沒有有效地完成使用者的目標？」</p>
+<blockquote>
+<p>在我們分析任何內部思考或工具調用之前，我們必須先評估最終的成果。對於一個寫程式的代理人，這可能意味著「它產生的 PR (Pull Request) 有沒有被接受？」；對於一個金融交易代理人，則是「資料庫交易是否成功？」</p>
+</blockquote>
+<p>這就是我們的第一道品質關卡。我們會看幾個關鍵指標：</p>
+<ul>
+<li><strong>任務成功率</strong>：這是一個直接的、二元的分數。問題解決了，還是沒解決？</li>
+<li><strong>使用者滿意度</strong>：使用者最直接的感受是什麼？他們是給了「讚」，還是「倒讚」？或是給了多高的客戶滿意度分數 (CSAT)？</li>
+<li><strong>整體品質</strong>：如果任務是量化的，例如「總結這十篇文章」，那它是否真的總結了全部十篇？內容是否準確、完整？</li>
+</ul>
+<p>如果代理人在這個階段拿到滿分，那我們的評估工作可能就到此為止了。但現實是，當結果不完美、任務被中途放棄，或出現奇怪的答案時，「黑箱」評估只告訴我們「<strong>什麼</strong>」錯了。接下來，我們就需要打開箱子，看看裡面到底發生了什麼事。</p>
+<h5>② 深入問題核心：白箱評估 (The Glass Box)</h5>
+<p>一旦我們在黑箱評估中發現了問題，我們就切換到「白箱」視角。這個階段的目標非常明確：「<strong>為什麼</strong>代理人會成功或失敗？」</p>
+<blockquote>
+<p>透過白箱分析，我們的診斷能力將從「最終答案是錯的」，提升到「最終答案是錯的，<strong>因為</strong>它在第三步錯誤解讀了 API 回傳的錯誤碼」。這就是我們追求的深度洞察力。</p>
+</blockquote>
+<p>為了做到這一點，我們會系統性地拆解代理人的整個執行軌跡 (Trajectory)，檢查每一個環節：</p>
+<ul>
+<li><strong>LLM 的規劃 (也就是「思考」)</strong>：我們先檢查大腦。大型語言模型本身是不是產生了幻覺、陷入了重複的迴圈，或是被無關的上下文污染了？</li>
+<li><strong>工具的使用</strong>：代理人就像一個工匠，它的工具用得好不好很關鍵。它有沒有選錯工具？或者，有沒有在該用的時候不用？甚至，它有沒有自己「幻想」出一個根本不存在的工具或參數？</li>
+<li><strong>工具回傳結果的解讀 (也就是「觀察」)</strong>：工具執行成功後，代理人看懂結果了嗎？一個非常常見的失敗案例是，API 回傳了「404 找不到頁面」的錯誤，但代理人卻沒意識到，還當作一切順利地繼續往下執行。</li>
+<li><strong>RAG 的表現</strong>：如果代理人需要從知識庫中檢索資料，那它找到的資訊相關嗎？是不是過時或不正確的？還是說，它明明找到了正確資料，卻選擇忽略，然後自己瞎掰一個答案？</li>
+<li><strong>軌跡的效率與穩健性</strong>：最後，我們評估整個過程本身。一個本該三步就能完成的任務，代理人卻繞了二十五步才做完，就算最終答案對了，這也是一個低品質、高成本的代理人。</li>
+</ul>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在解釋「白箱」的各個評估組件時，可以放慢速度，用偵探辦案的比喻——我們正在一步步追蹤線索，找出導致任務失敗的根本原因。</li>
+<li><strong>補充案例</strong>：你可以補充一個實際操作的例子：「在實務中，開發者通常會使用一個『追蹤』(Trace) 介面。這個介面會像地圖一樣，視覺化地畫出代理人的每一步路徑、它調用了哪個工具、傳了什麼參數，讓我們一眼就能看出它在哪個路口走錯了路。」</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>好的，我們現在知道了評估「什麼」以及「如何」深入分析的方法。但下一個問題是，執行這些評估的「裁判」到底是誰？是人類，還是機器？下一頁，我們將來認識這些評估者。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-5" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 05 頁：Evaluation in Practice: Black Box vs. Glass Box Views
+
+#### 【本頁重點摘要】
+*   **黑箱 (Black Box) 評估**：從外部視角開始，只看最終結果，判斷「任務是否成功」。
+*   **白箱 (Glass Box) 評估**：當任務失敗時，深入內部，分析代理人的完整「決策軌跡」，找出「為什麼失敗」。
+*   這是一個由外而內的兩步驟流程：先評估結果，再診斷過程。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們已經建立了「由外而內」的策略框架。現在，讓我們看看這個策略在實務中是如何運作的。它主要分為兩個核心視角：第一個是「黑箱」視角，第二個則是「白箱」視角。
+
+##### ① 「由外而內」的起點：黑箱評估 (The Black Box)
+
+首先，我們從黑箱開始。這代表我們先不關心代理人內部是怎麼想的、過程有多複雜。我們只問一個最根本、也最重要的問題：「這個代理人，有沒有有效地完成使用者的目標？」
+
+> 在我們分析任何內部思考或工具調用之前，我們必須先評估最終的成果。對於一個寫程式的代理人，這可能意味著「它產生的 PR (Pull Request) 有沒有被接受？」；對於一個金融交易代理人，則是「資料庫交易是否成功？」
+
+這就是我們的第一道品質關卡。我們會看幾個關鍵指標：
+*   **任務成功率**：這是一個直接的、二元的分數。問題解決了，還是沒解決？
+*   **使用者滿意度**：使用者最直接的感受是什麼？他們是給了「讚」，還是「倒讚」？或是給了多高的客戶滿意度分數 (CSAT)？
+*   **整體品質**：如果任務是量化的，例如「總結這十篇文章」，那它是否真的總結了全部十篇？內容是否準確、完整？
+
+如果代理人在這個階段拿到滿分，那我們的評估工作可能就到此為止了。但現實是，當結果不完美、任務被中途放棄，或出現奇怪的答案時，「黑箱」評估只告訴我們「**什麼**」錯了。接下來，我們就需要打開箱子，看看裡面到底發生了什麼事。
+
+##### ② 深入問題核心：白箱評估 (The Glass Box)
+
+一旦我們在黑箱評估中發現了問題，我們就切換到「白箱」視角。這個階段的目標非常明確：「**為什麼**代理人會成功或失敗？」
+
+> 透過白箱分析，我們的診斷能力將從「最終答案是錯的」，提升到「最終答案是錯的，**因為**它在第三步錯誤解讀了 API 回傳的錯誤碼」。這就是我們追求的深度洞察力。
+
+為了做到這一點，我們會系統性地拆解代理人的整個執行軌跡 (Trajectory)，檢查每一個環節：
+*   **LLM 的規劃 (也就是「思考」)**：我們先檢查大腦。大型語言模型本身是不是產生了幻覺、陷入了重複的迴圈，或是被無關的上下文污染了？
+*   **工具的使用**：代理人就像一個工匠，它的工具用得好不好很關鍵。它有沒有選錯工具？或者，有沒有在該用的時候不用？甚至，它有沒有自己「幻想」出一個根本不存在的工具或參數？
+*   **工具回傳結果的解讀 (也就是「觀察」)**：工具執行成功後，代理人看懂結果了嗎？一個非常常見的失敗案例是，API 回傳了「404 找不到頁面」的錯誤，但代理人卻沒意識到，還當作一切順利地繼續往下執行。
+*   **RAG 的表現**：如果代理人需要從知識庫中檢索資料，那它找到的資訊相關嗎？是不是過時或不正確的？還是說，它明明找到了正確資料，卻選擇忽略，然後自己瞎掰一個答案？
+*   **軌跡的效率與穩健性**：最後，我們評估整個過程本身。一個本該三步就能完成的任務，代理人卻繞了二十五步才做完，就算最終答案對了，這也是一個低品質、高成本的代理人。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在解釋「白箱」的各個評估組件時，可以放慢速度，用偵探辦案的比喻——我們正在一步步追蹤線索，找出導致任務失敗的根本原因。
+*   **補充案例**：你可以補充一個實際操作的例子：「在實務中，開發者通常會使用一個『追蹤』(Trace) 介面。這個介面會像地圖一樣，視覺化地畫出代理人的每一步路徑、它調用了哪個工具、傳了什麼參數，讓我們一眼就能看出它在哪個路口走錯了路。」
+*   **轉場橋樑 (Bridge)**：
+    > 好的，我們現在知道了評估「什麼」以及「如何」深入分析的方法。但下一個問題是，執行這些評估的「裁判」到底是誰？是人類，還是機器？下一頁，我們將來認識這些評估者。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-6">
+            <div class="slide">
+                <h2>Slide 06</h2>
+                <div class="rendered-content">
+                    <h1>06: The Judges: Automated &amp; AI-Driven Evaluation</h1>
+<p>Knowing <em>what</em> to evaluate is half the battle. <em>How</em> to judge it requires a sophisticated, hybrid approach.</p>
+<h2>Automated Systems for Scale</h2>
+<ol>
+<li>
+<p><strong>Automated Metrics:</strong></p>
+<ul>
+<li><strong>What:</strong> String/embedding similarity (ROUGE, BERTScore), task-specific benchmarks.</li>
+<li><strong>Value:</strong> Provide speed, reproducibility, and trend indicators for regression testing.</li>
+<li><strong>Limitation:</strong> Shallow; they capture surface similarity, not deep reasoning.</li>
+</ul>
+</li>
+<li>
+<p><strong>LLM-as-a-Judge:</strong></p>
+<ul>
+<li><strong>What:</strong> Use a powerful LLM (e.g., Gemini Advanced) to evaluate another agent's output against a detailed rubric.</li>
+<li><strong>Value:</strong> Scalable, fast, and nuanced feedback on qualitative aspects.</li>
+</ul>
+</li>
+<li>
+<p><strong>Agent-as-a-Judge:</strong></p>
+<ul>
+<li><strong>What:</strong> Use one agent to evaluate the full execution <em>trace</em> of another.</li>
+<li><strong>Value:</strong> Assesses the process itself (plan quality, tool use), not just the output.</li>
+</ul>
+</li>
+</ol>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 06</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(6, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(6, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-6" class="note-content rendered-content">
+                    <h3>🎙️ 第 06 頁：The Judges: Automated &amp; AI-Driven Evaluation</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>介紹三種用於規模化評估的自動化「裁判」。</li>
+<li><strong>自動化指標</strong>：提供快速、可量化的迴歸測試，但較為膚淺。</li>
+<li><strong>LLM-as-a-Judge</strong>：利用強大的語言模型來評估「產出」的品質，實現規模化的質化分析。</li>
+<li><strong>Agent-as-a-Judge</strong>：利用一個 Agent 來評估另一個 Agent 的完整「決策過程」，而不僅僅是最終結果。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們已經知道要評估些什麼了——從黑箱到白箱，從結果到過程。但接下來的問題是：<strong>誰來評估？</strong> 如果這是一場比賽，裁判是誰？在規模化的世界裡，我們不可能事事都靠人力。這就是為什麼我們需要一個由 AI 驅動的、自動化的裁判團。</p>
+<p>今天，我們來認識三位這樣的「AI 裁判」。</p>
+<h5>① 第一位裁判：自動化指標 (Automated Metrics)</h5>
+<p>這位裁判就像是田徑場上的<strong>碼錶和量尺</strong>。它快速、客觀、而且不知疲倦。</p>
+<p>我們談論的是像 ROUGE、BERTScore 這樣的指標。它們透過比較 Agent 生成的文字和我們的參考答案之間的「字詞重疊率」或「語意相似度」來打分數。它們最大的價值在於<strong>速度和可重複性</strong>，非常適合放在 CI/CD 流程中做第一層的品質監控。</p>
+<p>但它的限制也很明顯：<strong>它很膚淺</strong>。它只能測量表面的相似度，無法理解深層的邏輯、創意或價值。</p>
+<blockquote>
+<p>舉個實務上的例子：你不需要追求一個絕對完美的 BERTScore 分數。它的真正價值在於<strong>追蹤趨勢</strong>。如果你的主分支在測試集上的平均分數一直是 0.8，但某個新的 commit 讓它驟降到 0.6，那這就是一個非常清晰的警報——你的 Agent 品質出現了明顯的退步。這就是它作為「第一道防線」的價值。</p>
+</blockquote>
+<h5>② 第二位裁判：LLM-as-a-Judge</h5>
+<p>這位裁判，我們可以稱之為<strong>AI 藝術評論家</strong>。當我們需要評估一些主觀、質化的東西，比如「這篇摘要寫得好不好？」或「這個計畫是否合乎邏輯？」，它就派上用場了。</p>
+<p>做法是，我們請出一個非常強大的模型，比如 Gemini Advanced，然後給它一份詳細的評分標準 (Rubric)，讓它來評估我們自己 Agent 的產出。</p>
+<blockquote>
+<p>這種方法提供了規模化、快速且驚人細膩的質化回饋。一個更進階的技巧是<strong>成對比較 (Pairwise Comparison)</strong>。與其讓裁判打一個 1 到 5 的分數，不如給它兩個版本的答案，然後問它：</p>
+<p>「針對這個使用者問題，請問 A 答案和 B 答案，哪一個更好？請解釋你的理由。」</p>
+<p>這樣得出的「勝率」，遠比一個單獨、且可能充滿偏見的絕對分數，來得更可靠。</p>
+</blockquote>
+<h5>③ 第三位裁判：Agent-as-a-Judge</h5>
+<p>這是我們裁判團裡最先進的一位，可以稱之為<strong>過程審查員</strong>或<strong>偵探</strong>。</p>
+<p>前面兩種裁判主要關注「最終產出」，但這位裁判關注的是<strong>整個決策過程</strong>。我們會讓一個 Agent，去評估另一個 Agent 的完整執行軌跡 (Trace)。</p>
+<p>它會檢查：</p>
+<ul>
+<li><strong>計畫品質</strong>：一開始的計畫是否合理？</li>
+<li><strong>工具使用</strong>：它是否選擇了正確的工具？參數給對了嗎？</li>
+<li><strong>情境處理</strong>：它是否有效地利用了之前的對話資訊？</li>
+</ul>
+<blockquote>
+<p>實務上，我們會打造一個「評論家 Agent (Critic Agent)」，把目標 Agent 的整個執行紀錄檔（也就是 Trace 物件）餵給它，然後問它一些尖銳的問題，例如：「根據紀錄，第一步的計畫是否合乎邏輯？第二步選擇呼叫搜尋工具是正確的嗎？還是應該先查資料庫？」</p>
+<p>這讓我們能夠自動發現<strong>過程中的邏輯缺陷</strong>，即使最終答案看起來碰巧是正確的。</p>
+</blockquote>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講完三種裁判後，可以稍微停頓一下。這三個概念層次分明，需要一點時間消化。可以重申「碼錶、評論家、偵探」這個比喻，加深聽眾印象。</li>
+<li><strong>補充案例</strong>：如果時間允許，可以強調 LLM-as-a-Judge 的 pairwise comparison 是目前業界認為更可靠的作法，因為它減少了單點評分的偏差問題。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>我們看到了，自動化裁判團為我們提供了規模和速度。但它們真的能理解複雜的商業邏輯、產業知識，或判斷什麼是符合倫理的嗎？答案顯然是否定的。這就引出了我們評估框架中最後，也是最關鍵的一環。當機器的判斷力到達極限時，我們需要終極的仲裁者。下一頁，我們來談談<strong>人類</strong>在迴圈中的角色。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-6" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 06 頁：The Judges: Automated & AI-Driven Evaluation
+
+#### 【本頁重點摘要】
+*   介紹三種用於規模化評估的自動化「裁判」。
+*   **自動化指標**：提供快速、可量化的迴歸測試，但較為膚淺。
+*   **LLM-as-a-Judge**：利用強大的語言模型來評估「產出」的品質，實現規模化的質化分析。
+*   **Agent-as-a-Judge**：利用一個 Agent 來評估另一個 Agent 的完整「決策過程」，而不僅僅是最終結果。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們已經知道要評估些什麼了——從黑箱到白箱，從結果到過程。但接下來的問題是：**誰來評估？** 如果這是一場比賽，裁判是誰？在規模化的世界裡，我們不可能事事都靠人力。這就是為什麼我們需要一個由 AI 驅動的、自動化的裁判團。
+
+今天，我們來認識三位這樣的「AI 裁判」。
+
+##### ① 第一位裁判：自動化指標 (Automated Metrics)
+
+這位裁判就像是田徑場上的**碼錶和量尺**。它快速、客觀、而且不知疲倦。
+
+我們談論的是像 ROUGE、BERTScore 這樣的指標。它們透過比較 Agent 生成的文字和我們的參考答案之間的「字詞重疊率」或「語意相似度」來打分數。它們最大的價值在於**速度和可重複性**，非常適合放在 CI/CD 流程中做第一層的品質監控。
+
+但它的限制也很明顯：**它很膚淺**。它只能測量表面的相似度，無法理解深層的邏輯、創意或價值。
+
+> 舉個實務上的例子：你不需要追求一個絕對完美的 BERTScore 分數。它的真正價值在於**追蹤趨勢**。如果你的主分支在測試集上的平均分數一直是 0.8，但某個新的 commit 讓它驟降到 0.6，那這就是一個非常清晰的警報——你的 Agent 品質出現了明顯的退步。這就是它作為「第一道防線」的價值。
+
+##### ② 第二位裁判：LLM-as-a-Judge
+
+這位裁判，我們可以稱之為**AI 藝術評論家**。當我們需要評估一些主觀、質化的東西，比如「這篇摘要寫得好不好？」或「這個計畫是否合乎邏輯？」，它就派上用場了。
+
+做法是，我們請出一個非常強大的模型，比如 Gemini Advanced，然後給它一份詳細的評分標準 (Rubric)，讓它來評估我們自己 Agent 的產出。
+
+> 這種方法提供了規模化、快速且驚人細膩的質化回饋。一個更進階的技巧是**成對比較 (Pairwise Comparison)**。與其讓裁判打一個 1 到 5 的分數，不如給它兩個版本的答案，然後問它：
+>
+> 「針對這個使用者問題，請問 A 答案和 B 答案，哪一個更好？請解釋你的理由。」
+>
+> 這樣得出的「勝率」，遠比一個單獨、且可能充滿偏見的絕對分數，來得更可靠。
+
+##### ③ 第三位裁判：Agent-as-a-Judge
+
+這是我們裁判團裡最先進的一位，可以稱之為**過程審查員**或**偵探**。
+
+前面兩種裁判主要關注「最終產出」，但這位裁判關注的是**整個決策過程**。我們會讓一個 Agent，去評估另一個 Agent 的完整執行軌跡 (Trace)。
+
+它會檢查：
+*   **計畫品質**：一開始的計畫是否合理？
+*   **工具使用**：它是否選擇了正確的工具？參數給對了嗎？
+*   **情境處理**：它是否有效地利用了之前的對話資訊？
+
+> 實務上，我們會打造一個「評論家 Agent (Critic Agent)」，把目標 Agent 的整個執行紀錄檔（也就是 Trace 物件）餵給它，然後問它一些尖銳的問題，例如：「根據紀錄，第一步的計畫是否合乎邏輯？第二步選擇呼叫搜尋工具是正確的嗎？還是應該先查資料庫？」
+>
+> 這讓我們能夠自動發現**過程中的邏輯缺陷**，即使最終答案看起來碰巧是正確的。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講完三種裁判後，可以稍微停頓一下。這三個概念層次分明，需要一點時間消化。可以重申「碼錶、評論家、偵探」這個比喻，加深聽眾印象。
+*   **補充案例**：如果時間允許，可以強調 LLM-as-a-Judge 的 pairwise comparison 是目前業界認為更可靠的作法，因為它減少了單點評分的偏差問題。
+*   **轉場橋樑 (Bridge)**：
+    > 我們看到了，自動化裁判團為我們提供了規模和速度。但它們真的能理解複雜的商業邏輯、產業知識，或判斷什麼是符合倫理的嗎？答案顯然是否定的。這就引出了我們評估框架中最後，也是最關鍵的一環。當機器的判斷力到達極限時，我們需要終極的仲裁者。下一頁，我們來談談**人類**在迴圈中的角色。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-7">
+            <div class="slide">
+                <h2>Slide 07</h2>
+                <div class="rendered-content">
+                    <h1>07: The Human Arbiter: HITL and User Feedback</h1>
+<p>Automation provides scale, but human judgment remains the crucial arbiter of quality.</p>
+<h2>Human-in-the-Loop (HITL) Evaluation</h2>
+<ul>
+<li><strong>Purpose:</strong> To capture critical qualitative signals, nuanced judgments, and complex domain knowledge that automated systems miss.</li>
+<li><strong>Key Functions:</strong>
+<ul>
+<li><strong>Domain Expertise:</strong> Evaluate factual correctness and industry standards.</li>
+<li><strong>Interpreting Nuance:</strong> Judge subtle qualities like tone, creativity, and ethical alignment.</li>
+<li><strong>Creating the &quot;Golden Set&quot;:</strong> Establish the gold-standard benchmark for automated systems.</li>
+</ul>
+</li>
+</ul>
+<h2>User Feedback &amp; Reviewer UI</h2>
+<ul>
+<li><strong>Purpose:</strong> Capture real-world signals of usefulness, clarity, and trust directly from users.</li>
+<li><strong>Best Practices:</strong>
+<ul>
+<li><strong>Low-friction feedback:</strong> Thumbs up/down, quick sliders.</li>
+<li><strong>Context-rich review:</strong> Pair feedback with the full conversation and reasoning trace.</li>
+<li><strong>Actionable UI:</strong> Use dashboards and review queues to make feedback visible and actionable.</li>
+</ul>
+</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 07</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(7, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(7, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-7" class="note-content rendered-content">
+                    <h3>🎙️ 第 07 頁：The Human Arbiter: HITL and User Feedback</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>自動化評估提供規模，但人類的判斷力仍然是品質的最終仲裁者。</li>
+<li>「人在環路」(HITL) 對於捕捉質化信號、細微差別和專業領域知識至關重要。</li>
+<li>必須透過設計良好的使用者介面 (UI) 和流程，系統性地捕捉真實世界的用戶回饋，才能將其轉化為可操作的洞見。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們剛剛探討了如何用 AI 來評估 AI，這為我們帶來了前所未有的規模與速度。但我們都清楚，規模並非萬能。當我們追求真正頂尖的品質、當我們需要對「好」與「壞」做出最終裁決時，我們需要一種更細膩、更具智慧的判斷力——那就是人類的判斷力。</p>
+<p>這一頁，我們來談談整個品質框架中，最無可取代的角色：<strong>人類仲裁者</strong>。</p>
+<h5>① 人在環路 (Human-in-the-Loop, HITL)：品質的黃金標準</h5>
+<p>首先，我們來看看「人在環路」，也就是 HITL 評估。為什麼在擁有強大自動化工具後，我們仍然需要它？因為自動化系統在三個關鍵點上存在極限：<strong>主觀性、細微差別、以及深度的領域知識</strong>。</p>
+<blockquote>
+<p>我們必須理解，HITL 的目標不是提供完美的「客觀真理」，因為在許多主觀任務上，即使是人類專家也難以達成百分之百的共識。相反地，HITL 的真正價值在於建立一個「經由人類校準的基準 (human-calibrated benchmark)」。這是我們衡量其他一切自動化評估的黃金標準。</p>
+</blockquote>
+<p>具體來說，HITL 扮演了幾個關鍵角色：</p>
+<ul>
+<li><strong>領域專業知識 (Domain Expertise)</strong>：想像一個法律或醫療領域的 Agent。AI 可以檢查文法是否流暢，但它能判斷其建議是否符合複雜的行業規範嗎？不行。這就需要律師或醫生來進行最終的審核。</li>
+<li><strong>詮釋細微差別 (Interpreting Nuance)</strong>：一個回應的<strong>語氣</strong>、<strong>創意</strong>，或是在複雜<strong>倫理</strong>情境下的恰當性——這些微妙的品質，只有人類才能真正理解與判斷。</li>
+<li><strong>創建「黃金標準集 (Golden Set)」</strong>：這是最重要的一步。在我們能夠自動化評估之前，必須由人類專家來定義成功的標準、策劃涵蓋典型與極端場景的測試案例，打造出那一套「黃金標準集」。</li>
+</ul>
+<h5>② 使用者回饋與審核介面：與真實世界對話</h5>
+<p>除了內部專家，我們還有另一群更重要的「人類仲裁者」——那就是我們的<strong>終端使用者</strong>。每一次使用者與 Agent 的互動，都是一個關於其實用性、清晰度和信任度的寶貴信號。</p>
+<p>但要讓這些信號發揮作用，我們必須有策略地去收集和處理它。</p>
+<ul>
+<li>首先，回饋機制必須是<strong>低門檻的</strong>。一個簡單的 <strong>「讚」或「倒讚」</strong>、一個快速的滑桿，遠比複雜的問卷有效。</li>
+<li>其次，回饋必須<strong>富含上下文</strong>。一個「倒讚」本身意義不大，但如果系統能自動捕捉到這個負評背後<strong>完整的對話記錄</strong>和 Agent 的<strong>推理軌跡 (reasoning trace)</strong>，它的價值就瞬間倍增。</li>
+<li>最後，這些數據必須進入一個<strong>可操作的審核介面 (Reviewer UI)</strong>。想像一個雙欄介面：左邊是使用者對話，右邊是 Agent 的思考步驟。開發者可以一目了然地看到問題出在哪一步，並立即將這個失敗案例轉化為一個新的、永久性的回歸測試。</li>
+</ul>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講到這裡可以稍微停頓，強調「無論是 HITL 還是用戶回饋，其目的都不僅是為了挑錯，更是為了建立一個持續產生高品質數據、驅動系統自我完善的引擎。」</li>
+<li><strong>補充案例</strong>：可以補充書中提到的「執行期安全中斷」的例子。例如，當 Agent 準備執行一個高風險操作（如 <code>執行付款</code> 或 <code>刪除資料庫</code>）時，系統會自動暫停，並在審核 UI 中等待人類操作員手動批准，才能繼續執行。這就是 HITL 在保障安全方面的實際應用。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>我們剛剛討論了如何判斷品質與正確性，但還有一個凌駕於一切之上的評估維度，它是絕對不容妥協的。如果一個 Agent 雖然高效，但卻可能造成傷害，那該怎麼辦？下一頁，我們將探討整個框架的終極守門員：<strong>責任制 AI 與安全性 (Responsible AI &amp; Safety)</strong>。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-7" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 07 頁：The Human Arbiter: HITL and User Feedback
+
+#### 【本頁重點摘要】
+*   自動化評估提供規模，但人類的判斷力仍然是品質的最終仲裁者。
+*   「人在環路」(HITL) 對於捕捉質化信號、細微差別和專業領域知識至關重要。
+*   必須透過設計良好的使用者介面 (UI) 和流程，系統性地捕捉真實世界的用戶回饋，才能將其轉化為可操作的洞見。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們剛剛探討了如何用 AI 來評估 AI，這為我們帶來了前所未有的規模與速度。但我們都清楚，規模並非萬能。當我們追求真正頂尖的品質、當我們需要對「好」與「壞」做出最終裁決時，我們需要一種更細膩、更具智慧的判斷力——那就是人類的判斷力。
+
+這一頁，我們來談談整個品質框架中，最無可取代的角色：**人類仲裁者**。
+
+##### ① 人在環路 (Human-in-the-Loop, HITL)：品質的黃金標準
+首先，我們來看看「人在環路」，也就是 HITL 評估。為什麼在擁有強大自動化工具後，我們仍然需要它？因為自動化系統在三個關鍵點上存在極限：**主觀性、細微差別、以及深度的領域知識**。
+
+> 我們必須理解，HITL 的目標不是提供完美的「客觀真理」，因為在許多主觀任務上，即使是人類專家也難以達成百分之百的共識。相反地，HITL 的真正價值在於建立一個「經由人類校準的基準 (human-calibrated benchmark)」。這是我們衡量其他一切自動化評估的黃金標準。
+
+具體來說，HITL 扮演了幾個關鍵角色：
+*   **領域專業知識 (Domain Expertise)**：想像一個法律或醫療領域的 Agent。AI 可以檢查文法是否流暢，但它能判斷其建議是否符合複雜的行業規範嗎？不行。這就需要律師或醫生來進行最終的審核。
+*   **詮釋細微差別 (Interpreting Nuance)**：一個回應的**語氣**、**創意**，或是在複雜**倫理**情境下的恰當性——這些微妙的品質，只有人類才能真正理解與判斷。
+*   **創建「黃金標準集 (Golden Set)」**：這是最重要的一步。在我們能夠自動化評估之前，必須由人類專家來定義成功的標準、策劃涵蓋典型與極端場景的測試案例，打造出那一套「黃金標準集」。
+
+##### ② 使用者回饋與審核介面：與真實世界對話
+除了內部專家，我們還有另一群更重要的「人類仲裁者」——那就是我們的**終端使用者**。每一次使用者與 Agent 的互動，都是一個關於其實用性、清晰度和信任度的寶貴信號。
+
+但要讓這些信號發揮作用，我們必須有策略地去收集和處理它。
+*   首先，回饋機制必須是**低門檻的**。一個簡單的 **「讚」或「倒讚」**、一個快速的滑桿，遠比複雜的問卷有效。
+*   其次，回饋必須**富含上下文**。一個「倒讚」本身意義不大，但如果系統能自動捕捉到這個負評背後**完整的對話記錄**和 Agent 的**推理軌跡 (reasoning trace)**，它的價值就瞬間倍增。
+*   最後，這些數據必須進入一個**可操作的審核介面 (Reviewer UI)**。想像一個雙欄介面：左邊是使用者對話，右邊是 Agent 的思考步驟。開發者可以一目了然地看到問題出在哪一步，並立即將這個失敗案例轉化為一個新的、永久性的回歸測試。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講到這裡可以稍微停頓，強調「無論是 HITL 還是用戶回饋，其目的都不僅是為了挑錯，更是為了建立一個持續產生高品質數據、驅動系統自我完善的引擎。」
+*   **補充案例**：可以補充書中提到的「執行期安全中斷」的例子。例如，當 Agent 準備執行一個高風險操作（如 `執行付款` 或 `刪除資料庫`）時，系統會自動暫停，並在審核 UI 中等待人類操作員手動批准，才能繼續執行。這就是 HITL 在保障安全方面的實際應用。
+*   **轉場橋樑 (Bridge)**：
+    > 我們剛剛討論了如何判斷品質與正確性，但還有一個凌駕於一切之上的評估維度，它是絕對不容妥協的。如果一個 Agent 雖然高效，但卻可能造成傷害，那該怎麼辦？下一頁，我們將探討整個框架的終極守門員：**責任制 AI 與安全性 (Responsible AI & Safety)**。
+
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-8">
+            <div class="slide">
+                <h2>Slide 08</h2>
+                <div class="rendered-content">
+                    <h1>08: The Non-Negotiable Gate: Responsible AI &amp; Safety</h1>
+<p>An agent that is 100% effective but causes harm is a total failure. Safety is not a component; it's a mandatory, non-negotiable gate for any production agent.</p>
+<h2>Key Practices for Safety Evaluation</h2>
+<ol>
+<li>
+<p><strong>Systematic Red Teaming:</strong></p>
+<ul>
+<li>Actively trying to break the agent with adversarial scenarios.</li>
+<li>Includes attempts to generate hate speech, reveal private info, or induce malicious actions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Automated Filters &amp; Human Review:</strong></p>
+<ul>
+<li>Implement technical filters to catch policy violations.</li>
+<li>Couple automation with human review to catch nuanced forms of bias or toxicity.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adherence to Guidelines:</strong></p>
+<ul>
+<li>Explicitly evaluate agent outputs against predefined ethical guidelines and principles.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Performance metrics tell us if the agent <em>can</em> do the job. Safety evaluation tells us if it <em>should</em>.</strong></p>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 08</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(8, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(8, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-8" class="note-content rendered-content">
+                    <h3>🎙️ 第 08 頁：責任制 AI 與安全性：不容妥協的關卡</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>一個 Agent 即使效能再好，一旦造成傷害，就是徹底的失敗。安全性是生產環境中不容妥協的強制性關卡。</li>
+<li>安全評估的三大關鍵實踐：系統性紅隊演練、自動化過濾結合人工審核、以及遵循明確的倫理準則。</li>
+<li>效能指標決定 Agent 的「能力」，而安全評估決定其「應為之事」。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，到目前為止，我們討論了很多關於如何評估 Agent「做得好不好」的方法。但現在，我們要談一個更根本的問題：如何確保我們的 Agent「不會做壞事」。</p>
+<p>一個 100% 有效但會造成傷害的 Agent，是一個徹底的失敗品。因此，<strong>安全性不是一個可選的附加功能，而是進入生產環境前，一道必須通過、絕不妥協的關卡。</strong></p>
+<p>那麼，具體該怎麼做呢？這裡有三個關鍵的實踐。</p>
+<h5>① 系統性紅隊演練 (Systematic Red Teaming)</h5>
+<p>第一個，也是最積極主動的一步，叫做「紅隊演練」。這不是被動地等待問題發生，而是主動地、系統性地去攻擊我們自己的 Agent，試圖讓它崩潰或做出不當行為。</p>
+<p>這包括模擬各種惡意場景，例如：</p>
+<ul>
+<li>誘導它產生仇恨言論或有害內容。</li>
+<li>嘗試讓它洩漏訓練數據中的個人隱私資訊。</li>
+<li>引誘它執行一些惡意的、非預期的指令。</li>
+</ul>
+<p>只有透過這種方式，我們才能在真實世界的惡意使用者發現漏洞之前，自己先找到並修補它們。</p>
+<h5>② 自動化過濾與人工審核 (Automated Filters &amp; Human Review)</h5>
+<p>第二，我們需要一個雙層防護網。</p>
+<p>首先是 <strong>自動化過濾器</strong>。這就像是我們系統的免疫系統，可以即時攔截已知的風險。例如，我們可以在模型處理請求<strong>之前</strong>，就部署一個分類器來檢測「提示詞注入攻擊」；在模型生成回應<strong>之後</strong>，再用另一個工具來掃描是否包含個資 (PII)。</p>
+<p>但自動化並非萬能。對於那些更細微、更隱晦的偏見或潛在的冒犯性內容，機器很難判斷。這就需要 <strong>人工審核</strong> 的介入。人類專家能夠理解文化脈絡、解讀言外之意，捕捉那些自動化系統會錯過的灰色地帶。</p>
+<h5>③ 遵循準則 (Adherence to Guidelines)</h5>
+<p>最後，我們必須明確定義 Agent 的「行為準則」與「倫理邊界」，並且嚴格評估它的所有產出是否都符合這些準則。這確保了 Agent 的行為不僅合法合規，更能作為我們組織的可靠代理人，其言行與我們的核心價值觀保持一致。</p>
+<blockquote>
+<p>效能指標告訴我們，這個 Agent <em>能不能</em> 完成工作。但安全評估告訴我們，它 <em>應不應該</em> 去做。</p>
+</blockquote>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在唸完 blockquote 中的那句總結時，請務必停頓三秒。這句話是本頁的核心，需要時間讓聽眾消化。</li>
+<li><strong>補充案例</strong>：可以舉例，就像一輛自動駕駛汽車，它的效能指標是「能否準時到達目的地」，但它的安全評估是「能否在遵守交通規則、不造成任何危險的情況下到達」。兩者缺一不可。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>我們已經定義了評估的框架，也強調了安全這個不容妥協的大門。但無論是效能評估還是安全檢查，它們都需要一個共同的基礎：數據。如果我們看不見 Agent 的決策過程，我們就無法評估它。下一頁，我們將探討如何「看見」這一切，也就是「可觀測性」(Observability)。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-8" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 08 頁：責任制 AI 與安全性：不容妥協的關卡
+
+#### 【本頁重點摘要】
+*   一個 Agent 即使效能再好，一旦造成傷害，就是徹底的失敗。安全性是生產環境中不容妥協的強制性關卡。
+*   安全評估的三大關鍵實踐：系統性紅隊演練、自動化過濾結合人工審核、以及遵循明確的倫理準則。
+*   效能指標決定 Agent 的「能力」，而安全評估決定其「應為之事」。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，到目前為止，我們討論了很多關於如何評估 Agent「做得好不好」的方法。但現在，我們要談一個更根本的問題：如何確保我們的 Agent「不會做壞事」。
+
+一個 100% 有效但會造成傷害的 Agent，是一個徹底的失敗品。因此，**安全性不是一個可選的附加功能，而是進入生產環境前，一道必須通過、絕不妥協的關卡。**
+
+那麼，具體該怎麼做呢？這裡有三個關鍵的實踐。
+
+##### ① 系統性紅隊演練 (Systematic Red Teaming)
+第一個，也是最積極主動的一步，叫做「紅隊演練」。這不是被動地等待問題發生，而是主動地、系統性地去攻擊我們自己的 Agent，試圖讓它崩潰或做出不當行為。
+
+這包括模擬各種惡意場景，例如：
+*   誘導它產生仇恨言論或有害內容。
+*   嘗試讓它洩漏訓練數據中的個人隱私資訊。
+*   引誘它執行一些惡意的、非預期的指令。
+
+只有透過這種方式，我們才能在真實世界的惡意使用者發現漏洞之前，自己先找到並修補它們。
+
+##### ② 自動化過濾與人工審核 (Automated Filters & Human Review)
+第二，我們需要一個雙層防護網。
+
+首先是 **自動化過濾器**。這就像是我們系統的免疫系統，可以即時攔截已知的風險。例如，我們可以在模型處理請求**之前**，就部署一個分類器來檢測「提示詞注入攻擊」；在模型生成回應**之後**，再用另一個工具來掃描是否包含個資 (PII)。
+
+但自動化並非萬能。對於那些更細微、更隱晦的偏見或潛在的冒犯性內容，機器很難判斷。這就需要 **人工審核** 的介入。人類專家能夠理解文化脈絡、解讀言外之意，捕捉那些自動化系統會錯過的灰色地帶。
+
+##### ③ 遵循準則 (Adherence to Guidelines)
+最後，我們必須明確定義 Agent 的「行為準則」與「倫理邊界」，並且嚴格評估它的所有產出是否都符合這些準則。這確保了 Agent 的行為不僅合法合規，更能作為我們組織的可靠代理人，其言行與我們的核心價值觀保持一致。
+
+> 效能指標告訴我們，這個 Agent *能不能* 完成工作。但安全評估告訴我們，它 *應不應該* 去做。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在唸完 blockquote 中的那句總結時，請務必停頓三秒。這句話是本頁的核心，需要時間讓聽眾消化。
+*   **補充案例**：可以舉例，就像一輛自動駕駛汽車，它的效能指標是「能否準時到達目的地」，但它的安全評估是「能否在遵守交通規則、不造成任何危險的情況下到達」。兩者缺一不可。
+*   **轉場橋樑 (Bridge)**：
+    > 我們已經定義了評估的框架，也強調了安全這個不容妥協的大門。但無論是效能評估還是安全檢查，它們都需要一個共同的基礎：數據。如果我們看不見 Agent 的決策過程，我們就無法評估它。下一頁，我們將探討如何「看見」這一切，也就是「可觀測性」(Observability)。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-9">
+            <div class="slide">
+                <h2>Slide 09</h2>
+                <div class="rendered-content">
+                    <h1>09: Observability: From Monitoring to True Understanding</h1>
+<p>AI agents don't just follow instructions; they make decisions. This demands a shift from traditional monitoring to deep observability.</p>
+<h2>The Kitchen Analogy</h2>
+<ul>
+<li>
+<p><strong>Traditional Software (Line Cook):</strong> Follows a rigid, deterministic recipe. <strong>Monitoring</strong> is a checklist to verify a known process.</p>
+</li>
+<li>
+<p><strong>AI Agent (Gourmet Chef):</strong> Creates a novel solution to a goal (&quot;Create a dessert&quot;) from a mystery box of ingredients. <strong>Observability</strong> is like a food critic understanding the <em>entire process</em>—the 'why' behind the choices—to judge the quality of the work.</p>
+</li>
+</ul>
+<h2>The Critical Question Changes</h2>
+<ul>
+<li><strong>From:</strong> &quot;Is the agent running?&quot;</li>
+<li><strong>To:</strong> &quot;Is the agent thinking effectively?&quot;</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 09</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(9, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(9, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-9" class="note-content rendered-content">
+                    <h3>🎙️ 第 09 頁：Observability: From Monitoring to True Understanding</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>AI 代理程式的品質保證，需要從傳統的「監控 (Monitoring)」思維，轉變為更深層次的「可觀測性 (Observability)」。</li>
+<li>監控就像檢查「產線廚師」是否按部就班，而可觀測性則像美食評論家，需要理解「創意主廚」的整個決策過程。</li>
+<li>我們關注的核心問題，從「代理程式是否在運行？」轉變為「代理程式是否在有效地思考？」。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們前面談了為什麼需要新的評估框架，以及評估的層次。現在，問題來了：我們要如何才能「看見」代理程式的決策過程呢？這就帶我們進入一個至關重要的概念：<strong>可觀測性 (Observability)</strong>，以及它與傳統軟體「監控 (Monitoring)」的根本區別。</p>
+<p>為了讓大家秒懂，我們不用伺服器來比喻，我們走進廚房。</p>
+<h5>① 傳統軟體就像「產線廚師」</h5>
+<p>想像一下速食店的廚房。產線廚師的工作台前，有一張標準作業流程卡，上面明確寫著漢堡的每一個步驟：麵包烤 30 秒、肉排煎 90 秒、放一片起司、兩片酸黃瓜。這是一個完全固定、可預測的流程。</p>
+<blockquote>
+<p>在這種世界裡，我們做的事情叫做「監控」。監控就像一張檢查清單：烤爐溫度對嗎？廚師有沒有漏掉步驟？訂單是否準時完成？我們在做的，是<strong>驗證一個已知的、確定的流程</strong>。</p>
+</blockquote>
+<h5>② AI 代理程式則是「創意主廚」</h5>
+<p>現在，想像一位參加「神秘箱挑戰」的頂級主廚。他得到的不是食譜，而是一個目標——「做出一道驚豔的甜點」，以及一籃子食材——也就是使用者的指令、外部資料和可用的工具。</p>
+<p>這裡<strong>沒有唯一的正確答案</strong>。他可能做熔岩巧克力蛋糕，也可能做解構的提拉米蘇。兩者都可能是完美的解法。</p>
+<blockquote>
+<p>在這種情況下，要評斷他的好壞，就需要「可觀測性」。這就像美食評論家在評分。評論家不只嚐最後那道菜，他更想了解主廚的<strong>整個思考過程</strong>。他為什麼選擇用羅勒來搭配覆盆子？他用了什麼技巧讓薑糖結晶？當他發現糖不夠時，他又是如何應變的？我們必須看透他的「思維過程」，才能真正評估他作品的品質。</p>
+</blockquote>
+<h5>③ 核心問題的轉變</h5>
+<p>所以，這就帶來了我們對 AI 代理程式的根本思維轉變。我們不再只是問：「這個代理程式還在運行嗎？」</p>
+<p>我們必須問一個更深刻的問題：</p>
+<blockquote>
+<p><strong>「這個代理程式，是否在有效地思考？」</strong></p>
+</blockquote>
+<p>這個問題的轉變，意味著我們的焦點，從單純確認系統是否活著，轉移到了判斷其「認知過程」的品質。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在講完「產線廚師」和「創意主廚」的對比後，可以稍微停頓一下，讓聽眾消化這個比喻。</li>
+<li><strong>互動建議</strong>：可以問台下：「大家能理解這個廚師比喻的差別嗎？」來增加互動感。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>那麼，如果我們需要像美食評論家一樣，洞察主廚的完整創作過程，我們該使用哪些工具，來獲得這種「上帝視角」呢？下一頁，我們將介紹實現可觀測性的三大支柱。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-9" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 09 頁：Observability: From Monitoring to True Understanding
+
+#### 【本頁重點摘要】
+*   AI 代理程式的品質保證，需要從傳統的「監控 (Monitoring)」思維，轉變為更深層次的「可觀測性 (Observability)」。
+*   監控就像檢查「產線廚師」是否按部就班，而可觀測性則像美食評論家，需要理解「創意主廚」的整個決策過程。
+*   我們關注的核心問題，從「代理程式是否在運行？」轉變為「代理程式是否在有效地思考？」。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們前面談了為什麼需要新的評估框架，以及評估的層次。現在，問題來了：我們要如何才能「看見」代理程式的決策過程呢？這就帶我們進入一個至關重要的概念：**可觀測性 (Observability)**，以及它與傳統軟體「監控 (Monitoring)」的根本區別。
+
+為了讓大家秒懂，我們不用伺服器來比喻，我們走進廚房。
+
+##### ① 傳統軟體就像「產線廚師」
+想像一下速食店的廚房。產線廚師的工作台前，有一張標準作業流程卡，上面明確寫著漢堡的每一個步驟：麵包烤 30 秒、肉排煎 90 秒、放一片起司、兩片酸黃瓜。這是一個完全固定、可預測的流程。
+
+> 在這種世界裡，我們做的事情叫做「監控」。監控就像一張檢查清單：烤爐溫度對嗎？廚師有沒有漏掉步驟？訂單是否準時完成？我們在做的，是**驗證一個已知的、確定的流程**。
+
+##### ② AI 代理程式則是「創意主廚」
+現在，想像一位參加「神秘箱挑戰」的頂級主廚。他得到的不是食譜，而是一個目標——「做出一道驚豔的甜點」，以及一籃子食材——也就是使用者的指令、外部資料和可用的工具。
+
+這裡**沒有唯一的正確答案**。他可能做熔岩巧克力蛋糕，也可能做解構的提拉米蘇。兩者都可能是完美的解法。
+
+> 在這種情況下，要評斷他的好壞，就需要「可觀測性」。這就像美食評論家在評分。評論家不只嚐最後那道菜，他更想了解主廚的**整個思考過程**。他為什麼選擇用羅勒來搭配覆盆子？他用了什麼技巧讓薑糖結晶？當他發現糖不夠時，他又是如何應變的？我們必須看透他的「思維過程」，才能真正評估他作品的品質。
+
+##### ③ 核心問題的轉變
+所以，這就帶來了我們對 AI 代理程式的根本思維轉變。我們不再只是問：「這個代理程式還在運行嗎？」
+
+我們必須問一個更深刻的問題：
+
+> **「這個代理程式，是否在有效地思考？」**
+
+這個問題的轉變，意味著我們的焦點，從單純確認系統是否活著，轉移到了判斷其「認知過程」的品質。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在講完「產線廚師」和「創意主廚」的對比後，可以稍微停頓一下，讓聽眾消化這個比喻。
+*   **互動建議**：可以問台下：「大家能理解這個廚師比喻的差別嗎？」來增加互動感。
+*   **轉場橋樑 (Bridge)**：
+    > 那麼，如果我們需要像美食評論家一樣，洞察主廚的完整創作過程，我們該使用哪些工具，來獲得這種「上帝視角」呢？下一頁，我們將介紹實現可觀測性的三大支柱。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-10">
+            <div class="slide">
+                <h2>Slide 10</h2>
+                <div class="rendered-content">
+                    <h1>10: The Three Pillars of Observability</h1>
+<p>Observability provides access to the agent's &quot;thought process&quot; by analyzing the evidence it leaves behind. It stands on three foundational pillars.</p>
+<h2>1. Logs (The Agent's Diary)</h2>
+<ul>
+<li><strong>What:</strong> Timestamped, immutable facts about discrete events.</li>
+<li><strong>Tells Us:</strong> <em>What</em> happened at a specific moment.</li>
+</ul>
+<h2>2. Traces (The Narrative Thread)</h2>
+<ul>
+<li><strong>What:</strong> A narrative connecting individual logs (spans) into a coherent story for a single task.</li>
+<li><strong>Tells Us:</strong> <em>Why</em> it happened by showing the causal relationship between events.</li>
+</ul>
+<h2>3. Metrics (The Health Report)</h2>
+<ul>
+<li><strong>What:</strong> Quantitative, aggregated health scores derived from logs and traces.</li>
+<li><strong>Tells Us:</strong> <em>How well</em> the performance went, on average, over time.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 10</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(10, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(10, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-10" class="note-content rendered-content">
+                    <h3>🎙️ 第 10 頁：The_Three_Pillars_of_Observability_Logs,_Traces,_and_Metrics</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>可觀測性 (Observability)</strong> 讓我們能透過分析 AI 代理商留下的證據，來理解其「思考過程」。</li>
+<li>這個能力建立在三大支柱之上：
+<ul>
+<li><strong>日誌 (Logs)</strong>：記錄了在特定時間點「發生了什麼」。</li>
+<li><strong>追蹤 (Traces)</strong>：串連所有事件，解釋了「為什麼會發生」。</li>
+<li><strong>指標 (Metrics)</strong>：匯總數據，評估了「表現得有多好」。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們剛剛用「神祕箱挑戰」中的美食家主廚，來比喻一個 AI Agent。現在的問題是，身為美食評論家，我們該用什麼工具來評斷這位主廚的表現呢？這就是「可觀測性」的三大支柱要發揮作用的地方。它們是我們得以窺探 Agent 內心世界的眼睛和耳朵。</p>
+<h5>① 第一個支柱：日誌 (Logs) - Agent 的日記</h5>
+<p>首先是「日誌」。你可以把它想像成是 Agent 的 <strong>工作日記</strong>。</p>
+<blockquote>
+<p>日誌是可觀測性的最小單位，它是一個個帶有時間戳、不可改變的離散事件記錄。</p>
+</blockquote>
+<p>它非常單純，只告訴我們「發生了什麼事」。例如，日記上記錄著：「上午 10:01:32，我收到一個問題」、「上午 10:01:33，我決定使用 <code>get_weather</code> 這個工具」。每一筆都是一個獨立、客觀的事實。</p>
+<h5>② 第二個支柱：追蹤 (Traces) - 敘事的線索</h5>
+<p>但只有一堆零散的日記條目是不夠的。我們需要將它們串成一個有意義的故事，這就是「追蹤」的作用。</p>
+<p>如果說日誌是偵探軟木板上的一張張照片、一張張票根，那麼 <strong>追蹤就是那條串起所有線索的紅線</strong>。它會跟隨一個完整的任務——從最初的用戶提問到最終的答案——將所有相關的日誌（在追蹤裡我們稱之為 <code>spans</code>）串聯起來，形成一個完整的、端到端的視圖。</p>
+<p>這條紅線揭示了事件之間的因果關係，讓我們能夠回答那個至關重要的問題：「<strong>為什麼</strong>」事情會這樣發生。</p>
+<h5>③ 第三個支柱：指標 (Metrics) - 健康報告</h5>
+<p>最後，當我們有了日記和故事線之後，就需要一份總結報告了。這就是「指標」。</p>
+<blockquote>
+<p>指標是量化的、匯總後的健康分數，它來自於對大量日誌和追蹤數據的分析。</p>
+</blockquote>
+<p>如果說日誌是廚師的備料筆記，追蹤是評論家看著食譜的每一步，那麼 <strong>指標就是評論家最終發布的評分卡</strong>。它不會告訴你某個單一事件的細節，但它會告訴你，平均而言，這位 Agent 的表現「<strong>有多好</strong>」。例如，它的平均反應時間、任務成功率、或是成本花費。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講完這三大支柱後，可以稍微停頓一下。這三個概念是後續內容的基礎，確保聽眾能區分它們（日記、故事線、成績單）。</li>
+<li><strong>善用比喻</strong>：在解釋時，可以反覆使用「日記 (Logs)」、「故事線 (Traces)」、「成績單 (Metrics)」的比喻，這能幫助聽眾記憶。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了可觀測性的這三個核心概念後，接下來，我們將深入探討前兩個支柱——日誌與追蹤。我們會看看在實務上，一個「有效」的日誌和追蹤系統，到底該具備哪些關鍵要素。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-10" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 10 頁：The_Three_Pillars_of_Observability_Logs,_Traces,_and_Metrics
+
+#### 【本頁重點摘要】
+*   **可觀測性 (Observability)** 讓我們能透過分析 AI 代理商留下的證據，來理解其「思考過程」。
+*   這個能力建立在三大支柱之上：
+    *   **日誌 (Logs)**：記錄了在特定時間點「發生了什麼」。
+    *   **追蹤 (Traces)**：串連所有事件，解釋了「為什麼會發生」。
+    *   **指標 (Metrics)**：匯總數據，評估了「表現得有多好」。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們剛剛用「神祕箱挑戰」中的美食家主廚，來比喻一個 AI Agent。現在的問題是，身為美食評論家，我們該用什麼工具來評斷這位主廚的表現呢？這就是「可觀測性」的三大支柱要發揮作用的地方。它們是我們得以窺探 Agent 內心世界的眼睛和耳朵。
+
+##### ① 第一個支柱：日誌 (Logs) - Agent 的日記
+首先是「日誌」。你可以把它想像成是 Agent 的 **工作日記**。
+
+> 日誌是可觀測性的最小單位，它是一個個帶有時間戳、不可改變的離散事件記錄。
+
+它非常單純，只告訴我們「發生了什麼事」。例如，日記上記錄著：「上午 10:01:32，我收到一個問題」、「上午 10:01:33，我決定使用 `get_weather` 這個工具」。每一筆都是一個獨立、客觀的事實。
+
+##### ② 第二個支柱：追蹤 (Traces) - 敘事的線索
+但只有一堆零散的日記條目是不夠的。我們需要將它們串成一個有意義的故事，這就是「追蹤」的作用。
+
+如果說日誌是偵探軟木板上的一張張照片、一張張票根，那麼 **追蹤就是那條串起所有線索的紅線**。它會跟隨一個完整的任務——從最初的用戶提問到最終的答案——將所有相關的日誌（在追蹤裡我們稱之為 `spans`）串聯起來，形成一個完整的、端到端的視圖。
+
+這條紅線揭示了事件之間的因果關係，讓我們能夠回答那個至關重要的問題：「**為什麼**」事情會這樣發生。
+
+##### ③ 第三個支柱：指標 (Metrics) - 健康報告
+最後，當我們有了日記和故事線之後，就需要一份總結報告了。這就是「指標」。
+
+> 指標是量化的、匯總後的健康分數，它來自於對大量日誌和追蹤數據的分析。
+
+如果說日誌是廚師的備料筆記，追蹤是評論家看著食譜的每一步，那麼 **指標就是評論家最終發布的評分卡**。它不會告訴你某個單一事件的細節，但它會告訴你，平均而言，這位 Agent 的表現「**有多好**」。例如，它的平均反應時間、任務成功率、或是成本花費。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講完這三大支柱後，可以稍微停頓一下。這三個概念是後續內容的基礎，確保聽眾能區分它們（日記、故事線、成績單）。
+*   **善用比喻**：在解釋時，可以反覆使用「日記 (Logs)」、「故事線 (Traces)」、「成績單 (Metrics)」的比喻，這能幫助聽眾記憶。
+*   **轉場橋樑 (Bridge)**：
+    > 了解了可觀測性的這三個核心概念後，接下來，我們將深入探討前兩個支柱——日誌與追蹤。我們會看看在實務上，一個「有效」的日誌和追蹤系統，到底該具備哪些關鍵要素。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-11">
+            <div class="slide">
+                <h2>Slide 11</h2>
+                <div class="rendered-content">
+                    <h1>11: Pillar Deep Dive: Logging &amp; Tracing</h1>
+<h2>Pillar 1: Logging – The Agent's Diary</h2>
+<p>Effective logs are more than just <code>print()</code> statements. They must be structured (e.g., JSON) and rich with context.</p>
+<ul>
+<li><strong>Anatomy of a Critical Log:</strong>
+<ul>
+<li>Prompt/response pairs</li>
+<li>Intermediate reasoning steps (&quot;chain of thought&quot;)</li>
+<li>Structured tool calls (inputs, outputs, errors)</li>
+<li>Changes to internal state</li>
+</ul>
+</li>
+</ul>
+<h2>Pillar 2: Tracing – Following the Agent's Footsteps</h2>
+<p>Traces are indispensable for debugging complex, multi-step agent behaviors by revealing the root cause of failures.</p>
+<ul>
+<li><strong>How it Works:</strong>
+<ul>
+<li>A unique <code>trace_id</code> links individual events (spans) together.</li>
+<li>This allows tools like OpenTelemetry and Google Cloud Trace to visualize the full causal chain of an operation, from user query to final answer.</li>
+</ul>
+</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 11</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(11, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(11, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-11" class="note-content rendered-content">
+                    <h3>🎙️ 第 11 頁：Pillar Deep Dive: Structured Logging and End-to-End Tracing</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>日誌 (Logging)</strong>：如同 Agent 的日記，必須採用結構化 (如 JSON) 格式，詳細記錄每一步的「思想」與「行動」，而不只是簡單的 <code>print</code> 訊息。</li>
+<li><strong>追蹤 (Tracing)</strong>：是串連所有日記條目的敘事線，透過唯一的 <code>trace_id</code> 將分散的事件組合成一個完整的故事，讓我們能追溯問題的根本原因。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好的，我們剛剛介紹了可觀測性的三大支柱：日誌、追蹤和指標。現在，讓我們深入探討前兩個，也就是「日誌」與「追蹤」，看看它們在實務中是如何運作的。</p>
+<h5>① 第一個論點：日誌 (Logging) – Agent 的貼身日記</h5>
+<p>首先是日誌。我們可以把它想像成是 <strong>Agent 的日記</strong>。傳統的 <code>print()</code> 語句已經遠遠不夠了，因為它只告訴我們發生了什麼，卻沒有上下文。</p>
+<blockquote>
+<p>一個有效的日誌，必須是結構化的，通常是 JSON 格式，並且富含情境資訊。</p>
+</blockquote>
+<p>這本日記需要記錄什麼呢？</p>
+<ul>
+<li>首先，是完整的<strong>提示與回應</strong> (Prompt/Response) 配對。</li>
+<li>其次，也是最重要的，是 Agent 的<strong>中間推理步驟</strong>，也就是我們常說的「思維鏈 (chain of thought)」。</li>
+<li>再來，是所有<strong>結構化的工具呼叫</strong>，包含了輸入、輸出，甚至是錯誤訊息。</li>
+<li>最後，是 Agent <strong>內部狀態的任何改變</strong>。</li>
+</ul>
+<p>只有當我們擁有這樣詳盡、充滿上下文的日記時，我們才有機會在事後真正理解 Agent 的行為。</p>
+<h5>② 第二個論點：追蹤 (Tracing) – 跟隨 Agent 的每一步腳印</h5>
+<p>如果說日誌是日記中的一條條獨立記錄，那麼<strong>追蹤 (Tracing) 就是那條將所有記錄串連成一個完整故事的敘事線</strong>。它的核心目標，是讓我們能夠跟隨 Agent 從頭到尾的每一步腳印。</p>
+<p>追蹤對於偵錯複雜、多步驟的 Agent 行為來說，是不可或缺的。想像一個場景：Agent 回答了一個牛頭不對馬嘴的答案。</p>
+<ul>
+<li>如果只看<strong>日誌</strong>，你可能會看到兩個獨立的錯誤：「RAG 搜尋失敗」和「LLM 回應驗證失敗」。但你不知道哪個是因、哪個是果。</li>
+<li>但透過<strong>追蹤</strong>，你會看到一條清晰的因果鏈：使用者查詢 → 觸發 RAG 搜尋 (失敗) → 因為搜尋失敗，導致工具呼叫收到了空值 → LLM 因為錯誤的工具輸出而感到困惑 → 最終給出錯誤答案。</li>
+</ul>
+<blockquote>
+<p>追蹤透過一個獨一無二的 <code>trace_id</code>，將所有獨立的事件 (在 OpenTelemetry 中稱為 spans) 串連起來，讓我們能用視覺化的方式，從頭到尾看清整個因果鏈。這就是 Google Cloud Trace 這類工具的強大之處。</p>
+</blockquote>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講完日誌和追蹤的區別後，可以稍微停頓一下，確保聽眾理解「日誌是點，追蹤是線」這個核心概念。</li>
+<li><strong>補充案例</strong>：如果時間允許，可以簡單提及白皮書中的 JSON 日誌範例，說明一個結構化日誌看起來有多麼詳細，包含了模型、系統指令、函式呼叫等所有細節。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了如何用「日誌」記錄離散事件，以及如何用「追蹤」將它們串成故事之後，下一個問題自然就是：我們該如何從海量的數據中提煉出有意義的洞見呢？這就是我們第三大支柱——「指標 (Metrics)」——要解決的問題。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-11" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 11 頁：Pillar Deep Dive: Structured Logging and End-to-End Tracing
+
+#### 【本頁重點摘要】
+*   **日誌 (Logging)**：如同 Agent 的日記，必須採用結構化 (如 JSON) 格式，詳細記錄每一步的「思想」與「行動」，而不只是簡單的 `print` 訊息。
+*   **追蹤 (Tracing)**：是串連所有日記條目的敘事線，透過唯一的 `trace_id` 將分散的事件組合成一個完整的故事，讓我們能追溯問題的根本原因。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好的，我們剛剛介紹了可觀測性的三大支柱：日誌、追蹤和指標。現在，讓我們深入探討前兩個，也就是「日誌」與「追蹤」，看看它們在實務中是如何運作的。
+
+##### ① 第一個論點：日誌 (Logging) – Agent 的貼身日記
+首先是日誌。我們可以把它想像成是 **Agent 的日記**。傳統的 `print()` 語句已經遠遠不夠了，因為它只告訴我們發生了什麼，卻沒有上下文。
+
+> 一個有效的日誌，必須是結構化的，通常是 JSON 格式，並且富含情境資訊。
+
+這本日記需要記錄什麼呢？
+*   首先，是完整的**提示與回應** (Prompt/Response) 配對。
+*   其次，也是最重要的，是 Agent 的**中間推理步驟**，也就是我們常說的「思維鏈 (chain of thought)」。
+*   再來，是所有**結構化的工具呼叫**，包含了輸入、輸出，甚至是錯誤訊息。
+*   最後，是 Agent **內部狀態的任何改變**。
+
+只有當我們擁有這樣詳盡、充滿上下文的日記時，我們才有機會在事後真正理解 Agent 的行為。
+
+##### ② 第二個論點：追蹤 (Tracing) – 跟隨 Agent 的每一步腳印
+如果說日誌是日記中的一條條獨立記錄，那麼**追蹤 (Tracing) 就是那條將所有記錄串連成一個完整故事的敘事線**。它的核心目標，是讓我們能夠跟隨 Agent 從頭到尾的每一步腳印。
+
+追蹤對於偵錯複雜、多步驟的 Agent 行為來說，是不可或缺的。想像一個場景：Agent 回答了一個牛頭不對馬嘴的答案。
+*   如果只看**日誌**，你可能會看到兩個獨立的錯誤：「RAG 搜尋失敗」和「LLM 回應驗證失敗」。但你不知道哪個是因、哪個是果。
+*   但透過**追蹤**，你會看到一條清晰的因果鏈：使用者查詢 → 觸發 RAG 搜尋 (失敗) → 因為搜尋失敗，導致工具呼叫收到了空值 → LLM 因為錯誤的工具輸出而感到困惑 → 最終給出錯誤答案。
+
+> 追蹤透過一個獨一無二的 `trace_id`，將所有獨立的事件 (在 OpenTelemetry 中稱為 spans) 串連起來，讓我們能用視覺化的方式，從頭到尾看清整個因果鏈。這就是 Google Cloud Trace 這類工具的強大之處。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講完日誌和追蹤的區別後，可以稍微停頓一下，確保聽眾理解「日誌是點，追蹤是線」這個核心概念。
+*   **補充案例**：如果時間允許，可以簡單提及白皮書中的 JSON 日誌範例，說明一個結構化日誌看起來有多麼詳細，包含了模型、系統指令、函式呼叫等所有細節。
+*   **轉場橋樑 (Bridge)**：
+    > 了解了如何用「日誌」記錄離散事件，以及如何用「追蹤」將它們串成故事之後，下一個問題自然就是：我們該如何從海量的數據中提煉出有意義的洞見呢？這就是我們第三大支柱——「指標 (Metrics)」——要解決的問題。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-12">
+            <div class="slide">
+                <h2>Slide 12</h2>
+                <div class="rendered-content">
+                    <h1>12: Pillar Deep Dive: Actionable Metrics</h1>
+<p>Metrics are the aggregated scorecard of agent performance, derived from logs and traces. They are divided into two key categories.</p>
+<h2>1. System Metrics: The Vital Signs</h2>
+<p>Directly measurable, quantitative indicators of operational health.</p>
+<ul>
+<li><strong>Performance:</strong> Latency (P50/P99), Error Rate</li>
+<li><strong>Cost:</strong> Tokens per Task, API Cost per Run</li>
+<li><strong>Effectiveness:</strong> Task Completion Rate, Tool Usage Frequency</li>
+</ul>
+<h2>2. Quality Metrics: Judging the Decision-Making</h2>
+<p>Second-order metrics derived by applying judgment frameworks (from Chapter 2) to the observability data.</p>
+<ul>
+<li><strong>Correctness &amp; Accuracy:</strong> Was the answer factually correct?</li>
+<li><strong>Trajectory Adherence:</strong> Did the agent follow the ideal path?</li>
+<li><strong>Safety &amp; Responsibility:</strong> Did the response avoid harmful content?</li>
+<li><strong>Helpfulness &amp; Relevance:</strong> Was the response actually helpful?</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 12</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(12, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(12, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-12" class="note-content rendered-content">
+                    <h3>🎙️ 第 12 頁：Pillar_Deep_Dive_Deriving_Actionable_System_and_Quality_Metrics</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>指標 (Metrics) 是從日誌 (Logs) 和追蹤 (Traces) 中提煉出來的、量化的代理人「成績單」。</li>
+<li>指標分為兩大類：<strong>系統指標 (System Metrics)</strong>，衡量運營健康的「生命體徵」；以及 <strong>品質指標 (Quality Metrics)</strong>，用於判斷決策的「好壞」。</li>
+<li>系統指標包含：性能 (延遲、錯誤率)、成本 (Token 數、API 費用) 和有效性 (任務完成率)。</li>
+<li>品質指標包含：正確性、路徑遵循度、安全性與實用性等，需要一個「判斷層」來評估。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好，我們有了日誌和追蹤，就像廚師有了食譜筆記和旁觀者的紀錄。但最終，我們需要一張「成績單」來快速評分。這就是「指標」的角色。這一頁，我們要深入探討兩種關鍵的指標，它們共同構成了代理人完整的健康報告。</p>
+<h5>① 系統指標 (System Metrics)：代理人的生命體徵</h5>
+<p>首先是<strong>系統指標</strong>。你可以把它們想像成代理人的「生命體徵」——像是心跳、體溫和血壓。它們是關於運營健康的、可以直接量化的數據，告訴我們系統跑得順不順、貴不貴。</p>
+<blockquote>
+<p>這些指標是我們從日誌和追蹤數據中，透過加總、計算平均值或百分位數直接得出的。</p>
+</blockquote>
+<p>主要有三個方面：</p>
+<ul>
+<li><strong>性能 (Performance)</strong>：這關乎使用者體驗。例如，<strong>延遲 (Latency)</strong>，也就是使用者從提問到獲得答案要等多久？我們通常會看 P99，也就是 99% 的請求都在多少秒內完成，來捕捉最壞情況下的體驗。還有<strong>錯誤率 (Error Rate)</strong>，有多少比例的請求失敗了？</li>
+<li><strong>成本 (Cost)</strong>：這直接關係到你的錢包。例如，<strong>每次任務的 Token 消耗量 (Tokens per Task)</strong>，這對於控制大型語言模型的開銷至關重要。還有 <strong>每次運行的 API 成本 (API Cost per Run)</strong>，透過結合 Token 數和模型定價，你可以精確追蹤每項任務的財務成本。</li>
+<li><strong>有效性 (Effectiveness)</strong>：這衡量代理人是否在做有用的事。例如，<strong>任務完成率 (Task Completion Rate)</strong>，有多少比例的任務成功走到了終點？還有<strong>工具使用頻率 (Tool Usage Frequency)</strong>，這能告訴我們哪些工具最受歡迎、最有價值。</li>
+</ul>
+<p>這些指標是維運團隊的眼睛，幫助我們設定警報、管理成本和確保系統穩定。</p>
+<h5>② 品質指標 (Quality Metrics)：判斷決策的優劣</h5>
+<p>但光有生命體徵還不夠。一個心跳正常的廚師，也可能做出難吃的菜。所以我們需要第二類指標：<strong>品質指標</strong>。</p>
+<blockquote>
+<p>這些是「二階指標」，它們不是簡單的計數或平均，而是需要我們在原始數據之上，應用第二章提到的「判斷框架」來得出分數。</p>
+</blockquote>
+<p>它們回答的是更深層次的問題：</p>
+<ul>
+<li><strong>正確性與準確性 (Correctness &amp; Accuracy)</strong>：代理人給出的答案，事實上是正確的嗎？如果它總結了一份文件，摘要是否忠於原文？</li>
+<li><strong>路徑遵循度 (Trajectory Adherence)</strong>：代理人是否遵循了我們為特定任務設計的「理想路徑」或「黃金食譜」？它是否在正確的時機、用正確的順序呼叫了正確的工具？</li>
+<li><strong>安全性與責任感 (Safety &amp; Responsibility)</strong>：它的回應是否避開了有害、帶有偏見或不適當的內容？</li>
+<li><strong>實用性與相關性 (Helpfulness &amp; Relevance)</strong>：最後，也是最重要的，它的回答對使用者真的有幫助嗎？是否切題？</li>
+</ul>
+<p>要產生這些品質指標，光靠資料庫查詢是不夠的。我們通常需要將代理人的輸出與「黃金標準答案」進行比對，或者動用我們之前提到的「LLM-as-a-Judge」來進行評分。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講完「系統指標」後，可以稍微停頓，強調「但光有效率和穩定是不夠的」，然後再引入「品質指標」，讓兩種概念的對比更清晰。</li>
+<li><strong>補充案例</strong>：可以舉一個具體例子：「一個代理人可能延遲很低、成本也很低（系統指標很好），但它給出的摘要卻頻繁出錯（品質指標很差）。這就是為什麼我們需要同時關注這兩類指標。」</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>了解了如何用這兩類指標為代理人打分數之後，下一個問題自然就是：我們如何利用這張「成績單」，來打造一個能夠自我完善、持續進步的系統呢？這就帶我們進入了整個框架的核心——<strong>代理人品質飛輪</strong>。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-12" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 12 頁：Pillar_Deep_Dive_Deriving_Actionable_System_and_Quality_Metrics
+
+#### 【本頁重點摘要】
+*   指標 (Metrics) 是從日誌 (Logs) 和追蹤 (Traces) 中提煉出來的、量化的代理人「成績單」。
+*   指標分為兩大類：**系統指標 (System Metrics)**，衡量運營健康的「生命體徵」；以及 **品質指標 (Quality Metrics)**，用於判斷決策的「好壞」。
+*   系統指標包含：性能 (延遲、錯誤率)、成本 (Token 數、API 費用) 和有效性 (任務完成率)。
+*   品質指標包含：正確性、路徑遵循度、安全性與實用性等，需要一個「判斷層」來評估。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好，我們有了日誌和追蹤，就像廚師有了食譜筆記和旁觀者的紀錄。但最終，我們需要一張「成績單」來快速評分。這就是「指標」的角色。這一頁，我們要深入探討兩種關鍵的指標，它們共同構成了代理人完整的健康報告。
+
+##### ① 系統指標 (System Metrics)：代理人的生命體徵
+
+首先是**系統指標**。你可以把它們想像成代理人的「生命體徵」——像是心跳、體溫和血壓。它們是關於運營健康的、可以直接量化的數據，告訴我們系統跑得順不順、貴不貴。
+
+> 這些指標是我們從日誌和追蹤數據中，透過加總、計算平均值或百分位數直接得出的。
+
+主要有三個方面：
+*   **性能 (Performance)**：這關乎使用者體驗。例如，**延遲 (Latency)**，也就是使用者從提問到獲得答案要等多久？我們通常會看 P99，也就是 99% 的請求都在多少秒內完成，來捕捉最壞情況下的體驗。還有**錯誤率 (Error Rate)**，有多少比例的請求失敗了？
+*   **成本 (Cost)**：這直接關係到你的錢包。例如，**每次任務的 Token 消耗量 (Tokens per Task)**，這對於控制大型語言模型的開銷至關重要。還有 **每次運行的 API 成本 (API Cost per Run)**，透過結合 Token 數和模型定價，你可以精確追蹤每項任務的財務成本。
+*   **有效性 (Effectiveness)**：這衡量代理人是否在做有用的事。例如，**任務完成率 (Task Completion Rate)**，有多少比例的任務成功走到了終點？還有**工具使用頻率 (Tool Usage Frequency)**，這能告訴我們哪些工具最受歡迎、最有價值。
+
+這些指標是維運團隊的眼睛，幫助我們設定警報、管理成本和確保系統穩定。
+
+##### ② 品質指標 (Quality Metrics)：判斷決策的優劣
+
+但光有生命體徵還不夠。一個心跳正常的廚師，也可能做出難吃的菜。所以我們需要第二類指標：**品質指標**。
+
+> 這些是「二階指標」，它們不是簡單的計數或平均，而是需要我們在原始數據之上，應用第二章提到的「判斷框架」來得出分數。
+
+它們回答的是更深層次的問題：
+*   **正確性與準確性 (Correctness & Accuracy)**：代理人給出的答案，事實上是正確的嗎？如果它總結了一份文件，摘要是否忠於原文？
+*   **路徑遵循度 (Trajectory Adherence)**：代理人是否遵循了我們為特定任務設計的「理想路徑」或「黃金食譜」？它是否在正確的時機、用正確的順序呼叫了正確的工具？
+*   **安全性與責任感 (Safety & Responsibility)**：它的回應是否避開了有害、帶有偏見或不適當的內容？
+*   **實用性與相關性 (Helpfulness & Relevance)**：最後，也是最重要的，它的回答對使用者真的有幫助嗎？是否切題？
+
+要產生這些品質指標，光靠資料庫查詢是不夠的。我們通常需要將代理人的輸出與「黃金標準答案」進行比對，或者動用我們之前提到的「LLM-as-a-Judge」來進行評分。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講完「系統指標」後，可以稍微停頓，強調「但光有效率和穩定是不夠的」，然後再引入「品質指標」，讓兩種概念的對比更清晰。
+*   **補充案例**：可以舉一個具體例子：「一個代理人可能延遲很低、成本也很低（系統指標很好），但它給出的摘要卻頻繁出錯（品質指標很差）。這就是為什麼我們需要同時關注這兩類指標。」
+*   **轉場橋樑 (Bridge)**：
+    > 了解了如何用這兩類指標為代理人打分數之後，下一個問題自然就是：我們如何利用這張「成績單」，來打造一個能夠自我完善、持續進步的系統呢？這就帶我們進入了整個框架的核心——**代理人品質飛輪**。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-13">
+            <div class="slide">
+                <h2>Slide 13</h2>
+                <div class="rendered-content">
+                    <h1>13: Synthesis: The Agent Quality Flywheel</h1>
+<p>A great agent doesn't just perform; it improves. The Agent Quality Flywheel is a self-reinforcing system for driving continuous improvement.</p>
+<h2>How It Works:</h2>
+<ol>
+<li>
+<p><strong>Define Quality (The Target):</strong></p>
+<ul>
+<li>The Four Pillars (Effectiveness, Efficiency, Robustness, Safety) set the direction.</li>
+</ul>
+</li>
+<li>
+<p><strong>Instrument for Visibility (The Foundation):</strong></p>
+<ul>
+<li>Observability (Logs &amp; Traces) generates the rich evidence needed for measurement.</li>
+</ul>
+</li>
+<li>
+<p><strong>Evaluate the Process (The Engine):</strong></p>
+<ul>
+<li>A hybrid of AI-driven (LLM-as-a-Judge) and Human-in-the-Loop (HITL) evaluation provides the push that spins the wheel.</li>
+</ul>
+</li>
+<li>
+<p><strong>Architect the Feedback Loop (The Momentum):</strong></p>
+<ul>
+<li>Every production failure is programmatically converted into a permanent regression test, making the system smarter over time.</li>
+</ul>
+</li>
+</ol>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 13</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(13, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(13, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-13" class="note-content rendered-content">
+                    <h3>🎙️ 第 13 頁：Synthesis: The Agent Quality Flywheel</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>優秀的 AI 代理（Agent）不僅要能執行任務，更要能持續自我改進。</li>
+<li>「代理品質飛輪」是一個自我強化的系統，透過四個關鍵步驟，驅動品質的不斷提升。</li>
+<li>這四個步驟分別是：定義品質、建立可觀測性、評估流程，以及建構回饋循環。</li>
+<li>這個飛輪的核心精神是：讓每一次的失敗，都成為系統變得更聰明的養分。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+到目前為止，我們已經探討了「為什麼」需要新的品質框架、「如何」觀測代理的內心世界，以及「用什麼標準」來評估它。現在，我們要將所有這些概念，組合成一個能實際運作的、生生不息的系統。這就是「代理品質飛輪」 (Agent Quality Flywheel) 的概念。</p>
+<p>一個偉大的代理，不能只停留在「表現良好」，它必須要能「持續進步」。這個飛輪模型，就是實現持續改進的藍圖。</p>
+<blockquote>
+<p>想像一下，我們要推動一個巨大而沉重的飛輪。一開始的第一推，總是最費力的。但接下來，每一次結構化、持續性的評估，都會為這個飛輪增加新的動力。最終，它會以不可阻擋的氣勢持續旋轉，形成一個品質與信任的良性循環。</p>
+</blockquote>
+<p>這個飛輪是如何運作的呢？我們可以將它拆解成四個環環相扣的步驟：</p>
+<h5>① 第一步：定義品質 (The Target)</h5>
+<p>這就像是為飛輪設定一個明確的方向。如果沒有目標，飛輪只會原地空轉。我們在第一章提到的<strong>品質四大支柱——有效性、效率、穩健性與安全性</strong>——就是我們為飛輪設定的具體目標。它們將抽象的「品質」概念，轉化為可以衡量、可以對齊商業價值的具體指標。</p>
+<h5>② 第二步：建立可觀測性 (The Foundation)</h5>
+<p>這是飛輪的燃料。你無法管理你看不見的東西。正如我們在觀測性章節所強調的，我們必須從一開始就將代理設計為「可被觀測的」，讓它能主動產生結構化的<strong>日誌 (Logs)</strong> 和端到端的<strong>追蹤 (Traces)</strong>。這些觀測數據，就是評估四大支柱所需的最根本的證據。</p>
+<h5>③ 第三步：評估流程 (The Engine)</h5>
+<p>有了數據燃料，我們現在需要一個強大的引擎來推動飛輪。這就是評估的過程。我們採用「由外而內」的策略，不僅評估最終的產出，更要深入分析整個決策過程。這個引擎是混合動力的：它既利用 <strong>LLM-as-a-Judge</strong> 這樣的人工智慧評估系統來實現規模化與速度，也依賴 <strong>Human-in-the-Loop (HITL)</strong> 的人類專家來提供最權威的、黃金標準的判斷。</p>
+<h5>④ 第四步：建構回饋循環 (The Momentum)</h5>
+<p>這是讓飛輪越轉越快的關鍵。我們必須在架構層面就設計好這個回饋機制。它的核心思想是：<strong>將每一次在生產環境中發現的失敗，都透過程式化的方式，轉化為一個永久性的回歸測試案例，並納入我們的「黃金評估集」中。</strong> 這樣一來，每一次的失敗，都在為系統的未來提供免疫力。每一次的錯誤，都讓整個系統變得更聰明、更穩健。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：在介紹完飛輪的四個步驟後，可以稍微停頓一下，讓聽眾消化這個循環的概念。這個模型是整份白皮書的核心總結。</li>
+<li><strong>視覺輔助</strong>：可以指著投影片上的循環圖示，依序解說四個步驟，強化視覺連結。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>這個「品質飛輪」為我們提供了一個可操作的、持續改進的「實踐藍圖」。它告訴我們該「如何做」。那麼，要成功地執行這套藍圖，我們需要具備什麼樣的「心態」或「指導原則」呢？下一頁，我們將總結出建立可信賴代理的三大核心原則。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-13" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 13 頁：Synthesis: The Agent Quality Flywheel
+
+#### 【本頁重點摘要】
+*   優秀的 AI 代理（Agent）不僅要能執行任務，更要能持續自我改進。
+*   「代理品質飛輪」是一個自我強化的系統，透過四個關鍵步驟，驅動品質的不斷提升。
+*   這四個步驟分別是：定義品質、建立可觀測性、評估流程，以及建構回饋循環。
+*   這個飛輪的核心精神是：讓每一次的失敗，都成為系統變得更聰明的養分。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+到目前為止，我們已經探討了「為什麼」需要新的品質框架、「如何」觀測代理的內心世界，以及「用什麼標準」來評估它。現在，我們要將所有這些概念，組合成一個能實際運作的、生生不息的系統。這就是「代理品質飛輪」 (Agent Quality Flywheel) 的概念。
+
+一個偉大的代理，不能只停留在「表現良好」，它必須要能「持續進步」。這個飛輪模型，就是實現持續改進的藍圖。
+
+> 想像一下，我們要推動一個巨大而沉重的飛輪。一開始的第一推，總是最費力的。但接下來，每一次結構化、持續性的評估，都會為這個飛輪增加新的動力。最終，它會以不可阻擋的氣勢持續旋轉，形成一個品質與信任的良性循環。
+
+這個飛輪是如何運作的呢？我們可以將它拆解成四個環環相扣的步驟：
+
+##### ① 第一步：定義品質 (The Target)
+這就像是為飛輪設定一個明確的方向。如果沒有目標，飛輪只會原地空轉。我們在第一章提到的**品質四大支柱——有效性、效率、穩健性與安全性**——就是我們為飛輪設定的具體目標。它們將抽象的「品質」概念，轉化為可以衡量、可以對齊商業價值的具體指標。
+
+##### ② 第二步：建立可觀測性 (The Foundation)
+這是飛輪的燃料。你無法管理你看不見的東西。正如我們在觀測性章節所強調的，我們必須從一開始就將代理設計為「可被觀測的」，讓它能主動產生結構化的**日誌 (Logs)** 和端到端的**追蹤 (Traces)**。這些觀測數據，就是評估四大支柱所需的最根本的證據。
+
+##### ③ 第三步：評估流程 (The Engine)
+有了數據燃料，我們現在需要一個強大的引擎來推動飛輪。這就是評估的過程。我們採用「由外而內」的策略，不僅評估最終的產出，更要深入分析整個決策過程。這個引擎是混合動力的：它既利用 **LLM-as-a-Judge** 這樣的人工智慧評估系統來實現規模化與速度，也依賴 **Human-in-the-Loop (HITL)** 的人類專家來提供最權威的、黃金標準的判斷。
+
+##### ④ 第四步：建構回饋循環 (The Momentum)
+這是讓飛輪越轉越快的關鍵。我們必須在架構層面就設計好這個回饋機制。它的核心思想是：**將每一次在生產環境中發現的失敗，都透過程式化的方式，轉化為一個永久性的回歸測試案例，並納入我們的「黃金評估集」中。** 這樣一來，每一次的失敗，都在為系統的未來提供免疫力。每一次的錯誤，都讓整個系統變得更聰明、更穩健。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：在介紹完飛輪的四個步驟後，可以稍微停頓一下，讓聽眾消化這個循環的概念。這個模型是整份白皮書的核心總結。
+*   **視覺輔助**：可以指著投影片上的循環圖示，依序解說四個步驟，強化視覺連結。
+*   **轉場橋樑 (Bridge)**：
+    > 這個「品質飛輪」為我們提供了一個可操作的、持續改進的「實踐藍圖」。它告訴我們該「如何做」。那麼，要成功地執行這套藍圖，我們需要具備什麼樣的「心態」或「指導原則」呢？下一頁，我們將總結出建立可信賴代理的三大核心原則。
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-14">
+            <div class="slide">
+                <h2>Slide 14</h2>
+                <div class="rendered-content">
+                    <h1>14: Three Core Principles for Building Trustworthy Agents</h1>
+<p>These principles represent the foundational mindset for building reliable autonomous systems.</p>
+<h2>Principle 1: Treat Evaluation as an Architectural Pillar, Not a Final Step.</h2>
+<ul>
+<li>Reliable agents are &quot;evaluable-by-design.&quot; Quality is an architectural choice, not a final QA phase.</li>
+</ul>
+<h2>Principle 2: The Trajectory is the Truth.</h2>
+<ul>
+<li>The true measure of an agent's logic, safety, and efficiency lies in its end-to-end &quot;thought process.&quot; You must analyze the entire path.</li>
+</ul>
+<h2>Principle 3: The Human is the Arbiter.</h2>
+<ul>
+<li>Automation provides scale; humanity provides the source of truth. The definition of &quot;good&quot; must be anchored to human values and judgment.</li>
+</ul>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 14</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(14, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(14, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-14" class="note-content rendered-content">
+                    <h3>🎙️ 第 14 頁：Three_Core_Principles_for_Building_Trustworthy_Agents</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li><strong>原則一：評估是架構，不是終點</strong>。品質必須從一開始就內建於系統設計中，而非事後才測試。</li>
+<li><strong>原則二：決策軌跡才是真相</strong>。要真正理解 Agent 的品質，必須檢視其完整的「思考過程」，而不僅是最終答案。</li>
+<li><strong>原則三：人類是最終的仲裁者</strong>。自動化工具提供規模，但「好」的標準與價值判斷，最終必須由人類來定義。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+好的，在我們深入探討了評估的「是什麼」與「如何做」之後，現在讓我們退一步，提煉出三個最核心、最根本的指導原則。如果你希望從今天的分享中只帶走幾件事，我希望就是這三條。它們是建立可靠、值得信賴的 AI Agent 的基石。</p>
+<h5>① 第一個原則：將評估視為架構支柱，而不是最後一個步驟。</h5>
+<p>這可能是最重要的心態轉變。我們在第一章提到過那個一級方程式賽車的比喻，對吧？你不可能先把賽車造好，最後才想著「喔，我們應該加幾個感測器」。不，頂級的賽車從設計之初，每一個零件都考慮了數據遙測。</p>
+<blockquote>
+<p>可靠的 Agent 是「為評估而生」(evaluable-by-design) 的。品質是一種架構選擇，而不是最後的品保階段。</p>
+</blockquote>
+<p>從你寫下第一行程式碼開始，就要思考如何讓這個 Agent 的行為變得可觀察、可評估。這意味著，日誌、追蹤這些能力，都必須是系統內建的核心功能。</p>
+<h5>② 第二個原則：決策軌跡才是真相。</h5>
+<p>對於 Agent 來說，它給你的最終答案，只是一個漫長故事的最後一句話。真正的品質、邏輯、安全性和效率，都藏在它從頭到尾的「思考過程」——也就是我們所說的「軌跡」(Trajectory) 之中。</p>
+<blockquote>
+<p>要真正理解一個 Agent 為何成功或失敗，你必須分析它的完整路徑。</p>
+</blockquote>
+<p>只看結果，你可能知道「答案錯了」，但你永遠不會知道「為什麼錯」。是因為它一開始的計畫就錯了？還是它誤解了某個工具的回傳結果？只有透過我們在第三章談到的深度「可觀察性」實踐，去檢視完整的軌跡，你才能找到問題的根源。</p>
+<h5>③ 第三個原則：人類是最終的仲裁者。</h5>
+<p>自動化是我們擴展規模的工具，但人性，才是我們判斷真理的源頭。我們可以、也應該使用像 LLM-as-a-Judge 這樣的 AI 系統來進行大規模的評估，這非常有效率。</p>
+<blockquote>
+<p>然而，對於「好」的根本定義、對於細膩的價值判斷、對於安全與公平的最終裁決，都必須錨定在人類的價值觀上。</p>
+</blockquote>
+<p>一個 AI 可以幫我們批改考卷，但只有身為人類的我們，才能寫出評分標準，並定義什麼樣的答案才真正稱得上是「A+」。自動化是幫手，但人類永遠是那個決定方向的船長。</p>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講完這三點後，可以停頓幾秒鐘。這三個原則是整份白皮書的精髓，給聽眾一點時間吸收和思考。</li>
+<li><strong>補充案例</strong>：可以再次強調：「記住，我們不是在檢查一個計算機，我們是在評估一個『員工』。你會只看他交上來的報告，還是會關心他如何完成工作的？」</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：
+<blockquote>
+<p>總結來說，這三大原則——將評估視為架構、將軌跡視為真相、並以人為本——共同構成了我們建立信任的藍圖。那麼，當我們掌握了這些心法後，我們將迎來一個什麼樣的未來？下一頁，讓我們一起展望這個由可靠 Agent 所構成的新時代。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-14" class="note-content note-raw" style="display: none;">
+                    <pre>### 🎙️ 第 14 頁：Three_Core_Principles_for_Building_Trustworthy_Agents
+
+#### 【本頁重點摘要】
+*   **原則一：評估是架構，不是終點**。品質必須從一開始就內建於系統設計中，而非事後才測試。
+*   **原則二：決策軌跡才是真相**。要真正理解 Agent 的品質，必須檢視其完整的「思考過程」，而不僅是最終答案。
+*   **原則三：人類是最終的仲裁者**。自動化工具提供規模，但「好」的標準與價值判斷，最終必須由人類來定義。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+好的，在我們深入探討了評估的「是什麼」與「如何做」之後，現在讓我們退一步，提煉出三個最核心、最根本的指導原則。如果你希望從今天的分享中只帶走幾件事，我希望就是這三條。它們是建立可靠、值得信賴的 AI Agent 的基石。
+
+##### ① 第一個原則：將評估視為架構支柱，而不是最後一個步驟。
+
+這可能是最重要的心態轉變。我們在第一章提到過那個一級方程式賽車的比喻，對吧？你不可能先把賽車造好，最後才想著「喔，我們應該加幾個感測器」。不，頂級的賽車從設計之初，每一個零件都考慮了數據遙測。
+
+> 可靠的 Agent 是「為評估而生」(evaluable-by-design) 的。品質是一種架構選擇，而不是最後的品保階段。
+
+從你寫下第一行程式碼開始，就要思考如何讓這個 Agent 的行為變得可觀察、可評估。這意味著，日誌、追蹤這些能力，都必須是系統內建的核心功能。
+
+##### ② 第二個原則：決策軌跡才是真相。
+
+對於 Agent 來說，它給你的最終答案，只是一個漫長故事的最後一句話。真正的品質、邏輯、安全性和效率，都藏在它從頭到尾的「思考過程」——也就是我們所說的「軌跡」(Trajectory) 之中。
+
+> 要真正理解一個 Agent 為何成功或失敗，你必須分析它的完整路徑。
+
+只看結果，你可能知道「答案錯了」，但你永遠不會知道「為什麼錯」。是因為它一開始的計畫就錯了？還是它誤解了某個工具的回傳結果？只有透過我們在第三章談到的深度「可觀察性」實踐，去檢視完整的軌跡，你才能找到問題的根源。
+
+##### ③ 第三個原則：人類是最終的仲裁者。
+
+自動化是我們擴展規模的工具，但人性，才是我們判斷真理的源頭。我們可以、也應該使用像 LLM-as-a-Judge 這樣的 AI 系統來進行大規模的評估，這非常有效率。
+
+> 然而，對於「好」的根本定義、對於細膩的價值判斷、對於安全與公平的最終裁決，都必須錨定在人類的價值觀上。
+
+一個 AI 可以幫我們批改考卷，但只有身為人類的我們，才能寫出評分標準，並定義什麼樣的答案才真正稱得上是「A+」。自動化是幫手，但人類永遠是那個決定方向的船長。
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講完這三點後，可以停頓幾秒鐘。這三個原則是整份白皮書的精髓，給聽眾一點時間吸收和思考。
+*   **補充案例**：可以再次強調：「記住，我們不是在檢查一個計算機，我們是在評估一個『員工』。你會只看他交上來的報告，還是會關心他如何完成工作的？」
+*   **轉場橋樑 (Bridge)**：
+    > 總結來說，這三大原則——將評估視為架構、將軌跡視為真相、並以人為本——共同構成了我們建立信任的藍圖。那麼，當我們掌握了這些心法後，我們將迎來一個什麼樣的未來？下一頁，讓我們一起展望這個由可靠 Agent 所構成的新時代。</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="page-15">
+            <div class="slide">
+                <h2>Slide 15</h2>
+                <div class="rendered-content">
+                    <h1>15: Conclusion: Building Trust in an Autonomous World</h1>
+<h2>The Future is Agentic—and Reliable</h2>
+<p>The ability to create AI that can reason, plan, and act is a transformative technological shift. With this power comes the profound responsibility to build systems worthy of our trust.</p>
+<h2>Evaluation Engineering is the Differentiator</h2>
+<ul>
+<li>Organizations that treat agent quality as an afterthought will be stuck with promising demos and failed deployments.</li>
+<li>Those who invest in a rigorous, architecturally-integrated approach to evaluation will deploy truly transformative, enterprise-grade AI.</li>
+</ul>
+<p><strong>The ultimate goal is not just to build agents that work, but to build agents that are trusted. That trust is forged in the crucible of continuous, comprehensive, and architecturally-sound evaluation.</strong></p>
+
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes for Slide 15</h2>
+                <div class="note-toggle">
+                    <button class="toggle-btn active" onclick="toggleNoteView(15, 'rendered')">Rendered</button>
+                    <button class="toggle-btn" onclick="toggleNoteView(15, 'raw')">Source</button>
+                </div>
+                <div id="note-rendered-15" class="note-content rendered-content">
+                    <h3>🎙️ 第 15 頁：Conclusion: Building Trust in an Autonomous World</h3>
+<h4>【本頁重點摘要】</h4>
+<ul>
+<li>AI 的未來是「代理化 (Agentic)」的，而其成功的關鍵在於可靠性與信任。</li>
+<li>「評估工程 (Evaluation Engineering)」是區分成功與失敗的 AI 專案的核心差異。</li>
+<li>最終目標是打造「值得信賴」的代理，而信任是透過持續、全面且架構完善的評估所鍛造出來的。</li>
+</ul>
+<hr />
+<h4>【逐字講稿】</h4>
+<p>(開場白)
+各位，我們已經走到了這趟旅程的終點。現在，讓我們一起來總結，如何在這個充滿潛力的自主化世界中，建立起最關鍵的資產——<strong>信任</strong>。</p>
+<h5>① 未來是代理化的，更是可靠的</h5>
+<p>我們正處於一個巨大的技術轉捩點。AI 不再只是被動地回答問題，它們開始能夠自主地<strong>推理、規劃、並採取行動</strong>。這股力量將會徹底改變我們的世界。但正如我們在整份報告中不斷強調的，這股強大的力量，也伴隨著一份深遠的責任：我們必須打造出值得整個社會信賴的系統。</p>
+<h5>② 「評估工程」是真正的勝負手</h5>
+<p>為什麼有些公司能夠成功部署企業級的 AI，而另一些卻始終停留在充滿希望的展示和最終失敗的專案循環中？</p>
+<p>答案就在於我們今天探討的核心——我們稱之為「評估工程」的紀律。</p>
+<ul>
+<li>那些將品質視為事後補救、可有可無的團隊，他們將會發現自己不斷地在處理各種預料之外的失敗，最終失去使用者的信任。</li>
+<li>相反地，那些從一開始就將<strong>嚴謹、與架構整合的評估方法</strong>視為核心的組織，他們才是能夠真正釋放 AI 潛力，部署出具有變革性、企業級應用的贏家。</li>
+</ul>
+<blockquote>
+<p><strong>我們的最終目標，不僅僅是打造出能「工作」的代理，而是打造出能被「信賴」的代理。而這份信任，絕非源於希望或偶然。它是在持續、全面、且根植於優良架構的評估熔爐中，千錘百鍊鍛造而成的。</strong></p>
+</blockquote>
+<hr />
+<h4>【講者提示 &amp; 轉場】</h4>
+<ul>
+<li><strong>節奏提醒</strong>：講到最後的 blockquote 時，請放慢速度，一字一句、鏗鏘有力地傳達。這是整場演講的最終結論，也是最強大的訊息。</li>
+<li><strong>補充案例</strong>：此處無需補充案例，重點在於強化核心訊息，為整場演講劃下完美句點。</li>
+<li><strong>轉場橋樑 (Bridge)</strong>：(演講結束)
+<blockquote>
+<p>謝謝大家的聆聽。我們相信，透過今天分享的框架與原則，我們都能夠共同打造一個不僅是智慧的，更是可靠且值得信賴的 AI 未來。</p>
+</blockquote>
+</li>
+</ul>
+
+                </div>
+                <div id="note-raw-15" class="note-content note-raw" style="display: none;">
+                    <pre>```markdown
+### 🎙️ 第 15 頁：Conclusion: Building Trust in an Autonomous World
+
+#### 【本頁重點摘要】
+*   AI 的未來是「代理化 (Agentic)」的，而其成功的關鍵在於可靠性與信任。
+*   「評估工程 (Evaluation Engineering)」是區分成功與失敗的 AI 專案的核心差異。
+*   最終目標是打造「值得信賴」的代理，而信任是透過持續、全面且架構完善的評估所鍛造出來的。
+
+---
+
+#### 【逐字講稿】
+
+(開場白)
+各位，我們已經走到了這趟旅程的終點。現在，讓我們一起來總結，如何在這個充滿潛力的自主化世界中，建立起最關鍵的資產——**信任**。
+
+##### ① 未來是代理化的，更是可靠的
+我們正處於一個巨大的技術轉捩點。AI 不再只是被動地回答問題，它們開始能夠自主地**推理、規劃、並採取行動**。這股力量將會徹底改變我們的世界。但正如我們在整份報告中不斷強調的，這股強大的力量，也伴隨著一份深遠的責任：我們必須打造出值得整個社會信賴的系統。
+
+##### ② 「評估工程」是真正的勝負手
+為什麼有些公司能夠成功部署企業級的 AI，而另一些卻始終停留在充滿希望的展示和最終失敗的專案循環中？
+
+答案就在於我們今天探討的核心——我們稱之為「評估工程」的紀律。
+
+*   那些將品質視為事後補救、可有可無的團隊，他們將會發現自己不斷地在處理各種預料之外的失敗，最終失去使用者的信任。
+*   相反地，那些從一開始就將**嚴謹、與架構整合的評估方法**視為核心的組織，他們才是能夠真正釋放 AI 潛力，部署出具有變革性、企業級應用的贏家。
+
+> **我們的最終目標，不僅僅是打造出能「工作」的代理，而是打造出能被「信賴」的代理。而這份信任，絕非源於希望或偶然。它是在持續、全面、且根植於優良架構的評估熔爐中，千錘百鍊鍛造而成的。**
+
+---
+
+#### 【講者提示 & 轉場】
+*   **節奏提醒**：講到最後的 blockquote 時，請放慢速度，一字一句、鏗鏘有力地傳達。這是整場演講的最終結論，也是最強大的訊息。
+*   **補充案例**：此處無需補充案例，重點在於強化核心訊息，為整場演講劃下完美句點。
+*   **轉場橋樑 (Bridge)**：(演講結束)
+    > 謝謝大家的聆聽。我們相信，透過今天分享的框架與原則，我們都能夠共同打造一個不僅是智慧的，更是可靠且值得信賴的 AI 未來。
+
+```</pre>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function toggleNoteView(pageIndex, viewType) {
+            const pageElement = document.getElementById('page-' + pageIndex);
+            if (!pageElement) return;
+
+            const renderedView = pageElement.querySelector('#note-rendered-' + pageIndex);
+            const rawView = pageElement.querySelector('#note-raw-' + pageIndex);
+            const renderedBtn = pageElement.querySelector('button[onclick*="'rendered'"]');
+            const rawBtn = pageElement.querySelector('button[onclick*="'raw'"]');
+
+            if (viewType === 'rendered') {
+                renderedView.style.display = 'block';
+                rawView.style.display = 'none';
+                renderedBtn.classList.add('active');
+                rawBtn.classList.remove('active');
+            } else {
+                renderedView.style.display = 'none';
+                rawView.style.display = 'block';
+                rawBtn.classList.add('active');
+                renderedBtn.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
