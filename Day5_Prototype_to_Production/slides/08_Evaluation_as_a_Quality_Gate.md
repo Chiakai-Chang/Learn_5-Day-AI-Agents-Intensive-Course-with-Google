@@ -1,0 +1,8 @@
+# Evaluation as a Quality Gate
+
+Why do we need a special quality gate for agents? Traditional software tests are insufficient for systems that reason and adapt. Furthermore, evaluating an agent is distinct from evaluating an LLM; it requires assessing not just the final answer, but the entire trajectory of reasoning and actions taken to complete a task. An agent can pass 100 unit tests for its tools but still fail spectacularly by choosing the wrong tool or hallucinating a response. We need to evaluate its behavioral quality, not just its functional correctness. This gate can be implemented in two primary ways:
+
+1.  **The Manual "Pre-PR" Evaluation**: For teams seeking flexibility or just beginning their evaluation journey, the quality gate is enforced through a team process. The AI Engineer or Prompt Engineer runs the evaluation suite locally, and the performance report is linked in the PR description for human review.
+2.  **The Automated In-Pipeline Gate**: For mature teams, the evaluation harness is integrated directly into the CI/CD pipeline. A failing evaluation automatically blocks the deployment, providing rigid, programmatic enforcement of quality standards.
+
+Regardless of the method, the principle is the same: no agent proceeds to production without a quality check. We covered the specifics of what to measure and how to build this evaluation harness in our deep dive on Day 4: Agent Quality: Observability, Logging, Tracing, Evaluation, Metrics, which explored everything from crafting a 'golden dataset' to implementing LLM-as-a-judge techniques, to finally using a service like Vertex AI Evaluation to power evaluation.
